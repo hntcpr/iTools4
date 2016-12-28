@@ -1,0 +1,66 @@
+<SOUI title="iTools 4"  width="860" height="530" margin="5,3,5,7" appWnd="0" resizable="0" translucent="1">
+  <style>
+    <class name="title" colorText="#333333"/>
+    <class name="content" colorText="#666666"/>
+  </style>
+  <root skin="_skin.sys.wnd.bkgnd"> 
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">iTunes Backup</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="0,42,-0,@40" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line" focusable="1" drawFocusRect="0">
+        <buttonex name="tool_import" pos="[20,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_import" focusable="0">导入</buttonex>
+        <buttonex name="tool_open" pos="[0,0,@70,-0" enable="0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_folder" focusable="0">Open</buttonex>
+        <buttonex name="tool_delete" pos="[0,0,@70, -0" enable="0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_delete" focusable="0">Delete</buttonex>
+        <buttonex name="tool_refresh" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0">Refresh</buttonex>
+        <buttonex name="tool_backup" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_backup_app" focusable="0">Backup</buttonex>
+        <buttonex name="tool_restore" pos="[0,0,@100,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar.restore" focusable="0">Restore</buttonex>        
+        <buttonex name="tool_link" pos="[0,0,@100,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar.star" focusable="0">在线教程</buttonex>
+
+      </window>
+      <mclistviewex pos="0,[0,-0,-0" id="4796" name="lv_backups" headerHeight="30" dividerSize="1" wantTab="1"  dividerSkin="_skin.hor.line">
+        <header align="left"  sortSkin="skin_lcex_header_arrow" columnNum="1" minColumn="50" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+          <items>
+            <item width="10"></item>
+            <item width="255">Name_h</item>
+            <item width="140">Time_h</item>
+            <item width="102">Size_h</item>
+            <item width="110">Version_h</item>
+            <item width="100">Type_h</item>
+            <item width="110">Serial_h</item>
+          </items>
+        </header>
+        <template itemHeight="30" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+          <window name="col1"/>
+          <window name="col2" clipClient="1">
+            <text name="txt_name" pos="10,0,-4,-0" font="adding:-2" dotted="1">Name</text>
+          </window>
+          <window name="col3" clipClient="1">
+            <text name="txt_time" pos="4,0,-0,-0" font="adding:-2" colorText="#939496">--</text>
+          </window>
+          <window  name="col4" clipClient="1">
+            <text name="txt_size" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+          </window>
+          <window name="col5" clipClient="1">
+            <text name="txt_version" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+          </window>
+          <window name="col6">
+            <text name="txt_type" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+          </window>
+          <window name="col7">
+            <text name="txt_serial" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+          </window>
+          <window name="col8">
+            <text name="txt_size" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+          </window>
+
+        </template>
+      </mclistviewex>
+      <window name="process_wnd" pos="0,0,-0,-0" show="0">
+        <include src="layout:progress_box"/>
+      </window>
+
+    </window>
+  </root>
+</SOUI>

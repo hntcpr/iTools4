@@ -1,0 +1,18 @@
+﻿<SOUI trCtx="" title="" width="580" height="370" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text name="title" pos="15, 0, 200, -0">提示</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="0,76,-0,-66" skin="skin_bkgnd_line">
+        <img name="msgicon" pos="20,0,@168,@168" skin="icon_tip_install_itools" display="1"/>
+        <window pos="200, 7">
+          <text pos="0,0" colorText="#333333" multilines="0" valign="top">由于iOS系统限制，导入照片需要打开iTools（应用兔）</text>
+          <text pos="{0,[10" multilines="1" valign="top" maxWidth="330" font="adding:-2">请按以下步骤进行操作：\n\n1、点击下方的 安装“iTools（应用兔）” 按钮\n2、安装完成之后，请在设备上打开“iTools（应用兔）”，并保持开启状态</text>
+        </window>
+      </window>
+      <button id="IDOK" pos="|-100,-54, @200, @40" skin="blue_btn" drawFocusRect="0" colorText="#ffffff">安装“iTools（应用兔）”</button>
+    </window>
+  </root>
+</SOUI>

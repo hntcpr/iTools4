@@ -1,0 +1,13 @@
+﻿<SOUI trCtx="" title="" width="880" height="650" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#ffffff" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text name="title" pos="15, 0, 200, -0">文件管理 </text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window name="file_explorer" pos="0,40,-0,-0" colorBkgnd="#ffffff">
+        <include src="layout:devices_file_explorer"/>
+      </window>
+    </window>
+  </root>
+</SOUI>

@@ -1,0 +1,89 @@
+﻿<SOUI trCtx="" title="" width="560" height="480" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <style>
+    <class name="content_style" font="adding:-2"></class>
+  </style>
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text name="title" pos="15, 0, 200, -0">New Contact</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="45,[45,-45,-75">
+        <bitmap skin="icon_contact_defult" pos="0,0" name="img_jpg"/>
+        <imgbtn name="btn_pic" pos="{0,{0,[0,[0" skin="modify_contact_pic"></imgbtn>
+        <window pos="75,2,-0,@31">
+          <text pos="0,0,@50,-0" align="right" font="adding:-2">姓：</text>
+          <edit name="edit_last_name"  font="adding:-2" pos="[0,0,@135,-0" skin="normal_edit" class="content_style" inset="5,0,5,0"/>
+          <text pos="[0,0,@50,-0" align="right"  font="adding:-2">名：</text>
+          <edit name="edit_first_name" pos="[0,0,-0,-0"  font="adding:-2" skin="normal_edit" class="content_style" inset="5,0,5,0"/>
+        </window>
+        <window pos="75,37,-0,@31">
+          <text pos="0,0,@50,-0" align="right" font="adding:-2">公司：</text>
+          <edit name="edit_company" pos="[0,0,@135,-0" skin="normal_edit" class="content_style" inset="5,0,5,0" font="adding:-2"/>
+          <text pos="[0,0,@50,-0" align="right" font="adding:-2">分组：</text>
+          <combobox name="combo_group"  font="adding:-2" pos="[0,0,-0,-0"  dropDown="1" dropHeight="100" skin="normal_edit" dotted="0" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" inset="5,0,5,0">
+            <liststyle class="cls_combo_list" itemHeight="30"  font="adding:-2" colorBkgnd="#ffffff"/>
+            <editstyle inset="5,0,5,0" colorText="@color/text_body" align="center" class="content_style" colorBkgnd="#FFFFFF"/>
+          </combobox>
+        </window>
+        <listview pos="0,[40,-0,-44" name="lv_contact" dividerSize="8" wantTab="1">
+          <template >
+            <type0 colorHover="#ffffff" colorSelected="#ffffff" trackMouseEvent="1">
+              <combobox name="combo_type" pos="0,0,@115,@30"  dropDown="1" font="adding:-2" dropHeight="280" skin="normal_edit" dotted="0" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" inset="5,0,5,0">
+                <liststyle class="cls_combo_list" itemHeight="30"/>
+                <editstyle inset="5,0,5,0" colorText="@color/text_body" align="center" colorBkgnd="#FFFFFF"/>
+              </combobox>
+              <edit name="edit_value" pos="[5,0,]-5,@30" skin="normal_edit" class="content_style" inset="5,0,5,0"/>
+              <button name="btn_remove" pos="-28,0" skin="btn_delete_contact" drawFocusRect="0"/>
+            </type0>
+            <type1 colorHover="#ffffff" colorSelected="#ffffff" trackMouseEvent="1">
+              <text name="label" pos="0,5,@115,-0" font="adding:-2" align="center" valign="top"></text>
+              <edit name="edit_value" pos="[5,0,]-5,-0" skin="normal_edit" class="content_style" valign="top" inset="5,5,0,0"/>
+              <button name="btn_remove" pos="-28,0"  skin="btn_delete_contact" drawFocusRect="0"/>
+            </type1>
+            <type2 colorHover="#ffffff" colorSelected="#ffffff" trackMouseEvent="1">
+              <combobox name="combo_type" pos="0,0,@115,@30"  font="adding:-2" dropDown="1" dropHeight="150" skin="normal_edit" dotted="0" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" inset="5,0,5,0">
+                <liststyle class="cls_combo_list" itemHeight="30"/>
+                <editstyle inset="5,0,5,0" colorText="@color/text_body" align="center" colorBkgnd="#FFFFFF"/>
+              </combobox>
+              <edit name="edit_value" pos="[5,0,]-5,@30" skin="normal_edit" class="content_style" inset="5,0,5,0" cueText="Street"/>
+              <button name="btn_remove" pos="-28,0"  skin="btn_delete_contact" drawFocusRect="0"/>
+              <edit name="edit_city" pos="120,33,@100,@30" skin="normal_edit" class="content_style" inset="5,0,5,0" cueText="City"/>
+              <edit name="edit_province" pos="[3,33,@90,@30" skin="normal_edit" class="content_style" inset="5,0,5,0" cueText="State"/>
+              <edit name="edit_zip" pos="[3,33,@90,@30" skin="normal_edit" class="content_style" inset="5,0,5,0" cueText="Postal code"/>
+              <edit name="edit_country" pos="120,66,@140,@30" skin="normal_edit" class="content_style" inset="5,0,5,0" cueText="Country"/>
+
+            </type2>
+            <type3 colorHover="#ffffff" colorSelected="#ffffff" trackMouseEvent="1">
+              <text name="label" pos="0,5,@115,-0" font="adding:-2" align="center" valign="top"></text>
+              <datepicker name="date_picker" pos="[5,0,]-5,-0" dropDown="1" dropHeight="150" skin="normal_edit" dotted="0" animateTime="200" curSel="0" font="adding:-2" drawFocusRect="0" textOffset="5" inset="5,0,5,0">
+                <editstyle inset="5,0,5,0" colorText="@color/text_body" align="center" colorBkgnd="#FFFFFF"/>
+                <calendar2>
+                  <include src="layout:template_calendar"/>                  
+                </calendar2>
+              </datepicker>
+              <button name="btn_remove" pos="-28,0"  skin="btn_delete_contact" drawFocusRect="0"/>
+            </type3>
+            <type4 colorHover="#ffffff" colorSelected="#ffffff" trackMouseEvent="1">
+              <combobox name="combo_type" pos="0,0,@115,@30"  font="adding:-2" dropDown="1" dropHeight="150" skin="normal_edit" dotted="0" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" inset="5,0,5,0">
+                <liststyle class="cls_combo_list" itemHeight="30"/>
+                <editstyle inset="5,0,5,0" colorText="@color/text_body" align="center" colorBkgnd="#FFFFFF"/>
+              </combobox>
+              <datepicker name="date_picker" pos="[5,0,]-5,-0" dropDown="1" font="adding:-2" dropHeight="150" skin="normal_edit" dotted="0" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" inset="5,0,5,0">
+                <editstyle inset="5,0,5,0" colorText="@color/text_body" align="center" colorBkgnd="#FFFFFF"/>
+                <calendar2>
+                  <include src="layout:template_calendar"/>
+                </calendar2>
+              </datepicker>
+              <button name="btn_remove" pos="-28,0"  skin="btn_delete_contact" drawFocusRect="0"/>
+            </type4>
+
+          </template>
+        </listview>
+        <button pos="-30,[10" offset="-1,0" name="btn_add" skin="skin_null" cursor="hand" colorText="#1e78d5" colorTextHover="#1e78d5" drawFocusRect="0">+添加更多字段</button>
+      </window>
+      <button pos="|0, -70,@130,@35" offset="-1.3,0" name="btn_save">保存</button>
+      <button pos="|0, -70,@130,@35" offset="0.3,0" id="IDCANCEL">取消</button>
+    </window>
+  </root>
+</SOUI>

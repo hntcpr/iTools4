@@ -1,0 +1,38 @@
+<include>
+  <window name="photos" pos="0,0,-0,-0" colorBkgnd="#f0f0f0">
+    <window name="photos_tool" pos="0,0,-0,40" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line">
+      <buttonex name="tool_livephoto" pos="20,0,@100, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_live_photo" focusable="0" tip="固件不支持Live Photos">Live Photos</buttonex>
+      <buttonex name="tool_import" pos="[0,0,@70, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_import" focusable="0">导入</buttonex>
+      <buttonex name="tool_export" pos="[0,0,@70, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_export" focusable="0">导出</buttonex>
+      <buttonex name="tool_delete" pos="[0,0,@70, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_delete" focusable="0" tip="固件不支持删除">删除</buttonex>
+      <buttonex name="tool_refresh" pos="[0,0,@70, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0">刷新</buttonex>
+      <buttonex name="tool_unselect" pos="[0,0,@70, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_unselect_all" focusable="0">全选</buttonex>
+      <buttonex name="tool_select_all" pos="{0,0,@70, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_select_all" focusable="0">全选</buttonex>
+      <buttonex name="tool_play" pos="[0,0,@140, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_play" focusable="0">幻灯片播放</buttonex>
+      <window name="options" pos="-130,1,-1,-1" colorBkgnd="#ffffff" show="1">
+        <imgbtn name="tool_sort" pos="0,4,@60,@28" align="left" inset="10,0,0,0" drawFocusRect="0" skin="skin_btn_sort" animate="1">降序
+          <img pos="-25,0" skin="_skin.sys.dropbtn"/>
+        </imgbtn>
+        <radio2 pos="70,10" name="radio_day" checked="1" skin="toolbar_show_day" cursor="hand" tip="Show by day"></radio2>
+        <radio2 pos="[10,{0" name="radio_month" skin="toolbar_show_month" cursor="hand" tip="Show by month"></radio2>
+      </window>
+    </window>
+    <window pos="0,40,-0,-35" colorBkgnd="#ffffff" skin="skin_bkgnd_line">
+      <photolistview name="photo_listview" id="4796" pos="0,0,-0,-2" scrollSpeed="75">
+        <combobox name="combo_date" pos="43,20,@108,@26" dropDown="1" dropHeight="480" skin="normal_edit" dotted="1" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" colorText="@color/text_body" show="0" inset="5,0,5,0">
+          <liststyle class="cls_combo_list" itemHeight="24" font="adding:-2" textOffset="5"/>
+        </combobox>
+      </photolistview>
+    </window>
+    <window pos="0,-35,-0,-0" colorBkgnd="#ffffff">
+      <text name="status_text" pos="0,0,-0,-0" font="adding:-2" align="center" colorText="#5d5d5d" ></text>
+    </window>
+    <window name="process_wnd" pos="0,0,-0,-0" show="0">
+      <include src="layout:progress_box"/>
+    </window>
+    <window name="loading_wnd" pos="0,40,-0,-0" colorBkgnd="#ffffff">
+      <gifplayer name="loading_img" skin="skin_loading_img" pos="|0,|0" offset="-0.5,-0.6" show="1"/>
+      <text pos="|0,[-20" offset="-0.5,0" colorText="#666666" font="adding:-2">正在加载中，请稍候...</text>
+    </window>
+  </window>
+</include>

@@ -1,0 +1,26 @@
+﻿<SOUI trCtx="" title="" width="880" height="650" margin="3,3,3,3" resizable="1" translucent="0">
+  <root skin="_skin.sys.menu.border">
+    <window pos="1,1,-1,-1" colorBkgnd="#FFFFFF" >
+      <caption pos="0,0,-0,42" skin="skin_bkgnd_line">
+        <text name="txt_title" pos="15, 0, -200, -0">PList编辑器</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+        <imgbtn name="btn_max" skin="sys_btn_max2" pos="-65,10" tip="maximize" animate="1"/>
+        <imgbtn name="btn_restore" skin="sys_btn_restore2" pos="-65,10" tip="restore" animate="1" show="0"/>
+      </caption>
+      <window name="plist_tool" pos="0,[0,-0,@34" colorText="@color/text_body" colorBkgnd="#ffffff" skin="skin_bkgnd_line">
+        <buttonex name="tool_save" pos="20,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar.save" focusable="0" accel="ctrl+S">保存</buttonex>
+        <buttonex name="tool_save_as" pos="[0,0,@80,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar.save" focusable="0" accel="ctrl+shift+S">另存为</buttonex>
+        <buttonex name="tool_undo" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_import" focusable="0" enable="0" accel="ctrl+Z">撤消</buttonex>
+        <buttonex name="tool_redo" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_export" focusable="0" enable="0" accel="ctrl+Y">重做</buttonex>
+        <buttonex name="tool_refresh" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0" accel="F5">刷新</buttonex>
+        <buttonex name="tool_find" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_show" focusable="0" accel="ctrl+F">查找</buttonex>
+      </window>
+      <window pos="0,[0,-0,-25" colorBkgnd="#ffffff" skin="skin_bkgnd_line">
+        <realwnd name="scintilla" pos="1,1,-0,-0" wndclass="Scintilla" wndname="Scintilla"/>
+      </window>
+      <window pos="0,-25,-0,-0" colorBkgnd="#ffffff">
+      <text name="status_text" pos="5,0,-0,-0" font="adding:-2" align="left" colorText="#000000">共9行，第2行32列</text>
+      </window>
+    </window>
+  </root>
+</SOUI>

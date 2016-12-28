@@ -1,0 +1,97 @@
+<SOUI name="Config" title="iTools 4"  width="700" height="510" margin="5,3,5,7" appWnd="1" resizable="0" translucent="1"  trCtx="config">
+  <style>
+    <class name="title" colorText="#333333"/>
+    <class name="content" colorText="#666666"/>
+  </style>
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">Config</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <tabctrl name="downloadtab" pos="0,[0,-0,-75" colorBkgnd="#ffffff" tabAlign="left" tabSkin="skin_tab_download" tabInterSize="0"  tabWidth="145" tabHeight="37" icon-x="20" icon-y="11" text-x="40" colorText="#555555" colorTextPush="#ffffff" colorTextHover="#ffffff" focusable="0" align="left">
+        <page title="General">
+          <window pos="0, 0, @1, -0" colorBkgnd="#f1f1f1"></window>
+          <window pos="35, 30">
+            <text pos="0,0" class="title" visible="0">Onekey Install</text>
+            <check name="check_ipa" pos="30, [4" class="content" checked="1" visible="0">关联ipa文件，双击直接安装至手机</check>
+            <text pos="0, 0" class="title">When device plug</text>
+            <check name="check_restore" pos="30, [4" class="content" checked="1">Restore window</check>
+            <text pos="0,[30" class="title">Close</text>
+            <radio name="radio_minimize" pos="30, [4" class="content" checked="1">minimize to system tray</radio>
+            <radio name="radio_exit" pos="30, [4" class="content">exit</radio>
+            <text visible="0" pos="0,[30" class="title">Auto start</text>
+            <check visible="0" name="check_start_service" pos="30, [4" class="content" checked="1">start itools service when system up</check>
+         </window>
+        </page>
+        <page title="Network">
+          <window pos="0, 0, @1, -0" colorBkgnd="#f1f1f1"></window>
+          <window pos="35, 30">
+            <text pos="0,0" class="title">Proxy</text>
+
+            <window pos="0,[15">
+              <text pos="0,0" class="content">Type</text>
+              <text pos="125,0" class="content">Address</text>
+              <text pos="340,0" class="content">Port</text>
+            </window>
+            <window pos="0, [4">
+              <combobox name="proxy_type" pos="0,0,110,30"  dropDown="1" dropHeight="100" skin="normal_edit" dotted="0" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" inset="5,0,5,0">
+                <liststyle class="cls_combo_list" itemHeight="30"/>
+                <editstyle inset="5,0,5,0" colorText="@color/text_body" align="center" colorBkgnd="#FFFFFF"/>
+                <items>
+                  <item text="use system proxy" data="0"/>
+                  <item text="http proxy" data="1"/>
+                  <item text="no proxy" data="2"/>
+                </items>
+              </combobox>
+              <edit name="edit_addr" pos="125,0,@200,@30" skin="normal_edit" inset="5,0,5,0"></edit>
+              <edit name="edit_port" pos="340,0,@100,@30" skin="normal_edit" inset="5,0,5,0"></edit>
+            </window>
+            <window pos="0, [20">
+              <text pos="0,0" class="content">User</text>
+              <text pos="125,0" class="content">Password</text>
+              <text pos="340,0" class="content">Domain</text>
+            </window>
+            <window pos="0, [4">
+              <edit name="edit_user" pos="0,0,@110,@30" skin="normal_edit" inset="5,0,5,0"></edit>
+              <edit name="edit_passwd" pos="125,0,@200,@30" skin="normal_edit" inset="5,0,5,0"></edit>
+              <edit name="edit_domain" pos="340,0,@100,@30" skin="normal_edit" inset="5,0,5,0"></edit>
+            </window>
+            <button pos="340, [25, @100, @30">Test</button>
+          </window>
+        </page>
+        <page title="Download">
+          <window pos="0, 0, @1, -0" colorBkgnd="#f1f1f1"></window>
+          <window pos="35, 30">
+            <text pos="0,0" class="title">Download folder</text>
+            <edit name="download_path" pos="0, [4, @240, @30" skin="normal_edit" inset="5,0,5,0">D:\</edit>
+            <button name="btn_change" pos="[10, {0, @80, @30">Change</button>
+            <button name="btn_open" pos="[10, {0, @100, @30">Open</button>
+            <text pos="0,[50" class="title">Speed limit</text>
+
+            <text pos="10, [4">Speed limit to</text>
+            <edit name="speed_limit" pos="[10, {0, @50, @20" skin="blue_edit" align="center" colorText="#1E8EE4" number="1">0</edit>
+            <text pos="[10, {0" >KB/s (0-102400)</text>
+          </window>
+        </page>
+        <page title="Apple ID">
+          <window pos="0, 0, @1, -0" colorBkgnd="#f1f1f1"></window>
+          <window pos="0, 34, -0, @1" colorBkgnd="#f1f1f1"></window>
+          <text pos="25, 0, -0, @34" class="title" align="left">Account</text>
+          <listview pos="0,[10,-0,-60" name="lv_account" dividerSize="0" wantTab="1">
+            <template itemHeight="30" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+              <text pos="25,0,360,@30" name="email" colorText="#333333">email</text>
+              <text pos="360,0,500, @30" name="default" colorText="#9c9c9c" display="0">default</text>
+            </template>
+          </listview>
+          <button name="btn_add_account" pos="25, -50" inset="20, 5, 20, 5">Add</button>
+          <button name="btn_del_account" pos="[20, -50" inset="20, 5, 20, 5">Delete</button>
+          <button name="btn_def_account" pos="[20, -50" inset="20, 5, 20, 5">Set Default</button>
+        </page>
+      </tabctrl>
+      <window pos="0,[0, -0, @1" colorBkgnd="#f1f1f1"/>
+      <button pos="-230, -50, @100, @30" id="IDOK" name="btn_save">Ok</button>
+      <button pos="-120, -50, @100, @30" name="btn_cancel">Cancel</button>
+    </window>
+  </root>
+</SOUI>

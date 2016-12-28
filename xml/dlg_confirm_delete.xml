@@ -1,0 +1,38 @@
+﻿<SOUI title="mesagebox" width="360" height="200" appwin="0" frameSize="40,40,60,100" minSize="360,200" resize="0" translucent="1" trCtx="messagebox">
+  <style>
+    <class name="normalbtn" skin="_skin.sys.btn.normal" font="" colorText="#333333" colorTextDisable="#91a7c0" textMode="0x25" cursor="hand" margin-x="0"/>
+  </style>
+
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11">
+      <caption id="101" pos="0,0,-0,29">
+        <text pos="20, 0, @300, @42"  align="left" name="msgtitle" >Tip</text>
+        <imgbtn id="2" skin="_skin.sys.btn.close" pos="-35,10" tip="close"/>
+        <window pos="1, 42, -1, @1" colorBkgnd="#E4E4E4"/>
+      </caption>
+
+      <window pos="20,70,-5,-60">
+        <img name="msgicon" pos="0,0,@32,@32" skin="msgbox.info" display="0"/>
+        <window pos="42, 7">
+          <text name="msgtext" pos="0,0" colorText="#333333" multilines="1" valign="top" maxWidth="300">确认删除选中项吗？</text>
+        </window>
+      </window>
+      <tabctrl name="btnSwitch" pos="0,-50,-0,-0" tabHeight="0">
+        <page>
+          <button pos="-88,-44, @74, @30" name="button1st" class="normalbtn" drawFocusRect="0" id="IDOK" skin="_skin.sys.btn.default">确认</button>
+        </page>
+        <page>
+          <button pos="-174,-44, @74, @30" name="button1st" class="normalbtn"  drawFocusRect="0">button1</button>
+          <button pos="-88,-44, @74, @30" name="button2nd" class="normalbtn"  drawFocusRect="0">button2</button>
+        </page>
+        <page>
+          <button pos="-250,-44, @74, @30" name="button1st" class="normalbtn"  drawFocusRect="0">button1</button>
+          <button pos="-174,-44, @74, @30" name="button2nd" class="normalbtn"  drawFocusRect="0">button2</button>
+          <button pos="-88,-44, @74, @30" name="button3rd" class="normalbtn"  drawFocusRect="0">button3</button>
+        </page>
+      </tabctrl>
+      <check name="check_file" pos="20, -35" class="content" checked="1">删除本地文件</check>
+    </window>
+
+  </root>
+</SOUI>

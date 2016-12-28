@@ -1,0 +1,29 @@
+<include>
+	<window pos="0,0,-0,-0" colorBkgnd="#FFFFFF">
+		<devicetreectrl pos="0,10,164,-0" size="full,full" name="nodevtree" itemHeight="43" iconSkin="skin_tree_icon" colorItemSelBkgnd="#1C8EE3" font="adding:2"  colorItemText="@color/text_body">
+			<item text="Test" img="0" selImg="1"  expand="1" data="2550"></item>
+			<item text="应用" img="3" selImg="4" data="2550"/>
+			<item text="照片" img="6" selImg="7" data="2550"></item>
+			<item text="音乐" img="9" selImg="10" data="2550"></item>
+			<item text="视频" img="12" selImg="13" data="2550"></item>
+			<item text="图书" img="15" selImg="16" data="2550"></item>
+			<item text="信息" img="18" selImg="19" data="2550"></item>
+			<item text="文件管理" img="27" selImg="28" data="2550"/>
+      <item text="设备维修" img="21" selImg="22" data="17"></item>
+      <item text="设备回收" img="24" selImg="25" data="18"></item>
+		</devicetreectrl>
+		<window pos="[,0, @1,-0" colorBkgnd="#E4E4E4" />
+		<window pos="[,0,-0,-0" name="dev_ui_container">
+			<window pos="|0, |0, @850, @610" offset="-0.5, -0.5" colorBkgnd="#FFFFFF">
+				<img name="dev_connect_bkgnd" pos="|0, 110" offset="-0.5,0" skin="skin_nodev"></img>
+				<text pos="150,[70" font="face:微软雅黑,bold:0,size:24"  colorText="#444444">请使用USB数据线连接您的苹果设备</text>
+				<window pos="[30, {2, -100, [0">
+					<img pos="[0, |0, 16, %100" offset="0,-0.5" skin="skin_connectdev"/>
+					<link name="btn_connect" pos="[4, 0, %100, %100" class="cls_btn_weblink" align="left">已连接，无法识别？</link>
+				</window>
+				<text Pos="|0, -30" offset="-0.5, 0" class="cls_info_label">如使用过程中遇到任何问题请联系客服QQ：800081336</text>
+			</window>
+		</window>
+	</window>
+	<window pos="0, 0, -0, -0" colorBkgnd="#FFFFFF" name="devices_container" show="0"/>
+</include>

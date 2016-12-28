@@ -1,0 +1,74 @@
+<include>
+  <window name="music" pos="0,0,-0,-0" colorBkgnd="#ffffff">
+    <window pos="0,0,-0,40" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line" focusable="1" drawFocusRect="0">
+      <buttonex name="tool_import" pos="20,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_import" focusable="0">导入</buttonex>
+      <buttonex name="tool_export" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_export" focusable="0">导出</buttonex>
+      <buttonex name="tool_delete" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_delete" focusable="0">Delete</buttonex>
+      <buttonex name="tool_refresh" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0">刷新</buttonex>
+      <window pos="-210,5,@190,@30" skin="search_edit" trackMouseEvent="1">
+        <editex name="search_edit" pos="0,3,-30,-3" inset="12,0,12,0" cueText="搜索电影" cueColor="#9a9a9a"/>
+        <imgbtn name="search_reset" pos="-36,0,@36,@30" font="adding:-2" skin="search_reset" animate="1" visible="0"></imgbtn>
+      </window>
+    </window>
+    <window pos="0,[0,-0,-35" clipClient="1" skin="skin_bkgnd_line">
+      <window pos="0,[0,-0,]0">
+        <mclistviewex pos="0,0,-0,-0" id="4796" name="lv_video" headerHeight="30" dividerSize="1" wantTab="1"  dividerSkin="_skin.hor.line">
+          <header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" columnNum="1" minColumn="40" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+            <items>
+              <item width="40" minwidth="40"></item>
+              <item width="208">Name_h</item>
+              <item width="100">Time_h</item>
+              <item width="100">Artest_h</item>
+              <item width="100">Album_h</item>
+              <item width="100">Style_h</item>
+              <item width="100">Rate_h</item>
+              <item width="100">Size_h</item>
+            </items>
+          </header>
+          <check pos="20, 7" name="header_check"/>
+          <template itemHeight="30" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+            <window name="col1" clipClient="1">
+              <check pos="20,7" name="checkbox"></check>
+            </window>
+            <window name="col2" clipClient="1">
+              <text name="txt_name" pos="4,0,-4,-0" font="adding:-2" dotted="1">Name</text>
+            </window>
+            <window name="col3" clipClient="1">
+              <text name="txt_time" pos="4,0,-0,-0" font="adding:-2" colorText="#939496">00:00</text>
+            </window>
+            <window  name="col4" clipClient="1">
+              <text name="txt_artist" pos="4,0,-0,-0" font="adding:-2" colorText="#939496" dotted="1"></text>
+            </window>
+            <window name="col5" clipClient="1">
+              <text name="txt_album" pos="4,0,-0,-0" font="adding:-2" colorText="#939496" dotted="1"></text>
+            </window>
+            <window name="col6">
+              <text name="txt_style" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+            </window>
+            <window name="col7">
+              <text name="txt_rate" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+            </window>
+            <window name="col8">
+              <text name="txt_size" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+            </window>
+          </template>
+        </mclistviewex>
+        <window name="empty_tip" pos="{0,{30,-0,-0" show="0" msgTransparent="1">
+          <img skin="empty_tip.video" pos="|0,|0" offset="-0.5,-0.75" />
+          <text pos="|0,[20" offset="-0.5,0" colorText="#666666">— 暂无内容 —</text>
+        </window>
+
+      </window>
+    </window>
+    <window pos="0,-35,-0,-0" colorBkgnd="#ffffff">
+      <text name="status_text" pos="0,0,-0,-0" font="adding:-2" align="center" colorText="#5d5d5d" ></text>
+    </window>
+    <window name="process_wnd" pos="0,0,-0,-0" show="0">
+      <include src="layout:progress_box"/>
+    </window>
+    <window name="loading_wnd" pos="0,40,-0,-0" colorBkgnd="#ffffff" display="0">
+      <gifplayer name="loading_img" skin="skin_loading_img" pos="|0,|0" offset="-0.5,-0.6" show="1"/>
+      <text pos="|0,[-20" offset="-0.5,0" colorText="#666666">正在加载中，请稍候...</text>
+    </window>
+  </window>
+</include>

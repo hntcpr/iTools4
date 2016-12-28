@@ -1,0 +1,3 @@
+<include>
+  <webview colorBkg="#ffffff" pos="0,0,-0,-0" url="http://serv2.itools.hk/redirect?p=huishoubao" name="wke_sale"/>
+</include>

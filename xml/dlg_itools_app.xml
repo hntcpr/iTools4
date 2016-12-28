@@ -1,0 +1,18 @@
+<SOUI title="iTools 4"  width="520" height="360" margin="5,3,5,7" appWnd="0" resizable="0" translucent="1">
+
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="10,10,-10,-10" colorBkgnd="#FFFFFF" clipclient="1">
+      <img pos="|0,80" offset="-0.5,0" skin="img_install_app"/>
+      <caption pos="0, 0,-0,290">
+        <text pos="15, 0, 200, @40">安装 iTools（应用兔）</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="0"/>
+      </caption>
+      <window pos="|-260,-43,|260,-0">
+        <!--img pos="0, 0" name="indicator" skin="indicator"/-->
+        <text pos="0,0,-0,@20" name="info" align="center" font="adding:-1" colorText="#636363">正在下载...</text>
+      </window>
+      <progress name="progress" posSkin="skin.prog" bkgndSkin="skin.progbkg" pos="0,-6,-0,@6" value="0" min="0" max="100" showPercent="0"/>
+      
+    </window>
+  </root>
+</SOUI>

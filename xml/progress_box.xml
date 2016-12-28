@@ -1,0 +1,17 @@
+﻿<include>
+	<window colorBkgnd="#ffffff" colorBorder="#9a9a9a" margin="1" pos="|0,|0,@360,@170" offset="-0.5,-0.5">
+		<tabctrl name="btnSwitch" pos="0,0,-0,-0" tabHeight="0">
+			<page>
+				<gifplayer name="loading_img" skin="skin_progress_img" pos="|0,40" offset="-0.5,0" show="1"/>
+				<text name="txt_tip" pos="0,105,-0, @30" font="adding:-2" align="center" colorText="#333333" dotted="1">正在加载...</text>
+			</page>
+			<page>
+				<text name="txt_tip_p" pos="20,50,-0, @30" font="adding:-2" colorText="#333333" dotted="1">正在加载...</text>
+				<progress name="progress" pos="20,[0,-20,@6" value="0" min="0" max="100"  show="0"/>
+				<text name="txt_progress" pos="20,[5,-20,@30" font="adding:-2" colorText="#333333" dotted="1" show="0"></text>
+				<imgbtn name="btn_cancel" pos="-80,-50,@60,@30" font="adding:-2"   animate="1" show="0">取消</imgbtn>
+			</page>
+		</tabctrl>
+
+	</window>
+</include>

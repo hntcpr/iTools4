@@ -1,0 +1,22 @@
+<SOUI name="Connect" title="iTools 4" maxInset="5,3,10,10" width="660" height="480" margin="5,3,5,7" appWnd="1" resizable="0" translucent="1"  trCtx="DevInfo">
+	<root skin="_skin.sys.wnd.bkgnd">
+		<window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+			<caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+				<text pos="15, 0, 200, -0">无法识别</text>
+				<imgbtn name="btn_close" id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="关闭" animate="1"/>
+			</caption>
+			<!--hr pos="0,[0" size="1" colorLine="#e4e4e4"/-->
+			<text pos="70, [35">如无法检测到您的设备，请按以下方法重试：</text>
+			<img pos="|0,[35" offset="-0.5,0" skin="device_connect"/>
+			<text pos="40,300,@180,@100" align="center" valign="top" font="adding:-2" multiLines="1">方法1：重新插拔或者\n更换USB插口</text>
+			<text pos="230,300,@180,@100" align="center" valign="top" font="adding:-2">方法2：更换新的数据线</text>
+			<text pos="410,300,]-4,@100" font="adding:-2" valign="top" align="right">方法3：启动修复工具</text>
+			<button name="btn_diagnose" pos="-95, 300" class="cls_btn_weblink" font="adding:-2" skin="skin_null" fontHover="adding:-2,underline:1" align="left" href="http://itools.cn/redirect/ihelper.htm">启动修复</button>
+
+			<window pos="-130, -52, @130, @20">
+			<img pos="[0, |0, 16, @16" offset="0,-0.5" skin="skin_connectdev"/>
+			<link name="btn_connect" pos="[4, 0, %100, %100" class="cls_btn_weblink" align="left" href="http://itools.cn/redirect/ihelper.htm">查看论坛教程>></link>
+		</window>
+		</window>
+	</root>
+</SOUI>

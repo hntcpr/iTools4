@@ -1,0 +1,16 @@
+﻿<SOUI trCtx="" title="" width="480" height="150" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">新建根目录</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="0,42,-0,-0" colorBkgnd="#ffffff">
+        <text pos="10,20,@100,@20" align="right" valign="middle" font="adding:-2">标题</text>
+        <edit name="txt_title" pos="[10,20,-20,@20" skin="normal_edit" font="adding:-2" inset="2,0,2,0" cueText="标题" cueColor="#9a9a9a"></edit>
+        <imgbtn id="IDOK" pos="-180,-34,@80,@24" font="adding:-2" animate="1" colorTextDisable="#cccccc">保存</imgbtn>
+        <imgbtn id="IDCANCEL" pos="[10,-34,@80,@24" font="adding:-2" animate="1" colorTextDisable="#cccccc">取消</imgbtn>
+      </window>
+    </window>
+  </root>
+</SOUI>

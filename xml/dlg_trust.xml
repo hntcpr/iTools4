@@ -1,0 +1,21 @@
+<SOUI name="Update" title="iTools 4"  width="695" height="480" margin="5,3,5,7" appWnd="1" resizable="0" translucent="1"  trCtx="config">
+  <style>
+    <class name="title" colorText="#333333"/>
+    <class name="content" colorText="#666666"/>
+  </style>
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" >
+        <text name="version" pos="15, 0, 200, -0">连接提醒</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      
+      <window pos="0,-80,-0,-0" colorBkgnd="#f9f9f9"></window>
+      <img pos="-290,70" skin="trusttip"/>
+      <text pos="45,65" font="adding:8" class="title">请查看您手机里的提示</text>
+      <text pos="45,[5" class="content">点击“信任” 才能正常连接噢</text>
+      <text pos="45,-80,-0,-0" class="content">正在读取信任信息...</text>
+      
+    </window>
+  </root>
+</SOUI>

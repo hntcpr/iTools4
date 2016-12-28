@@ -1,0 +1,9 @@
+<include>
+  <window pos="0,0,-0,-0">
+    <devicetreectrl pos="0,10,164,-0" size="full,full" name="devtree" itemHeight="43" iconSkin="skin_tree_icon" colorItemSelBkgnd="#1C8EE3" toggleSkin="tree_triger" font="adding:2" colorItemText="@color/text_body">
+    </devicetreectrl>
+    <window pos="[,0, @1,-0" colorBkgnd="#E4E4E4" />
+    <window pos="[,0,-0,-0" name="dev_ui_container"/>
+  </window>
+
+</include>

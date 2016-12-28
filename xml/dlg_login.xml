@@ -1,0 +1,24 @@
+﻿<SOUI title="mesagebox" width="440" height="280" appwin="0" resize="0" translucent="1" trCtx="login">
+  <style>
+    <class name="normalbtn" skin="_skin.sys.btn.normal" font="" colorText="#333333" colorTextDisable="#91a7c0" textMode="0x25" cursor="hand" margin-x="0"/>
+  </style>
+  <root skin="_skin.sys.menu.border">
+    <caption id="101" pos="0,0,-0,29">
+      <text pos="20, 0, @300, @42"  align="left" name="msgtitle" >Login</text>
+      <imgbtn id="2" skin="_skin.sys.btn.close" pos="-35,10" tip="close"/>
+      <window pos="1, 42, -1, @1" colorBkgnd="#E4E4E4"/>
+    </caption>
+
+    <window pos="0,90,-0,@65">
+      <text pos="0,0, @105, @28" align="right">Apple ID：</text>
+      <edit name="edit_account" pos="110, 0, @210, @28" skin="normal_edit" inset="5,0,5,0"></edit>
+      <link pos="[10, 2" href="http://itools.hk/redirect/regguide.htm" inset="0,3,0,3" cursor="hand" valign="center" colorText="#1E8EE4" colorTextHover="#1E8EE4" font="adding:-2" fontHover="adding:-2,underline:1">Regist</link>
+      <text pos=" 0, 37, @105, @28" align="right">Password:</text>
+      <edit name="edit_passwd" pos="110, 37, @210, @28" skin="normal_edit" inset="5,0,5,0" password="1"></edit>
+    </window>
+    <text name="status" pos="40, [4, -40, -55" align="center" multiLines="1" font="adding:-1" colorText="#333333"/>
+    <button name="btn_login" pos="130, -50, @75, @30">Ok</button>
+    <button name="btn_cancel" pos="220, -50, @75, @30" id="IDCANCEL">Cancel</button>
+    <link pos="[10, {0" href="http://itools.hk/redirect/privacy.htm" inset="0,6,0,6" cursor="hand" valign="center" colorText="#d36161" colorTextHover="#d36161" font="adding:-2" fontHover="adding:-2,underline:1">Disclaimer</link>
+  </root>
+</SOUI>

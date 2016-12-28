@@ -1,0 +1,21 @@
+﻿<SOUI trCtx="" title="" width="400" height="240" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text name="title" pos="15, 0, 200, -0">提示</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+    <window pos="30,60,-15,-70">
+      <img name="msgicon" pos="0,10,@32,@32" skin="msgbox.warn" display="0"/>
+      <window pos="42, 8">
+        <text pos="0,0" valign="top">由于iOS系统限制，不能删除以下相簿：</text>        
+        <text pos="{0,[10" valign="top" maxWidth="300">1、相机胶卷</text>        
+        <text pos="{130,{0" valign="top" maxWidth="300">2、照片图库</text>        
+        <text pos="{-130,[10" valign="top" maxWidth="300">3、设备自带的</text>        
+        <text pos="{130,{0" valign="top" maxWidth="300">4、设备上创建的</text>        
+      </window>
+    </window>
+        <button id="IDOK" pos="-88,-44, @74, @30" class="normalbtn" drawFocusRect="0" animate="1">确定</button>
+    </window>
+  </root>
+</SOUI>

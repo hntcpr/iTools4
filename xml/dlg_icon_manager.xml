@@ -1,0 +1,29 @@
+﻿<SOUI trCtx="" title="Ignore List" width="840" height="740" margin="5,3,5,7" resizable="0" translucent="1">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">桌面管理</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="0,42,-0,@40" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line" focusable="1" drawFocusRect="0">
+        <buttonex name="tool_sync" pos="[20,0,@100,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar.sync" focusable="0">同步到设备</buttonex>
+        <buttonex name="tool_refresh" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0">Refresh</buttonex>
+        <buttonex name="tool_backup" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_backup_app" focusable="0">备份</buttonex>
+        <buttonex name="tool_import" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_import" focusable="0">恢复</buttonex>
+        <buttonex name="tool_classify" pos="[0,0,@70, -0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar.classify" focusable="0">智能分类</buttonex>
+      </window>
+      <text pos="|0,|0" offset="-0.5,-0.5">Loading</text>
+      <window pos="0,82,-0,-0">
+        <window name="canvas" colorBkgnd="#e6e6e6" pos="|0,|0,@465,@600" offset="-0.5,-0.5" show="0">
+          <icon_canvas name="icons" colorBkgnd="#f1f1f1">
+            <edit name="folder_name" show="1"></edit>
+          </icon_canvas>
+          <icon_tabs name="tabs"></icon_tabs>
+        </window>
+        <window name="process_wnd" pos="0,0,-0,-0" show="0">
+          <include src="layout:progress_box"/>
+        </window>
+      </window>
+    </window>
+  </root>
+</SOUI>

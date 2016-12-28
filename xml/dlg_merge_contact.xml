@@ -1,0 +1,67 @@
+﻿<SOUI trCtx="" title="" width="860" height="540" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <style>
+    <class name="content_style" font="adding:-1,bold:0" dotted="1" colorText="#999999"></class>
+  </style>
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text name="title" pos="15, 0, 200, -0">Merge Contact</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <mclistviewex pos="0,[0,-0,-80" name="lv_merge" headerHeight="30" dividerSize="1" wantTab="1"  dividerSkin="_skin.hor.line">
+          <header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+            <items>
+              <item width="40"></item>
+              <item width="380">  重复的联系人</item>
+              <item width="400">  合并后的结果</item>
+            </items>
+          </header>
+          <check pos="20, 7" name="header_check"/>
+          <template itemHeight="190" colorHover="#ffffff" colorSelected="#ffffff" trackMouseEvent="1">
+            <window name="col1" clipClient="1">
+              <check pos="20,7" name="checkbox"></check>
+              <hr pos="-1,0,@1,-0" colorLine="#e4e4e4" size="1" mode="vertical"/>
+            </window>
+            <window name="col2" clipClient="1">
+              
+              <window pos="10,10,-0, |0">
+                <bitmap name="bmp_contact" skin="icon_contact_defult_small" pos="0,0" />
+                <text name="txt_name" pos="[10,3" font="adding:-1,bold:0" dotted="1">Li XX</text>
+                <text name="txt_first_1" pos="{0,[5" class="content_style">电话：18988794137</text>
+                <text name="txt_first_2" pos="{0,[5" class="content_style">电话：18988794137</text>
+                <text name="txt_first_3" pos="{0,[5" class="content_style">电话：18988794137</text>
+                <img pos="-330,-10" skin="gradiant_overlay"></img>
+              </window>
+              <window pos="10,[10, -0,-0" clipClient="1">
+                <bitmap name="bmp_contact2" skin="icon_contact_defult_small" pos="0,0" />
+                <text name="txt_name2" pos="[10,3" font="adding:-1" dotted="1">Li XX</text>
+                <text name="txt_second_1" pos="{0,[5" class="content_style">电话：18988794137</text>
+                <text name="txt_second_2" pos="{0,[5" class="content_style">电话：18988794137</text>
+                <text name="txt_second_3" pos="{0,[5" class="content_style">电话：18988794137</text>
+                <img pos="-330,-10" skin="gradiant_overlay"></img>
+
+              </window>
+              <hr pos="-1,0,@1,-0" colorLine="#e4e4e4" size="1" mode="vertical"/>
+            </window>
+            <window name="col3" clipClient="1">
+              
+              <window pos="10,10,-0, -0">
+                <bitmap name="bmp_contact_after" skin="icon_contact_defult_small" pos="0,0" />
+                <text name="txt_name_after" pos="[10,3" font="adding:-1,bold:0" dotted="1">Li XX</text>
+                <listview pos="{0,[5, -0,-0" name="lv_info" dividerSize="0">
+            		  <template itemHeight="25" colorSelected="#ffffff">
+               			<text pos="4,0, -40, @25" class="content_style" multiLines="0" name="txt_info">电话：18988794137</text>
+               			<button name="btn_remove" pos="-28,0"  skin="btn_delete_contact" drawFocusRect="0"/>
+            		  </template>
+          		  </listview>
+         
+              </window>
+            </window>
+          </template>
+        </mclistviewex>
+      <hr pos="0,[0,-0,@1" colorLine="#e4e4e4" size="1" mode="horizontal"/>
+      <button pos="-230, -60,@100,@35" name="btn_save">合并</button>
+      <button pos="-120, -60, @100,@35" id="IDCANCEL">取消</button>
+    </window>
+  </root>
+</SOUI>

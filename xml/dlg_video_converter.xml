@@ -1,0 +1,57 @@
+﻿<SOUI trCtx="" title="video convert" width="810" height="500" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">视频转换</text>
+        <imgbtn name="btn_closez" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="0,[0,-0,@40" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line" focusable="1" drawFocusRect="0">
+        <buttonex name="tool_add" pos="20,0,@100,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_install_app" focusable="0">添加文件</buttonex>
+        <buttonex name="tool_convert" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar.convert" focusable="0" enable="0">转换</buttonex>
+        <buttonex name="tool_delete" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_delete" focusable="0" enable="0">Cancel</buttonex>
+      </window>
+      <mclistviewex name="lv_task" pos="0,[0,-0,-70" headerHeight="30" dividerSkin="_skin.hor.line" dividerSize="1">
+        <header align="left" sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" font="adding:-2" colorText="#cccccc" sortHeader="0" colorBkgnd="#ffffff">
+          <items>
+            <item width="40"></item>
+            <item width="160">Name_h</item>
+            <item width="100">Time_h</item>
+            <item width="100">Size_h</item>
+            <item width="100">Format_h</item>
+            <item width="168">Progress_h</item>
+            <item width="110">Operation_h</item>
+          </items>
+        </header>
+        <check pos="20, 7" name="header_check"/>
+        <template itemHeight="30" colorHover="#f2f4f6" colorSelected="#ddeeff">
+          <window name="col1" clipClient="1">
+            <check pos="20,|0" offset="0,-0.5" name="checkbox"></check>
+          </window>
+          <window name="col2" clipClient="1">
+            <text name="txt_name" pos="10,26,-0,-26" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+          </window>
+          <window  name="col3" clipClient="1">
+            <text name="txt_time" pos="10,26,-0,-26" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+          </window>
+          <window name="col4" clipClient="1">
+            <text name="txt_size" pos="10,26,-0,-26" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+          </window>
+          <window name="col5" clipClient="1">
+            <text name="txt_format" pos="10,26,-0,-26" font="adding:-2" align="left" colorText="#000000bb" >.mp4</text>
+          </window>
+          <window name="col6" clipClient="1">
+            <text name="txt_progress" pos="10,|0" offset="0,-0.5" font="adding:-2" align="left" colorText="#000000bb" ></text>
+            <progress pos="10,|0,@110,@6" offset="0,-0.5" name="convert_progress"/>
+            <text name="txt_percent" pos="[5,|0" offset="0,-0.5" font="adding:-2" align="left" colorText="#000000bb"/>
+          </window>
+          <window name="col7" clipClient="1">
+            <button pos="10,|0" offset="0,-0.5" skin="skin_null" name="btn_open" colorText="#1c8ee3" colorTextHover="#1c8ee3" colorTextPush="#0876c8" colorTextDisable="#cccccc" drawFocusRect="0" cursor="hand" display="0" visible="0">查看</button>
+            <button pos="[10,|0" offset="0,-0.5" skin="skin_null" name="btn_cancel" colorText="#1c8ee3" colorTextHover="#1c8ee3" colorTextPush="#0876c8" colorTextDisable="#cccccc" drawFocusRect="0" cursor="hand" visible="0">取消</button>
+          </window>
+        </template>
+      </mclistviewex>
+      <hr pos="0,[0,-0,@1" colorLine="#e4e4e4" size="1" />
+      <button name="btn_import" pos="-110,-50,@90,@30" enable="0" drawFocusRect="0" colorTextDisable="#cccccc">导入设备</button>
+    </window>
+  </root>
+</SOUI>

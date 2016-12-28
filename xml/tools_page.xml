@@ -1,0 +1,76 @@
+<include>
+
+  <window name="tool_box" pos="0,0,-0,-0" colorBkgnd="#FFFFFF" id="tools">
+    <window pos="60,45,-0,-0">
+      <window>
+        <text pos="10,0,@400,@50" colorText="#666666" font="adding:6" valign="top">设备管理</text>
+        <button pos="9, 50, @390, @85" skin="tool_bg" drawFocusRect="0" name="btn_install_itools">
+          <img pos="16, 15" name="btn_install_itools_pic" skin="skin_dev_itools"/>
+          <text pos="90, |0" offset="0,-1" colorText="#666666" font="adding:1">安装 iTools（应用兔）</text>
+          <text pos="90, |0" colorText="#999999">最快的免费正版市场，最好用的手机管理助手</text>
+        </button>
+        <window pos="0,[30, @400, @95">
+          <buttonex name="btn_file_system" pos="0, 0, @105, @95" iconSkin="skin_dev_explorer" class="tool_item">文件管理</buttonex>
+          <buttonex name="btn_battery" pos="210, 0, @105, @95" class="tool_item" iconSkin="dev_toolbar.battery" >电池专家</buttonex>
+          <buttonex name="btn_fixauth" pos="105, 0, @105, @95"  class="tool_item" iconSkin="skin_dev_auth" >闪退修复</buttonex>
+          <buttonex name="btn_storage" pos="315, 0, @105, @95" class="tool_item" iconSkin="skin_dev_disk" >移动硬盘</buttonex>
+        </window>
+        <window pos="0,[20, @400, @95">
+          <buttonex name="btn_realtime_desktop" pos="0, 0, @105, @95" class="tool_item" iconSkin="dev_toolbar.screenshot" >实时桌面</buttonex>
+          <buttonex name="btn_icon_manager" pos="105, 0, @105, @95" class="tool_item" iconSkin="dev_toolbar.icons" >桌面管理</buttonex>
+          <buttonex name="btn_realtime_log" pos="210, 0, @105, @95"  class="tool_item" iconSkin="skin_dev_log" >实时日志</buttonex>
+          <buttonex name="btn_crash_log" pos="315, 0, @105, @95"  class="tool_item" iconSkin="skin_dev_crash" >崩溃日志</buttonex>
+
+        </window>
+        <window pos="0,[20, @400, @95">
+          <buttonex name="btn_ssh" pos="0, 0, @105, @95"  class="tool_item" iconSkin="skin_dev_ssh" >
+            SSH通道
+            <img name="ssh_state_indicator" pos="-40,0" skin="ssh_state" iconIndex="1"/>
+          </buttonex>
+        </window>
+      </window>
+      <window pos="490, 0">
+        <text pos="10,0,@400,@50" colorText="#666666" font="adding:6" valign="top">实用工具</text>
+        <button pos="9, 50, @390, @85" skin="tool_bg" drawFocusRect="0" name="btn_ringtone_maker">
+          <img pos="16, 15" skin="skin_dev_ringtone"/>
+          <text pos="90, |0" offset="0,-1" colorText="#666666" font="adding:1">铃声制作</text>
+          <text pos="90, |0" colorText="#999999">铃声DIY，快速制作属于你自己的铃声吧！</text>
+        </button>
+        <window pos="0,[30, @410, @95">
+          <buttonex name="btn_Data_Transfer" pos="0, 0, @105, @95" iconSkin="dev_toolbar.transfer" class="tool_item">手机搬家</buttonex>
+          <buttonex name="btn_itunes_backup" pos="105, 0, @105, @95" iconSkin="dev_toolbar.itunes" class="tool_item">iTunes备份管理</buttonex>
+          <buttonex name="btn_Flush" pos="210, 0, @105, @95" iconSkin="dev_toolbar.flush" class="tool_item">刷机助手</buttonex>
+          <buttonex name="btn_download_firmware" pos="315, 0, @105, @95"  class="tool_item" iconSkin="skin_dev_firmware" >固件下载</buttonex>
+        </window>
+        <window pos="0,[20, @410, @95">
+          <buttonex name="btn_video_convert" pos="0, 0, @105, @95" iconSkin="dev_toolbar.converter" class="tool_item">视频转换</buttonex>
+          <buttonex name="btn_AirPlayer" pos="105, 0, @105, @95"  class="tool_item" iconSkin="skin_dev_airplay">
+            苹果录屏大师
+            <window name="prog_wnd" pos="0,-30,-0,@30" colorBkgnd="#ffffff" visible="0">
+              <progress name="progress" pos="20,10,-35,@6" value="0" min="0" max="100" showPercent="0"/>
+              <imgbtn name="buttonex_cancel" pos="-30,5" skin="tool_stop" tip="Cancel" cursor="hand"/>
+            </window>
+          </buttonex>
+          <buttonex name="btn_iToolsJailbreak" pos="210, 0, @105, @95" iconSkin="skin_dev_jailbreak" class="tool_item">
+            越狱助手
+            <window name="prog_wnd" pos="0,-30,-0,@30" colorBkgnd="#ffffff" visible="0">
+              <progress name="progress" pos="20,10,-35,@6" value="0" min="0" max="100" showPercent="0"/>
+              <imgbtn name="buttonex_cancel" pos="-30,5" skin="tool_stop" tip="Cancel" cursor="hand"/>
+            </window>
+          </buttonex>
+          <buttonex name="btn_iToolsGCSetup" pos="315, 0, @105, @95"  class="tool_item" iconSkin="skin_dev_avm">
+            iTools模拟器
+            <window name="prog_wnd" pos="0,-30,-0,@30" colorBkgnd="#ffffff" visible="0">
+              <progress name="progress" pos="20,10,-35,@6" value="0" min="0" max="100" showPercent="0"/>
+              <imgbtn name="buttonex_cancel" pos="-30,5" skin="tool_stop" tip="Cancel" cursor="hand"/>
+            </window>
+          </buttonex>
+        </window>
+        <window pos="0,[20, @410, @95">
+          <buttonex name="btn_wechat" pos="0, 0, @105, @95" iconSkin="dev_toolbar.icon_logo" class="tool_item">微信管理</buttonex>
+          <buttonex name="btn_diagnose" pos="105, 0, @105, @95" iconSkin="dev_toolbar.diagnose" class="tool_item">驱动修复</buttonex>        </window>
+      </window>
+    </window>
+  </window>
+
+</include>

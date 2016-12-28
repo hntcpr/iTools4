@@ -1,0 +1,17 @@
+<SOUI title="iTools 4"  width="500" height="240" margin="5,3,5,7" appWnd="1" resizable="0" translucent="1">
+
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="10,10,-10,-10" colorBkgnd="#FFFFFF" clipclient="1">
+      <window pos="0,0,-0,100" colorBkgnd="#3a97e5"/>
+      <caption pos="0, 0,-0,100">
+        <text pos="0,0,-0,100" align="center" font="adding:12" colorText="#ffffff">正在安装驱动组件</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close.main" pos="-35,10" tip="close" id="IDCANCEL" animate="0"/>
+      </caption>
+
+      <text pos="30,130,-0,@30" name="info" font="adding:-1" colorText="#636363">正在下载...</text>
+      <progress name="progress" posSkin="skin.prog" bkgndSkin="skin.progbkg" pos="30,[0,-30,@6" value="0" min="0" max="100" showPercent="0"/>
+      <link name="btn_links" pos="-180,[10,-30,@30" align="right" href="http://bbs.itools.cn/thread-128287-1-1.html" cursor="hand" colorText="#1c8be4" colorTextHover="#1c8be4" font="adding:-2" fontHover="adding:-2,underline:1">无法下载？请查看教程</link>
+      
+    </window>
+  </root>
+</SOUI>

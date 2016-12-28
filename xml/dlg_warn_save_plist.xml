@@ -1,0 +1,19 @@
+﻿<SOUI trCtx="" title="" width="380" height="220" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text name="title" pos="15, 0, 200, -0">提示</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+    <window pos="20,60,-15,-70">
+      <img name="msgicon" pos="0,10,@32,@32" skin="msgbox.warn" display="0"/>
+      <window pos="42, 8">
+          <text name="msgtext" pos="0,8" colorText="#333333" multilines="1" valign="top" maxWidth="300">内容已修改，是否保存？</text>
+      </window>
+    </window>
+        <button id="IDOK" pos="-260,-44, @74, @30" class="normalbtn" drawFocusRect="0" animate="1">保存</button>
+        <button name="btn_not_save" pos="-174,-44, @74, @30" class="normalbtn" drawFocusRect="0" animate="1">不保存</button>
+        <button id="IDCANCEL" pos="-88,-44, @74, @30" class="normalbtn" drawFocusRect="0" animate="1">取消</button>
+    </window>
+  </root>
+</SOUI>

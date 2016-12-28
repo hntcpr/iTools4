@@ -1,0 +1,18 @@
+﻿<SOUI trCtx="" title="" width="420" height="220" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text name="title" pos="15, 0, 200, -0">查找</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="10,45,-10,-10" colorBkgnd="#ffffff">
+        <text pos="10,[10,-10,@20" font="adding:-2" dotted="1" multiLines="1" interHeight="10">查找内容</text>
+        <edit name="edit_string" pos="{0,[5,-10,@20" skin="normal_edit" font="adding:-2" inset="2,0,2,0"></edit>
+        <check name="check_case" pos="{0,[10" font="adding:-2">大小写匹配</check>
+        <check name="check_full" pos="{0,[10" font="adding:-2">全字匹配</check>
+        <imgbtn id="IDOK" pos="-180,-24,@80,@24" font="adding:-2" animate="1">查找下一个</imgbtn>
+        <imgbtn id="IDCANCEL" pos="-90,-24,@80,@24" font="adding:-2" animate="1">取消</imgbtn>
+      </window>
+    </window>
+  </root>
+</SOUI>

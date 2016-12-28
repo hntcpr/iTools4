@@ -1,0 +1,24 @@
+﻿<SOUI trCtx="" title="" width="900" height="660" margin="11,11,11,11" marginInset="5,5,5,5" maxInset="10,10,10,10" resizable="1" translucent="1">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window name="frame" pos="11,11,-11,-11" colorBkgnd="#282828" >
+      <caption name="caption_bar" pos="0, 0,-0,40">
+        <text name="title" pos="15, 0, 200, -0" colorText="#ffffff">实时桌面</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+        <imgbtn name="btn_max" skin="sys_btn_max2" pos="-65,10" tip="maximize" animate="1"/>
+        <imgbtn name="btn_restore" skin="sys_btn_restore2" pos="-65,10" tip="restore" animate="1" show="0"/>
+        <window pos="0,-1,-0,-0" colorBkgnd="#3f3f3f"/>
+      </caption>
+      <window name="main_wnd" pos="0,40,-0,-0" colorBkgnd="#262626" clipClient="1">
+        <img pos="5,-80" skin="itools_logo"/>
+        <window name="screen_wnd" pos="|-160,10,@320,-10" colorBkgnd="#000000">
+          <bitmap name="screen_shot" pos="0,0,-0,-0"/>
+        </window>
+        <imgbtn name="full_screen" pos="[10,|-16,@32,@32" skin="photoview.true_size" animate="1" accel="enter"/>
+        <imgbtn name="exit_fullscreen" skin="photo_view_close" pos="-51,0" tip="退出全屏" animate="1" show="0"/>
+      </window>
+    <window name="wnd_loading" pos="0,42,-0,-0" show="0">
+      <text name="text_loading" pos="0,|-20,-0,@40" font="size:16" align="center" colorText="#ffffff"></text>
+    </window>
+    </window>
+  </root>
+</SOUI>

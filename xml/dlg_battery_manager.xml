@@ -1,0 +1,77 @@
+﻿<SOUI trCtx="" title="" width="860" height="620" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">电池专家</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window name="main_wnd" pos="0,42,-0,-0" colorBkgnd="#FFFFFF">
+        <window pos="0,0,@360,-0" colorBkgnd="#ffffff">
+          <window pos="70, 30, @248, @400" colorBkgnd="#E6E6E6">
+            <img name="device_image" pos="0,0,-0,-0" skin="skin_dev_default" iconIndex="3" clipClient="1">
+              <window name="background_wnd" pos="0,0,-0,-0" colorBkgnd="#3a97e5" clipClient="1">
+                <BatteryStateCtrl name="charge_wave" pos ="|0,|0,@134,@134" offset="-0.5,-0.5" waveSkin="battery_wave" waveSkinBg="battery_wave_bg" skin="icon_charge_bk"></BatteryStateCtrl>
+              </window>
+              <text name="percent" pos="0,|-15,@248,@40" font="size:26" textmode="25" colorText="#66c23b">--</text>
+              <text name="charge" pos="0,[50,@248,@30" font="size:12" textmode="25" colorText="#ffffff">Charging</text>
+            </img>
+          </window>
+          <!--window pos="{42,[20,@40,@40"-->
+            <img name="step1_img" pos="{42,[20,@40,@40" skin="icon_charge_state2"/>
+            <text name="step1_txt1" pos="{-5,[4,@60,@30" font="size:12" colorText="#429bdd" show="0">快速充电</text>
+            <text name="step1_txt2" pos="{0,{0,@60,@30" font="size:12" colorText="#a8a8a8">快速充电</text>
+          <!--/window-->
+          <window name="step1_line" pos="{45,{-24,@24,@1" colorBkgnd="#a8a8a8" />
+          <!--window pos="[0,{-20,@40,@40"-->
+            <img name="step2_img" pos="[0,{-20,@40,@40" skin="icon_charge_state4"/>
+            <text name="step2_txt1" pos="{-4,[4,@60,@30" font="size:12" colorText="#429bdd" show="0">连续充电</text>
+            <text name="step2_txt2" pos="{0,{0,@60,@30" font="size:12" colorText="#a8a8a8">连续充电</text>
+          <!--/window-->
+          <window name="step2_line" pos="{44,{-24,@24,@1" colorBkgnd="#a8a8a8" />
+          <!--window pos="[0,{-20,@40,@40"-->
+            <img name="step3_img" pos="[0,{-20,@40,@40" skin="icon_charge_state6"/>
+            <text name="step3_txt1" pos="{-3,[4,@60,@30" font="size:12" colorText="#429bdd" show="0">涓流充电</text>
+            <text name="step3_txt2" pos="{0,{0,@60,@30" font="size:12" colorText="#a8a8a8">涓流充电</text>
+          <!--/window-->
+        </window>
+        <window pos="[30,50,-80,-50" colorBkgnd="#ffffff">
+          <window name="charging_txt" pos="0,0,-0,@50" colorBkgnd="#ffffff">
+            <text pos="0,0,@160,@50" font="adding:12" colorText="#2f2f2f">预计完成充电</text>
+            <text pos="[5,{0,@23,@50" font="adding:20" colorText="#66c23b" name="hours">-</text>
+            <text pos="[7,{0,@30,@50" font="adding:12" colorText="#2f2f2f">时</text>
+            <text pos="[5,{0,@40,@50" font="adding:20" colorText="#66c23b" name="mins">--</text>
+            <text pos="[7,{0,@30,@50" font="adding:12" colorText="#2f2f2f">分</text>
+          </window>
+          <window name="charged_txt" pos="0,0,-0,@50" colorBkgnd="#ffffff" show="0">
+            <text pos="0,0,-0,@50" font="adding:12" colorText="#2f2f2f">设备充电完成！</text>
+          </window>
+          <!--></-->
+          <text pos="0,[20,-0,@30" font="adding:6" colorText="#2f2f2f">电池充电记录</text>
+          <text pos="0,[0,-0,@30" colorText="#666666">历史完全循环充电次数</text>
+          <text pos="0,{0,-20,@30" font="adding:2" colorText="#66c23b" align="right" name="cycles"></text>
+          <text pos="0,{0,-0,@30" colorText="#2f2f2f" align="right">次</text>
+          <text pos="0,[0,-100,@30" colorText="#666666">电池健康状况</text>
+          <text pos="0,{0,-0,@30" font="adding:2" colorText="#66c23b" align="right" name="health_percent">--</text>
+          <!--></-->
+          <text pos="0,[15,-0,@30" font="adding:6" colorText="#2f2f2f">电池体检报告</text>
+          <text pos="0,[10,-0,@26" colorText="#666666">实际容量：</text>
+          <text pos="0,[0,-0,@26" colorText="#666666">设计容量：</text>
+          <text pos="0,[0,-0,@26" colorText="#666666">当前电压：</text>
+          <text pos="0,[0,-0,@26" colorText="#666666">开机电压：</text>
+          <text pos="0,[0,-0,@26" colorText="#666666">电池温度：</text>
+          <text pos="0,[0,-0,@26" colorText="#666666">电池电流：</text>
+          <text pos="0,[0,-0,@26" colorText="#666666">电池厂家：</text>
+          <text pos="0,[0,-0,@26" colorText="#666666">电池序号：</text>
+          <text pos="0,215,-0,@26" colorText="#2f2f2f" align="right" name="actual_capacity">--</text>
+          <text pos="0,[0,-0,@26" colorText="#2f2f2f" align="right" name="design_capacity">--</text>
+          <text pos="0,[0,-0,@26" colorText="#2f2f2f" align="right" name="current_voltage">--</text>
+          <text pos="0,[0,-0,@26" colorText="#2f2f2f" align="right" name="boot_voltage">--</text>
+          <text pos="0,[0,-0,@26" colorText="#2f2f2f" align="right" name="temperature">--</text>
+          <text pos="0,[0,-0,@26" colorText="#2f2f2f" align="right" name="electricity">--</text>
+          <text pos="0,[0,-0,@26" colorText="#2f2f2f" align="right" name="manufacturers">--</text>
+          <text pos="0,[0,-0,@26" colorText="#2f2f2f" align="right" name="serial_number">--</text>
+        </window>
+      </window>
+    </window>
+  </root>
+</SOUI>

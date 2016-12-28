@@ -1,0 +1,126 @@
+<include>
+  <window name="contact" pos="0,0,-0,-0" colorBkgnd="#ffffff">
+    <window pos="0,0,-0,40" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line" focusable="1" drawFocusRect="0">
+      <button name="expand_playlist" pos="20,0,@129,-0" class="cls_toolbar_btn" skin="skin_bkgnd_line" drawFocusRect="0">展开分组>></button>
+      <window pos="[0,2,@1,-2" colorBkgnd="#E4E4E4"></window>
+      <buttonex name="tool_add_contact" pos="[20,0,@85,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_install_app" focusable="0">添加联系人</buttonex>
+      <buttonex name="tool_import" pos="[20,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_import" focusable="0">导入</buttonex>
+      <buttonex name="tool_export" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_export" focusable="0">导出</buttonex>
+      <buttonex name="tool_delete" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_delete" focusable="0">Delete</buttonex>
+      <buttonex name="tool_refresh" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0">刷新</buttonex>
+      <buttonex name="tool_merge" pos="[0,0,@70, -0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar.merge" focusable="0">合并</buttonex>
+      <window pos="-210,5,@190,@30" skin="search_edit" trackMouseEvent="1">
+        <editex name="search_edit" pos="0,3,-30,-3" inset="12,0,12,0" cueText="搜索联系人" cueColor="#9a9a9a"/>
+        <imgbtn name="search_reset" pos="-36,0,@36,@30" font="adding:-2" skin="search_reset" animate="1" visible="0"></imgbtn>
+      </window>
+    </window>
+    <window pos="0,[0,-0,-0" clipClient="1">
+      <window pos="0,0,-0,-0">
+        <window name="playlist_wnd" pos="0,0,@150,-0" visible="0"  display="0"  >
+          <listviewex pos="0,0,-1,-0" name="lv_group" dividerSize="0" wantTab="1">
+            <template itemHeight="30">
+              <Normal colorHover="#f2f4f6" colorSelected="#ddeeff"  trackMouseEvent="1">
+                <playlistedit name="playlist_edit" pos="20,0,-20,@30"  inset="5,0,5,0" show="0" skin="normal_edit" font="adding:-2"></playlistedit>
+                <text pos="20,0,@-1,@30" name="title" dotted="1" maxWidth="95" colorText="#333333" font="adding:-2">All</text>
+                <text pos="[4,0,-0,@30" name="title_count" colorText="#333333" font="adding:-2"></text>
+              </Normal>
+              <Last colorHover="#ffffff" colorSelected="#ffffff">
+                <playlistedit name="new_playlist_edit" pos="20,0,-20,-0"  inset="5,0,5,0" skin="normal_edit" font="adding:-2">新建分组</playlistedit>
+                <button name="new_playlist_btn" skin="hot_btn" pos="10,0,-10,-0" drawFocusRect="0" colorText="#1c8ee4">+新建分组</button>
+              </Last>
+            </template>
+          </listviewex>
+
+          <window pos="-1,0, -0,-0" colorBkgnd="#f1f1f1"/>
+        </window>
+        <window pos="[0,0,]0,-0">
+          <contactlistview pos="0,0,-0,-0" id="4796" name="lv_contact" headerHeight="30" dividerSize="1" wantTab="1"  dividerSkin="_skin.hor.line">
+          <header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+            <items>
+              <item width="65"></item>
+              <item width="170">Contact_h</item>
+              <item width="285">Tel_h</item>
+              <item width="115">Region_h</item>
+            </items>
+          </header>
+          <check pos="40, 7" name="header_check"/>
+          <template   trackMouseEvent="1">
+            <groupTemplate itemHeight="22" colorHover="#eaeaea" colorSelected="#eaeaea" colorNormal="#eaeaea">
+              <window name="col1" clipClient="1">
+                <text name="txt_name" pos="30,0,-0,-0" align="center">A</text>
+              </window>
+              <window name="col2" clipClient="1">
+              </window>
+              <window name="col3" clipClient="1"></window>
+              <window name="col4" clipClient="1"></window>
+            </groupTemplate>
+            <normalTemplate itemHeight="46" colorHover="#f2f4f6" colorSelected="#ddeeff">
+              <window name="col1" clipClient="1">
+                <check pos="40,15" name="checkbox"></check>
+              </window>
+              <window name="col2" clipClient="1">
+                <bitmap name="bmp_contact" skin="icon_contact_defult_small" pos="0,|0" offset="0,-0.5" />
+                <text name="txt_name" pos="[10,0,-4,-0" font="adding:-1" dotted="1"></text>
+              </window>
+              <window name="col3" clipClient="1">
+                <text name="txt_tel" pos="4,0,-0,-0" font="adding:-2" colorText="#939496" dotted="1"></text>
+              </window>
+              <window  name="col4" clipClient="1">
+                <text name="txt_area" pos="4,0,-0,-0" font="adding:-2" colorText="#939496" dotted="1"></text>
+              </window>             
+            </normalTemplate>
+
+          </template>
+          </contactlistview>
+          <window name="empty_tip" pos="{0,{30,[0,[0" show="0" msgTransparent="1">
+            <img skin="empty_tip.contact" pos="|0,|0" offset="-0.5,-0.75" />
+            <text pos="|0,[20" offset="-0.5,0" colorText="#666666">— 暂无内容 —</text>
+          </window>
+
+          <contacttabctrl name="contact_index" pos="0,30,30,-0" colorBkgnd="#ffffff" tabAlign="left" tabSkin="skin_tab_download" tabInterSize="0"  tabWidth="30" tabHeight="21" colorText="#555555" colorTextPush="#ffffff" colorTextHover="#ffffff" colorTextDisable="#cccccc" focusable="0" align="center">
+            <page title="A"/><page title="B"/><page title="C"/><page title="D"/><page title="E"/><page title="F"/><page title="G"/><page title="H"/><page title="I"/><page title="J"/><page title="K"/><page title="L"/><page title="M"/><page title="N"/><page title="O"/>
+            <page title="P"/><page title="Q"/><page title="R"/><page title="S"/><page title="T"/><page title="U"/><page title="V"/><page title="W"/><page title="X"/><page title="Y"/><page title="Z"/>
+            <page title="#"/>
+          </contacttabctrl>
+          <hr pos="[-1,30,@1,-0" colorLine="#e4e4e4" size="1" mode="vertical"/>
+        </window>
+        <hr pos="-213,0,@1,-0" colorLine="#dedede" size="1" mode="vertical"/>
+        <window name="contact_info" pos="-212,0,-0,-0" >
+          <hr pos="0,29,-0,@1" colorLine="#e4e4e4" size="1" />
+          <bitmap name="bmp_contact" skin="icon_contact_defult" pos="22,51"/>
+          <text name="contact_name" pos="[16,51">Name</text>
+          <text pos="{0,[4" name="group_name" colorText="#939496">--</text>
+          <buttonex pos="{0,[4,@55,@24" name="btn_edit" skin="skin_null" valign="center"  icon-align="left" iconSkin="icon_edit" colorText="#1c8ee3" colorTextHover="#1c8ee3" colorTextPush="#0876c8" cursor="hand" drawFocusRect="0">编辑</buttonex>
+
+          <listview pos="22,150,-0,-0" name="lv_info" dividerSize="0">
+            <template itemHeight="40" colorSelected="#ffffff">
+               <text pos="0,0, -0, 20" font="adding:-2" align="left" valign="bottom" colorText="#999999" multiLines="0" dotted="1" name="txt_info">loading</text>
+               <text pos="0,20, -0, -0" font="adding:-2" align="left" valign="top" colorText="#333333" multiLines="0" dotted="1" interHeight="0" name="txt_value"/>
+            </template>
+          </listview>
+          
+        </window>
+      </window>
+    </window>
+    <window name="process_wnd" pos="0,0,-0,-0" visible="0" display="0">
+      <include src="layout:progress_box"/>
+    </window>
+    <window name="icloud_tip" pos="0,0,-0,-0" colorBkgnd="#ffffff" visible="0" display="0">
+      <text pos="65,105" colorText="#333333" font="adding:2">无法读取您的通讯录，请按以下步骤关闭 iCloud 联系人同步</text>
+      <img pos="{-20, [10" skin="icloud_contact_tip"></img>
+      <window pos="{0, [10">
+        <text pos="20,0" colorText="#333333">1. 打开设置中的 iCloud</text>
+        <text pos="290,0" colorText="#333333">2. 关闭 “通讯录” 开关</text>
+        <text pos="550,0" colorText="#333333">3. 保留在我的 iPhone 上</text>
+      </window>
+      <button pos="|0, [30,@130,@40" offset="-0.5,0" colorText="#ffffff" name="icloud_refresh" skin="btn_blue" drawFocusRect="0">我已关闭</button>
+
+    </window>
+    <window name="loading_wnd" pos="0,0,-0,-0" visible="0" display="0">
+      <window pos="0,40,-0,-0" colorBkgnd="#ffffff"/>
+      <gifplayer name="loading_img" skin="skin_loading_img" pos="|0,|0" offset="-0.5,-0.6" show="1"/>
+      <text pos="|0,[-20" offset="-0.5,0" colorText="#666666">正在加载中，请稍候...</text>
+    </window>
+
+  </window>
+</include>

@@ -1,0 +1,18 @@
+﻿<SOUI trCtx="" title="" width="840" height="520" margin="11,11,11,11" marginInset="5,5,5,5" maxInset="10,10,10,10"  resizable="1" translucent="1">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0,0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">系统日志(实时)</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="0,42,-0,-60" colorBkgnd="#ffffff" skin="skin_bkgnd_line">
+        <edit name="edit_log" pos="15,6,-2,-6" font="adding:-2" style="4164" autoVscroll="1" multiLines="1" autoHscroll="1" vscrollBar="1"/>
+      </window>
+      <window pos="0,-60,-0,-0" colorBkgnd="#ffffff">
+        <check name="chk_autoscroll" pos="16, 20" font="adding:-3" show="1" checked="1">自动滚屏</check>
+        <imgbtn name="btn_clear" pos="-230,15,@100,@30" font="adding:-3"   animate="1">清空</imgbtn>
+        <imgbtn name="btn_save" pos="[15,15,@100,@30" font="adding:-3"   animate="1">保存</imgbtn>
+      </window>
+    </window>
+  </root>
+</SOUI>

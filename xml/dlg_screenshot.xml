@@ -1,0 +1,18 @@
+<SOUI title="iTools 4"  width="700" height="510" margin="5,3,5,7" resizable="0" translucent="1">
+  <style>
+    <class name="title" colorText="#333333"/>
+    <class name="content" colorText="#666666"/>
+  </style>
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">Tip</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" id="IDCANCEL" animate="1"/>
+      </caption>
+      <text pos="|0, 70" offset="-0.5,0">将会开启“开发者”功能，可以在设置中查看</text>
+      <img pos="|0, 100" offset="-0.5,0" skin="dev_developer"/>
+      <button pos="-230, -50, @100, @30" id="IDOK" name="btn_save">Ok</button>
+      <button pos="-120, -50, @100, @30" id="IDCANCEL" name="btn_cancel">Cancel</button>
+    </window>
+  </root>
+</SOUI>

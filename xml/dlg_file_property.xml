@@ -1,0 +1,30 @@
+﻿<SOUI trCtx="" title="" width="420" height="350" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text name="title" pos="15, 0, 200, -0" dotted="1">File Properties</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="0,45,110,-0" colorBkgnd="#ffffff">
+      <text pos="40,[10,-0,@20" font="adding:-2" dotted="1">Name:</text>
+      <text pos="40,[10,-0,@20" font="adding:-2" dotted="1">File Type:</text>
+      <text pos="40,[10,-0,@20" font="adding:-2" dotted="1">File Path:</text>
+      <text pos="40,[10,-0,@20" font="adding:-2" dotted="1">File Size:</text>
+      <text pos="40,[10,-0,@20" font="adding:-2" dotted="1">Created Time:</text>
+      <text pos="40,[10,-0,@20" font="adding:-2" dotted="1">Modified Time:</text>
+      <text pos="40,[10,-0,@20" font="adding:-2" dotted="1">Contain:</text>
+      <text pos="40,[10,-0,@20" font="adding:-2" dotted="1">Remark:</text>
+      </window>
+      <window pos="110,45,-0,-0" colorBkgnd="#ffffff">
+      <text name="file_name" pos="10,[10,-10,@20" font="adding:-2" dotted="1"></text>
+      <text name="file_type" pos="10,[10,-10,@20" font="adding:-2" dotted="1"></text>
+      <text name="file_path" pos="10,[10,-10,@20" font="adding:-2" dotted="1"></text>
+      <text name="file_size" pos="10,[10,-10,@20" font="adding:-2" dotted="1"></text>
+      <text name="created_date" pos="10,[10,-10,@20" font="adding:-2" dotted="1"></text>
+      <text name="modified_date" pos="10,[10,-10,@20" font="adding:-2" dotted="1"></text>
+      <text name="include" pos="10,[10,-10,@20" font="adding:-2" dotted="1"></text>
+      <text name="remarks" pos="10,[10,-10,@20" font="adding:-2" dotted="1"></text>
+      </window>
+    </window>
+  </root>
+</SOUI>

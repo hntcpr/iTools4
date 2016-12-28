@@ -1,0 +1,32 @@
+<SOUI trCtx="" title="" width="500" height="380" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">修复闪退</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" id="IDCANCEL" animate="0"/>
+      </caption>
+      <window name="main_wnd" pos="0,42,-0,-0" colorBkgnd="#FFFFFF">
+        <window name="first_tip" pos="0,0,-0,-0">
+          <text pos="|0,30" offset="-0.5,0" colorText="#2f2f2f">打开应用时出现下列情况，可以使用修复闪退</text>
+          <img pos="|0,[16" offset="-0.5,0" skin="icon_fixauth_tip"/>
+          <text pos="45,[2,-250,@30" font="adding:-2" colorText="#a8a8a8">1、打开应用时需要输入帐号密码</text>
+          <text pos="[30,{0,-0,@30" font="adding:-2" colorText="#a8a8a8">2、打开应用时一闪就退出了</text>
+          <window pos="0,-75,-0,@1" colorbkgnd="#e4e4e4"/>
+          <check name="tip_check" pos="20,-40" font="adding:-2" colorText="#a8a8a8">下次直接进行修复</check>
+          <imgbtn name="btn_fix" pos="|-50,-50,@100,@35" font="adding:-2" animate="1" colorText="#555555" colorTextHover="#1c8ee3" colorTextPush="#0876c8">我要修复闪退</imgbtn>
+        </window>
+        <window name="processing" pos="0,0,-0,-0" show="0">
+          <img pos="|0,30" offset="-0.5,0" skin="dev_fixauth_bkg">
+            <animateimg pos="|0,|0" offset="-0.5,-0.5" skin="dev_fixauth_ani" autostart="1"></animateimg>
+            <img pos="|0,|0" offset="-0.5,-0.5" skin="dev_fixauth_front"></img>
+          </img>
+          <window pos="0,-75,-0,@1" colorbkgnd="#e4e4e4"/>
+          <img name="result_img" pos="160,-44" offset="-0.5,0" skin="icon_fixauth_success"/>
+          <text name="txt_status" pos="0,-52,-250,@30" align="right"></text>
+          <text name="txt_time" pos="[0,-52,-0,@30" align="left" colorText="#a8a8a8">（10s之后关闭）</text>
+		  <text name="txt_info" pos="|0, -50" offset="-0.5,0" name="txt_info">正在修复，请不要断开设备</text>
+        </window>
+      </window>
+    </window>
+  </root>
+</SOUI>

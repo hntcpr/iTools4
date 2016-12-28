@@ -1,0 +1,76 @@
+﻿<include>
+  <window pos="0,0,-0,-0" colorBkgnd="#ffffff">
+    <window pos="0,0,-0,@1" colorBkgnd="#e3e3e3"/>
+    <window class="" pos="0,[0,-0,@40" trackMouseEvent="1">
+      <editex name="path_edit" pos="12,0,-210,-0" inset="5,0,5,0" font="adding:-2" cueColor="#9a9a9a" colorText="#333333" dotted="1">/</editex>
+      <window pos="[0,5,-20,@30" skin="search_edit" trackMouseEvent="1">
+        <editex name="search_edit" pos="0,0,-36,-0" inset="12,0,12,0" font="adding:-2" cueText="在此输入文件关键字" cueColor="#9a9a9a" colorText="#333333"/>
+        <imgbtn name="search_reset" pos="-36,0,@36,@30" font="adding:-2" skin="search_reset" animate="1" visible="0"></imgbtn>
+        <imgbtn name="search_btn" pos="-36,0,@36,@30" font="adding:-2" skin="search_btn" animate="1" enable="0"></imgbtn>
+      </window>
+    </window>
+    <window pos="0,[0,-0,@1" colorBkgnd="#e3e3e3"/>
+    <splitcol name="split_tree" pos="0,[0,-0,-0" sepSize="3" sepSkin="skin.spliter">
+      <pane idealSize="194" minSize="80" priority="0" colorBkgnd="#ffffff" clipClient="1">
+        <filetreectrl pos="0,0,-0,-0" name="tree_dir" itemHeight="30" font="adding:-2" iconSkin="file_explorer_tree_icon" colorBkgnd="#ffffff" colorItemSelBkgnd="#ddeeff" colorItemSelText="#000000" itemMargin="4" indent="24" scrollSpeed="50"/>
+      </pane>
+      <pane idealSize="646" minSize="200" priority="1" colorBkgnd="#ffffff" clipClient="1">
+        <window name="file_explorer_tool" pos="0,0,-0,@34" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line">
+          <buttonex name="tool_go_back" pos="20,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_go_back" focusable="0" enable="0">返回</buttonex>
+          <buttonex name="tool_import" display="0" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_import" focusable="0" enable="0">导入</buttonex>
+          <buttonex name="tool_export" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_export" focusable="0" enable="0">导出</buttonex>
+          <buttonex name="tool_refresh" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0" enable="0">刷新</buttonex>
+          <buttonex name="tool_delete" display="0" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_uninstall_app" focusable="0" enable="0">删除</buttonex>
+          <buttonex name="tool_new_folder" display="0" pos="[0,0,@110,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_new_folder" focusable="0" enable="0">新建文件夹</buttonex>
+          <buttonex name="tool_view_mode" pos="[0,0,@110,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_show" focusable="0" enable="1">查看模式</buttonex>
+        </window>
+        <window pos="0,34,-0,-0">
+          <mclistviewex pos="0,0,-0,-0" id="4796" name="file_listview" headerHeight="30" dividerSize="1" wantTab="1"  dividerSkin="_skin.hor.line">
+            <header align="left" sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+              <items>
+              	<item width="10"/>
+                <item width="234" minwidth="100">Name_h</item>
+                <item width="80">Size_h</item>
+                <item width="120">FileType_h</item>
+                <item width="120">FileDate_h</item>
+                <item width="70">FileMark_h</item>
+              </items>
+            </header>
+            <template itemHeight="30" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+              <window name="col1"/>
+              <window name="col2" clipClient="1">
+                <bitmap name="file_icon" pos="6,7,@16,@16"/>
+                <listviewedit name="listview_edit" pos="[6,0,-4,-0" show="0" inset="5,0,5,0" font="adding:-2" skin="normal_edit"></listviewedit>
+                <text pos="{0,0,-4,-0" dotted="1" name="title" colorText="#333333" font="adding:-2"></text>
+              </window>
+              <window name="col3" clipClient="1">
+                <text name="file_size" pos="4,0,-4,-0" font="adding:-2" colorText="#939496"></text>
+              </window>
+              <window  name="col4" clipClient="1">
+                <text name="file_type" pos="4,0,-4,-0" font="adding:-2" colorText="#939496"></text>
+              </window>
+              <window name="col5" clipClient="1">
+                <text name="file_date" pos="4,0,-4,-0" font="adding:-2" colorText="#939496"></text>
+              </window>
+              <window name="col6" clipClient="1">
+                <text name="file_mark" pos="4,0,-4,-0" font="adding:-2" colorText="#939496"></text>
+              </window>
+            </template>
+          </mclistviewex>
+          <tileviewex pos="0,0,-0,-0" id="4796" name="file_tileview" wantTab="1" marginSize="18,18" colorBkgnd="#FFFFFF" show="0">
+            <template itemHeight="86" itemWidth="86" trackMouseEvent="1" colorHover="#ffffff" colorSelected="#ffffff" skinSel="skin_item_bk">
+              <bitmap name="file_icon" pos="20,8,@48,@48"/>
+              <listviewedit name="listview_edit" pos="0,-26,-0,-0" show="0" inset="5,0,5,0" font="adding:-2" align="center" skin="normal_edit"></listviewedit>
+              <text pos="0,{0,-0,-0" dotted="1" name="title" colorText="#333333" font="adding:-2" align="center"></text>
+            </template>
+          </tileviewex>
+          <window name="process_wnd" pos="0,-35,-0,-0" colorBkgnd="#82c547" show="0">
+            <animateimg name="ani_img" skin="icon_searching" pos="13,|-7" autoStart="1" show="1"/>
+            <text name="search_tip" pos="40,0,-40,-0" font="adding:-2" colorText="#ffffff">正在搜索</text>
+            <imgbtn name="btn_cancel" animate="1"  pos="-25,|-7" cursor="hand" skin="icon_search_stop"></imgbtn>
+          </window>
+        </window>
+      </pane>
+    </splitcol>
+  </window>
+</include>

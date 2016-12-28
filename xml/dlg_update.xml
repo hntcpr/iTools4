@@ -1,0 +1,36 @@
+<SOUI name="Update" title="iTools 4"  width="500" height="380" margin="5,3,5,7" appWnd="1" resizable="0" translucent="1"  trCtx="config">
+  <style>
+    <class name="title" colorText="#333333"/>
+    <class name="content" colorText="#666666"/>
+  </style>
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" >
+        <text pos="15, 0, 200, -0">Check update</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      
+      <img pos="0,-150,-0,-0" skin="update_bg"/>
+      <tabctrl name="btnSwitch" pos="0,42,-0,-0" tabHeight="0" curSel="0">
+        <page>
+          <img pos="|0,25" offset="-0.5,0" skin="update_icon"/>
+          <text name="txt_tip" pos="|0,210" offset="-0.5,-0.5" colorText="#3a97e7">正在检查更新...</text>
+        </page>
+        <page>
+          <text name="txt_tip_p" pos="30,-115,-30, @30" font="adding:-2" colorText="#333333" dotted="1">正在加载...</text>
+          <progress name="progress" posSkin="skin.prog" bkgndSkin="skin.progbkg" pos="30,[0,-30,@6" value="0" min="0" max="100"/>
+          <text pos="30,[5" font="adding:-2" colorText="#333333" dotted="1">更新完成之后将会自动重启 iTools</text>
+        </page>
+        <page>
+          <button pos="|0,|0,@100,@30" offset="-0.5,-0.5" name="btn_restart" skin="blue_btn" drawFocusRect="0" colorText="#ffffff">重启</button>        
+        </page>
+        <page>
+          <text name="update_info" pos="80,40,-80,-120" multiLines="1" valign="top">检查到 iTools 有新版本</text>
+          <button name="update_btn" pos="|0,-70,@100,@35" offset="-0.5,0" skin="blue_btn"  drawFocusRect="0" colorText="#ffffff">立即更新</button>
+        </page>
+      </tabctrl>
+
+
+    </window>
+  </root>
+</SOUI>

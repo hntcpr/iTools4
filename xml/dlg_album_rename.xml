@@ -1,0 +1,16 @@
+﻿<SOUI trCtx="" title="" width="320" height="190" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text name="title" pos="15, 0, 200, -0">新建相簿</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="10,45,-10,-10" colorBkgnd="#ffffff">
+        <text pos="10,[10,-10,@20" font="adding:-2" dotted="1" multiLines="1" interHeight="10">请输入相簿名称</text>
+        <editex name="edit_string" pos="{0,[5,-10,@30" skin="normal_edit" font="adding:-2" inset="5,0,5,0">新建相簿</editex>
+        <imgbtn id="IDOK" pos="-180,-24,@80,@24" font="adding:-2" animate="1">确定</imgbtn>
+        <imgbtn id="IDCANCEL" pos="-90,-24,@80,@24" font="adding:-2" animate="1">取消</imgbtn>
+      </window>
+    </window>
+  </root>
+</SOUI>

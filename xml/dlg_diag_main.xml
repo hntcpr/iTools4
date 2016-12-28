@@ -1,0 +1,27 @@
+<SOUI name="iToolsDiagnose" title="iTools驱动组件修复" width="580" height="320" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="10,10,-10,-10">
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">iTools驱动组件修复</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="0,42,-0,-0" colorBkgnd="#ffffff">
+        <text pos="10,20,@100,@20" align="right" valign="middle" font="adding:-2">Windows版本</text>
+        <text pos="{0,[10,@100,@20" align="right" valign="middle" font="adding:-2">驱动组件版本</text>
+        <text pos="{0,[10,@100,@20" align="right" valign="middle" font="adding:-2">组件模块1</text>
+        <text pos="{0,[10,@100,@20" align="right" valign="middle" font="adding:-2">组件模块2</text>
+        <text pos="{0,[10,@100,@20" align="right" valign="middle" font="adding:-2">组件模块3</text>
+        <edit name="txt_os" pos="[10,20,-20,@20" skin="normal_edit" font="adding:-2" inset="2,0,2,0" readonly="1">未知版本</edit>
+        <edit name="txt_itunes_version" pos="{0,[10,-20,@20" skin="normal_edit" font="adding:-2" inset="2,0,2,0" readonly="1">未知版本</edit>
+        <edit name="txt_itunes_path" pos="{0,[10,-20,@20" skin="normal_edit" font="adding:-2" inset="2,0,2,0" readonly="1">未知版本</edit>
+        <edit name="txt_itmd_path" pos="{0,[10,-20,@20" skin="normal_edit" font="adding:-2" inset="2,0,2,0" readonly="1">未知版本</edit>
+        <edit name="txt_ath_path" pos="{0,[10,-20,@20" skin="normal_edit" font="adding:-2" inset="2,0,2,0" readonly="1">未知版本</edit>
+        <progress name="install_progress" pos="40,[22,-150,@8" value="0" min="0" max="100" showPercent="0" posSkin="prog_bar_h" bkgndSkin="prog_bkgnd_h"/>
+        <text name="txt_tip" pos="{0,[10,@300,@20" font="adding:-2">正在检测...</text>
+        <link name="btn_link" pos="[10,{-40,%100,%100" class="cls_btn_weblink" show="0">更多详情！</link>
+        <imgbtn name="btn_install" pos="-120,-85,@100,@30" font="adding:-2"   animate="1" colorTextDisable="#cccccc">升级修复</imgbtn>
+        <imgbtn name="btn_download" pos="{0,-45,@100,@30" font="adding:-2"   animate="1" colorTextDisable="#cccccc">手动下载</imgbtn>
+      </window>
+    </window>
+  </root>
+</SOUI>

@@ -1,0 +1,304 @@
+<SOUI name="Download" title="iTools 4"  width="862" height="540" margin="5,3,5,7" appWnd="1" resizable="0" translucent="1"  trCtx="download">
+	<root skin="_skin.sys.wnd.bkgnd">
+		<window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+			<caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+				<text pos="15, 0, 200, -0">Download</text>
+				<imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+			</caption>
+			<window pos="0,[35,-0,@1" colorBkgnd="#E4E4E4"/>
+			<tabctrl pos="0,42,-0,-0" animateSteps="10"   tabAlign="top" tabSkin="tab_ctrl" tabInterSize="0" tabWidth="80" tabHeight="36" colorText="#555555" colorTextHover="#1c8ee3" colorTextPush="#0876c8" focusable="0">
+				<page title="Downloading">
+					<window pos="0, 34, -0, @1" colorBkgnd="#f1f1f1"></window>
+					<buttonex name="toolbar_btn_start" pos="20,0,@65, @35" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_start" focusable="0" enable="0">Start</buttonex>
+					<buttonex name="toolbar_btn_pause" pos="[0,0,@65, @35" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_stop" focusable="0" enable="0">Pause</buttonex>
+					<buttonex name="toolbar_btn_delete" pos="[0,0,@65, @35" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_delete" focusable="0" enable="0">Delete</buttonex>
+
+
+					<mclistviewex pos="0,[0,-0,-0" name="lv_downloading" wantTab="1" headerHeight="30" dividerSkin="_skin.hor.line" dividerSize="1">
+						<header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+							<items>
+								<item width="40"></item>
+								<item width="270">Name_h</item>
+								<item width="100">Size_h</item>
+								<item width="200">Status_h</item>
+								<item width="220">Operation_h</item>
+							</items>
+						</header>
+						<check pos="20, 7" name="header_check"/>
+						<template itemHeight="68" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+							<window name="col1" clipClient="1">
+								<check pos="20,|0" offset="0,-0.5" name="checkbox"></check>
+							</window>
+							<window name="col2" clipClient="1">
+								<img name="app_icon" skin="default_item" pos="10,|0,@38,@38" offset="0,-0.5"/>
+								<text name="txt_name" pos="[8,0,-5,-0" font="adding:-2" dotted="1">Name</text>
+							</window>
+							<window name="col3" clipClient="1">
+								<text name="txt_app_size" pos="10,0,-0,-0" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+							</window>
+							<window  name="col4" clipClient="1" tip=""> 
+								<progress name="app_progress" pos="10,|0,-10,@6" offset="0, -1" value="0" min="0" max="100" showPercent="0" />
+                <window pos="10,|0,-10,-10">
+                   <img skin="down_state_error" pos="0,4" name="state_error_icon" display="0"></img>
+								   <text name="txt_progress" pos="[0,0,-0,-0" font="adding:-3" dotted="1">...</text>
+                </window>
+							</window>
+							<window name="col5" clipClient="1">
+								<imgbtn animate="1"  pos="|-25,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_pause" skin="download_btn_stop"></imgbtn>
+								<imgbtn animate="1"  pos="|25,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_delete" skin="download_btn_delete"></imgbtn>
+							</window>
+						</template>
+					</mclistviewex>
+				</page>
+				<page title="Finished">
+					<window pos="0, 34, -0, @1" colorBkgnd="#f1f1f1"></window>
+					<buttonex name="toolbar_btn_folder" pos="20,0,@120, @35" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" iconSkin="toolbar_folder" skin="skin_bkgnd_line" focusable="0">Open folder</buttonex>
+					<buttonex name="toolbar_btn_import" pos="[0,0,@120, @35" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" iconSkin="toolbar_install_app" skin="skin_bkgnd_line" focusable="0">导入本地文件</buttonex>
+					<buttonex name="toolbar_btn_down_deleted" pos="[0,0,@65, @35" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" iconSkin="toolbar_delete" skin="skin_bkgnd_line" focusable="0" enable="0">Delete</buttonex>
+
+					<downloadtabctrl name="downloadtab" pos="0,35,-0,-0" colorBkgnd="#ffffff" tabAlign="left" tabSkin="skin_tab_download" tabInterSize="0"  tabWidth="145" tabHeight="37" iconSkin="down_icon" icon-x="20" icon-y="12" text-x="40" colorText="#555555" colorTextPush="#ffffff" colorTextHover="#ffffff" focusable="0" align="left">
+						<page title="App" iconIndex="0">
+							<window pos="0,0,@1,-0" colorBkgnd="#e4e4e4"/>
+							<mclistviewex id="#100" pos="[0,0,-0,-0" name="lv_downloaded_app" headerHeight="30" wantTab="1" dividerSkin="_skin.hor.line" dividerSize="1">
+								<header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+									<items>
+										<item width="34"></item>
+										<item width="180">Name_h</item>
+										<item width="90">Version_h</item>
+										<item width="100">iOS_h</item>
+										<item width="110">Size_h</item>
+										<item width="170">Operation_h</item>
+									</items>
+								</header>
+								<check pos="8, 7" name="header_check"/>
+								<template itemHeight="50" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+									<window name="col1" clipClient="1">
+										<check pos="|0,|0" offset="-0.5,-0.5" name="checkbox"></check>
+									</window>
+									<window name="col2" clipClient="1">
+										<bitmap name="app_icon" skin="default_item" pos="0,|0,@38,@38" offset="0,-0.5"/>
+										<text name="txt_name" pos="[8,0,-5,-0" font="adding:-2" dotted="1">Name</text>
+									</window>
+									<window name="col3" clipClient="1">
+										<text name="txt_app_version" pos="0,0,-5,-0" font="adding:-2" align="left" dotted="1" colorText="#000000bb" >--</text>
+									</window>
+									<window name="col4" clipClient="1">
+										<text name="txt_app_os" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+									</window>
+									<window  name="col5" clipClient="1">
+										<text name="txt_app_size" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+									</window>
+									<window name="col6" clipClient="1">
+										<imgbtn animate="1"  pos="|-50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_pause" skin="download_btn_start" tip="import to device"></imgbtn>
+										<imgbtn animate="1"  pos="|0,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_open" skin="download_btn_open" tip="open file location"></imgbtn>
+										<imgbtn animate="1"  pos="|50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_delete" skin="download_btn_delete" tip="delete file"></imgbtn>
+										<progress name="app_progress" pos="10,|0,-10,@6" offset="0, -1" value="0" min="0" max="100" showPercent="0" visible="0"/>
+										<text name="txt_progress" pos="10,|0,-10,-10" font="adding:-3" dotted="1"  visible="0">...</text>
+									</window>
+								</template>
+							</mclistviewex>
+						</page>
+						<page title="Wallpaper" iconIndex="3">
+							<window pos="0,0,@1,-0" colorBkgnd="#e4e4e4"/>
+							<mclistviewex id="#101" pos="[0,0,-0,-0" name="lv_downloaded_wallpaper" headerHeight="30" wantTab="1" dividerSkin="_skin.hor.line" dividerSize="1">
+								<header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+									<items>
+										<item width="34"></item>
+										<item width="370">Name_h</item>
+										<item width="110">Size_h</item>
+										<item width="170">Operation_h</item>
+									</items>
+								</header>
+								<check pos="8, 7" name="header_check"/>
+								<template itemHeight="50" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+									<window name="col1" clipClient="1">
+										<check pos="|0,|0" offset="-0.5,-0.5" name="checkbox"></check>
+									</window>
+									<window name="col2" clipClient="1">
+										<img name="app_icon" skin="default_item" pos="0,|0,@38,@38" offset="0,-0.5"/>
+										<text name="txt_name" pos="[15,0,-5,-0" font="adding:-2" dotted="1">Name</text>
+									</window>
+									<window  name="col3" clipClient="1">
+										<text name="txt_app_size" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+									</window>
+									<window name="col4" clipClient="1">
+										<imgbtn animate="1"  pos="|-50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_pause" skin="download_btn_start" tip="import to device"></imgbtn>
+										<imgbtn animate="1"  pos="|0,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_open" skin="download_btn_open" tip="open file location"></imgbtn>
+										<imgbtn animate="1"  pos="|50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_delete" skin="download_btn_delete" tip="delete file"></imgbtn>
+										<progress name="app_progress" pos="10,|0,-10,@6" offset="0, -1" value="0" min="0" max="100" showPercent="0" visible="0"/>
+										<text name="txt_progress" pos="10,|0,-10,-10" font="adding:-3" dotted="1"  visible="0">...</text>
+									</window>
+								</template>
+							</mclistviewex>
+						</page>
+						<page title="Music" iconIndex="6">
+							<window pos="0,0,@1,-0" colorBkgnd="#e4e4e4"/>
+							<mclistviewex id="#102" pos="[0,0,-0,-0" name="lv_downloaded_music" headerHeight="30" wantTab="1" dividerSkin="_skin.hor.line" dividerSize="1">
+								<header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+									<items>
+										<item width="34"></item>
+										<item width="370">Name_h</item>
+										<item width="110">Size_h</item>
+										<item width="170">Operation_h</item>
+									</items>
+								</header>
+								<check pos="8, 7" name="header_check"/>
+								<template itemHeight="50" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+									<window name="col1" clipClient="1">
+										<check pos="|0,|0" offset="-0.5,-0.5" name="checkbox"></check>
+									</window>
+									<window name="col2" clipClient="1">
+										<img name="app_icon" skin="default_item" pos="0,|0,@38,@38" offset="0,-0.5"/>
+										<text name="txt_name" pos="[8,0,-5,-0" font="adding:-2" dotted="1">Name</text>
+									</window>
+									<window  name="col3" clipClient="1">
+										<text name="txt_app_size" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+									</window>
+									<window name="col4" clipClient="1">
+										<imgbtn animate="1"  pos="|-50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_pause" skin="download_btn_start" tip="import to device"></imgbtn>
+										<imgbtn animate="1"  pos="|0,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_open" skin="download_btn_open" tip="open file location"></imgbtn>
+										<imgbtn animate="1"  pos="|50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_delete" skin="download_btn_delete" tip="delete file"></imgbtn>
+										<progress name="app_progress" pos="10,|0,-10,@6" offset="0, -1" value="0" min="0" max="100" showPercent="0" visible="0"/>
+										<text name="txt_progress" pos="10,|0,-10,-10" font="adding:-3" dotted="1"  visible="0">...</text>
+									</window>
+								</template>
+							</mclistviewex>
+						</page>
+						<page title="Video" iconIndex="9">
+							<window pos="0,0,@1,-0" colorBkgnd="#e4e4e4"/>
+							<mclistviewex id="#103" pos="[0,0,-0,-0" name="lv_downloaded_video" headerHeight="30" wantTab="1" dividerSkin="_skin.hor.line" dividerSize="1">
+								<header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+									<items>
+										<item width="34"></item>
+										<item width="370">Name_h</item>
+										<item width="110">Size_h</item>
+										<item width="170">Operation_h</item>
+									</items>
+								</header>
+								<check pos="8, 7" name="header_check"/>
+								<template itemHeight="50" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+									<window name="col1" clipClient="1">
+										<check pos="|0,|0" offset="-0.5,-0.5" name="checkbox"></check>
+									</window>
+									<window name="col2" clipClient="1">
+										<img name="app_icon" skin="default_item" pos="0,|0,@38,@38" offset="0,-0.5"/>
+										<text name="txt_name" pos="[8,0,-5,-0" font="adding:-2" dotted="1">Name</text>
+									</window>
+									<window  name="col3" clipClient="1">
+										<text name="txt_app_size" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+									</window>
+									<window name="col4" clipClient="1">
+										<imgbtn animate="1"  pos="|-50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_pause" skin="download_btn_start" tip="import to device"></imgbtn>
+										<imgbtn animate="1"  pos="|0,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_open" skin="download_btn_open" tip="open file location"></imgbtn>
+										<imgbtn animate="1"  pos="|50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_delete" skin="download_btn_delete" tip="delete file"></imgbtn>
+										<progress name="app_progress" pos="10,|0,-10,@6" offset="0, -1" value="0" min="0" max="100" showPercent="0" visible="0"/>
+										<text name="txt_progress" pos="10,|0,-10,-10" font="adding:-3" dotted="1"  visible="0">...</text>
+									</window>
+								</template>
+							</mclistviewex>
+						</page>
+						<page title="Book" iconIndex="12">
+							<window pos="0,0,@1,-0" colorBkgnd="#e4e4e4"/>
+							<mclistviewex id="#104" pos="[0,0,-0,-0" name="lv_downloaded_book" headerHeight="30" wantTab="1" dividerSkin="_skin.hor.line" dividerSize="1">
+								<header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+									<items>
+										<item width="34"></item>
+										<item width="370">Name_h</item>
+										<item width="110">Size_h</item>
+										<item width="170">Operation_h</item>
+									</items>
+								</header>
+								<check pos="8, 7" name="header_check"/>
+								<template itemHeight="50" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+									<window name="col1" clipClient="1">
+										<check pos="|0,|0" offset="-0.5,-0.5" name="checkbox"></check>
+									</window>
+									<window name="col2" clipClient="1">
+										<img name="app_icon" skin="default_item" pos="0,|0,@38,@38" offset="0,-0.5"/>
+										<text name="txt_name" pos="[8,0,-5,-0" font="adding:-2" dotted="1">Name</text>
+									</window>
+									<window  name="col3" clipClient="1">
+										<text name="txt_app_size" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+									</window>
+									<window name="col4" clipClient="1">
+										<imgbtn animate="1"  pos="|-50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_pause" skin="download_btn_start" tip="import to device"></imgbtn>
+										<imgbtn animate="1"  pos="|0,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_open" skin="download_btn_open" tip="open file location"></imgbtn>
+										<imgbtn animate="1"  pos="|50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_delete" skin="download_btn_delete" tip="delete file"></imgbtn>
+										<progress name="app_progress" pos="10,|0,-10,@6" offset="0, -1" value="0" min="0" max="100" showPercent="0" visible="0"/>
+										<text name="txt_progress" pos="10,|0,-10,-10" font="adding:-3" dotted="1"  visible="0">...</text>
+									</window>
+								</template>
+							</mclistviewex>
+						</page>
+						<page title="Ringtone" iconIndex="15">
+							<window pos="0,0,@1,-0" colorBkgnd="#e4e4e4"/>
+							<mclistviewex id="#105" pos="[0,0,-0,-0" name="lv_downloaded_ringtone" headerHeight="30" wantTab="1" dividerSkin="_skin.hor.line" dividerSize="1">
+								<header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+									<items>
+										<item width="34"></item>
+										<item width="370">Name_h</item>
+										<item width="110">Size_h</item>
+										<item width="170">Operation_h</item>
+									</items>
+								</header>
+								<check pos="8, 7" name="header_check"/>
+								<template itemHeight="50" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+									<window name="col1" clipClient="1">
+										<check pos="|0,|0" offset="-0.5,-0.5" name="checkbox"></check>
+									</window>
+									<window name="col2" clipClient="1">
+										<img name="app_icon" skin="default_item" pos="0,|0,@38,@38" offset="0,-0.5"/>
+										<text name="txt_name" pos="[15,0,-5,-0" font="adding:-2" dotted="1">Name</text>
+									</window>
+									<window  name="col3" clipClient="1">
+										<text name="txt_app_size" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+									</window>
+									<window name="col4" clipClient="1">
+										<imgbtn animate="1"  pos="|-50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_pause" skin="download_btn_start" tip="import to device"></imgbtn>
+										<imgbtn animate="1"  pos="|0,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_open" skin="download_btn_open" tip="open file location"></imgbtn>
+										<imgbtn animate="1"  pos="|50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_delete" skin="download_btn_delete" tip="delete file"></imgbtn>
+										<progress name="app_progress" pos="10,|0,-10,@6" offset="0, -1" value="0" min="0" max="100" showPercent="0" visible="0"/>
+										<text name="txt_progress" pos="10,|0,-10,-10" font="adding:-3" dotted="1"  visible="0">...</text>
+									</window>
+								</template>
+							</mclistviewex>
+						</page>
+						<page title="Firmware" iconIndex="18">
+							<window pos="0,0,@1,-0" colorBkgnd="#e4e4e4"/>
+							<mclistviewex id="#106" pos="[0,0,-0,-0" name="lv_downloaded_firmware" headerHeight="30" wantTab="1" dividerSkin="_skin.hor.line" dividerSize="1">
+								<header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+									<items>
+										<item width="34"></item>
+										<item width="370">Name_h</item>
+										<item width="110">Size_h</item>
+										<item width="170">Operation_h</item>
+									</items>
+								</header>
+								<check pos="8, 7" name="header_check"/>
+								<template itemHeight="50" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+									<window name="col1" clipClient="1">
+										<check pos="|0,|0" offset="-0.5,-0.5" name="checkbox"></check>
+									</window>
+									<window name="col2" clipClient="1">
+										<img name="app_icon" skin="default_item" pos="0,|0,@38,@38" offset="0,-0.5"/>
+										<text name="txt_name" pos="[8,0,-5,-0" font="adding:-2" dotted="1">Name</text>
+									</window>
+									<window  name="col3" clipClient="1">
+										<text name="txt_app_size" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+									</window>
+									<window name="col4" clipClient="1">
+										<imgbtn animate="1"  pos="|0,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_open" skin="download_btn_open" tip="open file location"></imgbtn>
+										<imgbtn animate="1"  pos="|50,|0" offset="-0.5,-0.5" font="adding:-2"  name="btn_delete" skin="download_btn_delete" tip="delete file"></imgbtn>
+										<progress name="app_progress" pos="10,|0,-10,@6" offset="0, -1" value="0" min="0" max="100" showPercent="0" visible="0"/>
+										<text name="txt_progress" pos="10,|0,-10,-10" font="adding:-3" dotted="1"  visible="0">...</text>
+									</window>
+								</template>
+							</mclistviewex>
+						</page>
+					</downloadtabctrl>
+
+				</page>
+			</tabctrl>
+		</window>
+	</root>
+</SOUI>

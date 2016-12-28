@@ -1,0 +1,63 @@
+<include>
+  <window name="apps" pos="0,0,-0,-0" colorBkgnd="#f0f0f0">
+    <window name="apps_tool" pos="0,0,-0,40" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line" focusable="1" drawFocusRect="0">
+      <buttonex name="tool_install" pos="20,0,@70, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_install_app" focusable="0">安装</buttonex>
+      <buttonex name="tool_backup" pos="[0,0,@70, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_backup_app" focusable="0" tip="固件不支持备份">备份</buttonex>
+      <buttonex name="tool_uninstall" pos="[0,0,@70, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_uninstall_app" focusable="0">卸载</buttonex>
+      <buttonex name="tool_refresh" pos="[0,0,@70, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0">刷新</buttonex>
+<!--
+      <buttonex name="tool_reinstall" pos="[0,0,@70, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_reinstall_app" focusable="0">重装</buttonex>
+-->
+      <buttonex name="tool_install_itools" pos="[0,0,@140, @40" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_install_itools" focusable="0">安装iTools(应用兔)</buttonex>
+      <window pos="-210,5,@190,@30" skin="search_edit" trackMouseEvent="1">
+        <editex name="search_edit" pos="0,3,-30,-3" inset="12,0,12,0" cueText="在此输入应用关键字" cueColor="#9a9a9a"/>
+        <imgbtn name="search_reset" pos="-36,0,@36,@30" font="adding:-2" skin="search_reset" animate="1" visible="0"></imgbtn>
+      </window>
+    </window>
+
+    <mclistviewex name="mclv_apps" id="4796" colorBkgnd="#ffffff" pos="0,40,-0,-0" headerHeight="30"  dividerSkin="_skin.hor.line" dividerSize="1">
+      <header align="left" sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+        <items>
+          <item width="40" minwidth="40"></item>
+          <item width="299" minwidth="200">Name_h</item>
+          <item width="100" minwidth="63">AppSize_h</item>
+          <item width="100" minwidth="63">Document_h</item>
+          <item width="100" minwidth="40">Version_h</item>
+          <item width="210" minwidth="200">Operation_h</item>
+        </items>
+      </header>
+      <check pos="20,7" name="header_check"/>
+      <template itemHeight="70" colorHover="#f2f4f6" colorSelected="#ddeeff">
+        <window name="col1" clipClient="1">
+          <check pos="20,|-8" name="checkbox"></check>
+        </window>
+        <window name="col2" clipClient="1" tip="test">
+          <bitmap name="app_icon" skin="def_app_icon" pos="10,10,@48,@48"/>
+          <text name="txt_name" pos="[10,16,-10,@20" dotted="1" >名称</text>
+          <text name="txt_desc" pos="{0,36,-10,-10" font="adding:-2" dotted="1" colorText="#999999" >App描述</text>
+        </window>
+        <window name="col3" clipClient="1">
+          <text name="txt_app_size" pos="10,26,-0,-26" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+        </window>
+        <window name="col4" clipClient="1">
+          <text name="txt_doc_size" pos="10,26,-0,-26" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+        </window>
+        <window  name="col5" clipClient="1">
+          <text name="txt_version" pos="10,26,-0,-26" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+        </window>
+        <window name="col6" clipClient="1">
+          <imgbtn animate="1"  pos="|-80,|-14" colorText="#d36161" colorTextHover="#d36161" colorTextPush="#ffffff" colorTextDisable="#cccccc" cursor="hand" skin="list_btn_red" name="btn_uninstall">卸载</imgbtn>
+          <imgbtn animate="1"  pos="|0,|-14,@80,@28" colorText="#1c8ee3" colorTextHover="#1c8ee3" colorTextPush="#ffffff" colorTextDisable="#cccccc" cursor="hand" skin="list_btn_blue" name="btn_fileshare" tip="不支持文件共享" >文件共享</imgbtn>
+          <progress name="app_progress" pos="|-76,|-6,@152,@6" value="0" min="0" max="100" showPercent="0"/>
+          <imgbtn name="btn_cancel" animate="1"  pos="[3,|-10" cursor="hand" skin="tool_stop"></imgbtn>
+          <text name="txt_progress" pos="|-76,|0,@152,-10" font="adding:-2" dotted="1">等待安装</text>
+        </window>
+      </template>
+    </mclistviewex>
+    <window pos="0,40,-0,-0" name="loading_wnd" colorBkgnd="#ffffff">
+      <gifplayer name="loading_img" skin="skin_loading_img" pos="|0,|0" offset="-0.5,-0.6" show="1"/>
+      <text pos="|0,[-20" offset="-0.5,0" colorText="#666666">正在加载中，请稍候...</text>
+    </window>
+    
+  </window>
+</include>

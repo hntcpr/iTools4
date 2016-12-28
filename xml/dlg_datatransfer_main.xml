@@ -1,0 +1,283 @@
+<SOUI name="mainWindow" title="iTools DataTransfer" maxInset="3,3,3,3" width="920" height="650" margin="10,10,10,10" appWnd="1" resizable="0" translucent="1" >
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="10,10,-10,-10">
+      <caption pos="0, 0,-0,42" colorBkgnd="#3A97E5">
+        <img pos="15,11" skin="logo_datatransfer" />
+        <text pos="[5,0,200,-0" colorText="#ffffff">iTools手机搬家</text>
+        <animateBtn name="btn_close" skin="_skin.btn.close.main" animateSkin="caption.ani.close" speed="20" pos="-35,10" tip="close" />
+        <animateBtn name="btn_min" skin="_skin.btn.min" pos="-62,10" animateSkin="caption.ani.minimize" speed="20" tip="minimize" />
+      </caption>
+      <window name="wnd_device_info" pos="0,42,-0,-0" colorBkgnd="#ffffff">
+        <window pos="25,20,@400,@470" skin="icon_rect_wnd">
+          <window pos="1,1,-1,@58" colorBkgnd="#f6f6f6" >
+            <text pos="0,0,-0,-0" font="adding:2" align="center">请连接您的旧设备</text>
+            <text name="txt_old_device" pos="75,15,@60,@30" show="0">旧设备：</text>
+            <combobox name="combo_old_device" pos="[0,15,@190,@30" dropDown="1" dropHeight="120" skin="normal_edit" dotted="1" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" colorText="@color/text_body" inset="5,0,5,0" show="0">
+              <liststyle class="cls_combo_list" itemHeight="28" font="adding:-2" textOffset="5"/>
+            </combobox>
+          </window>
+          <window pos="0,[0,-0,@1" colorBkgnd="#e1e1e1" />
+          <window name="old_info" pos="0,[0,-0,-0" show="0">
+            <text pos="75,[70,-0,@30" font="adding:2" colorText="#2f2f2f">设备信息</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">设备类型：</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">系统版本：</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">越狱状态：</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">购买日期：</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">购买地区：</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">循环充电：</text>
+            <text pos="{120,110,-0,@26" font="adding:-2" colorText="#2f2f2f" name="old_type">--</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#2f2f2f" name="old_os">--</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#2f2f2f" name="old_jb">--</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#2f2f2f" name="old_date">--</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#2f2f2f" name="old_country">--</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#2f2f2f" name="old_cycle">--</text>
+          </window>
+          <window name="old_img" pos="0,{0,-0,-0" show="1">
+            <img pos="|0,|0" offset="-0.5,-0.5" skin="icon_no_device"/>
+          </window>
+        </window>
+        <img pos="|0,|-50" offset="-0.5,-0.5" skin="icon_tranfer_arrow" />
+        <window pos="-425,20,@400,@470" skin="icon_rect_wnd">
+          <window pos="1,1,-1,@58" colorBkgnd="#f6f6f6" >
+            <text pos="0,0,-0,-0" font="adding:2" align="center">请连接您的新设备</text>
+            <text name="txt_new_device" pos="75,15,@60,@30" show="0">新设备：</text>
+            <combobox name="combo_new_device" pos="[0,15,@180,@30" dropDown="1" dropHeight="120" skin="normal_edit" dotted="1" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" colorText="@color/text_body" inset="5,0,5,0" show="0">
+              <liststyle class="cls_combo_list" itemHeight="28" font="adding:-2" textOffset="5"/>
+            </combobox>
+          </window>
+          <window pos="0,[0,-0,@1" colorBkgnd="#e1e1e1" />
+          <window name="new_info" pos="0,[0,-0,-0" show="0">
+            <text pos="75,[70,-0,@30" font="adding:2" colorText="#2f2f2f">设备信息</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">设备类型：</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">系统版本：</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">越狱状态：</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">购买日期：</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">购买地区：</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#666666">循环充电：</text>
+            <text pos="{120,110,-0,@26" font="adding:-2" colorText="#2f2f2f" name="new_type">--</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#2f2f2f" name="new_os">--</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#2f2f2f" name="new_jb">--</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#2f2f2f" name="new_date">--</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#2f2f2f" name="new_country">--</text>
+            <text pos="{0,[10,-0,@26" font="adding:-2" colorText="#2f2f2f" name="new_cycle">--</text>
+          </window>
+          <window name="new_img" pos="0,{0,-0,-0" show="1">
+            <img pos="|0,|0" offset="-0.5,-0.5" skin="icon_no_device"/>
+          </window>
+        </window>
+        <imgbtn name="btn_step1" pos="|-140,-75,@280,@50" font="adding:4" skin="icon_tranfer_btn" animate="1" enable="0" colorText="#ffffff" colorTextHover="#ffffff" colorTextPush="#ffffff" colorTextDisable="#ffffff">Connect Device</imgbtn>
+      </window>
+      <window name="wnd_advisor" pos="0,42,-0,-0" colorBkgnd="#ffffff" show="0">
+        <window pos="25,20,@400,@470" skin="icon_rect_wnd">
+          <window pos="1,1,-1,@58" colorBkgnd="#f6f6f6" >
+            <text pos="100,0,@60,-0" colorText="#333333">旧设备：</text>
+            <text name="txt_old_name" pos="[0,0,@180,-0" font="bold:1" colorText="#333333" dotted="1"></text>
+          </window>
+          <window pos="0,[0,-0,@1" colorBkgnd="#e1e1e1" />
+          <transferlistview name="lv_listview" pos="21,[16,-21,-49" colorBkgnd="#ffffff" skin="skin_bkgnd_line" headerHeight="0"  dividerSkin="_skin.hor.line" dividerSize="1">
+            <header align="left" sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="1" font="adding:-2" colorText="#cccccc" sortHeader="0" colorBkgnd="#ffffff">
+              <items>
+                <item width="14"></item>
+                <item width="50">Name_h</item>
+                <item width="230">Version_h</item>
+                <item width="60">Size_h</item>
+              </items>
+            </header>
+            <template itemHeight="46" colorHover="#ffffff" colorSelected="#ffffff">
+              <window name="col1" clipClient="1">
+                <check pos="0,|-7" name="checkbox" checked="1"></check>
+              </window>
+              <window name="col2" clipClient="1">
+                <img name="img_type" pos="8,7,@32,@32"/>
+              </window>
+              <window  name="col3" clipClient="1">
+                <text name="txt_type" pos="0,0,-0,-0" align="left" colorText="@color/text_body" ></text>
+              </window>
+              <window name="col4" clipClient="1">
+                <text name="txt_size" pos="0,0,-0,-0" align="right" colorText="#9b9b9b" ></text>
+                <animateimg name="anim_scan" skin="skin.anim.copy_file" pos="-20,13,@20,@20" autoStart="0" show="1"/>
+              </window>
+            </template>
+          </transferlistview>
+          <transferlistview name="lv_applist" pos="56,{142,-21,-49" colorBkgnd="#ffffff" skin="skin_bkgnd_line" headerHeight="0"  dividerSkin="_skin.hor.line" dividerSize="1">
+            <header align="left" sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="1" font="adding:-2" colorText="#cccccc" sortHeader="0" colorBkgnd="#ffffff">
+              <items>
+                <item width="14"></item>
+                <item width="42"></item>
+                <item width="120"></item>
+                <item width="136"></item>
+              </items>
+            </header>
+            <template itemHeight="36" colorHover="#ffffff" colorSelected="#ffffff">
+              <window name="col1" clipClient="1">
+                <check pos="0,|-7" name="checkbox" checked="1"></check>
+              </window>
+              <window name="col2" clipClient="1">
+                <bitmap name="app_icon" skin="def_app_icon" pos="8,6,@24,@24"/>
+              </window>
+              <window  name="col3" clipClient="1">
+                <text name="txt_name" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="@color/text_body" >--</text>
+              </window>
+              <window name="col4" clipClient="1">
+                <text name="txt_addition" pos="0,0,-0,-0" font="adding:-2" align="right" colorText="#eb8000" >--</text>
+                <img name="img_finish" pos="-18,10,@18,@15" skin="icon_success"/>
+              </window>
+            </template>
+          </transferlistview>
+          <window pos="0,[-1,-0,@1" colorBkgnd="#e1e1e1" />
+          <window pos="1,[0,-1,-1">
+            <text pos="50,8,@64,@30" font="adding:2" colorText="#333333" >已选中：</text>
+            <text name="txt_select_size" pos="[0,{0,@60,@30" font="adding:2" colorText="#333333" >64GB</text>
+            <text pos="[0,{0,@100,@30" font="adding:2" colorText="#333333" >搬家大约耗时</text>
+            <text name="txt_select_time" pos="[0,{0,-0,@30" font="adding:2" colorText="#eb8000">1小时30分钟</text>
+          </window>
+        </window>
+        <img pos="|0,|-50" offset="-0.5,-0.5" skin="icon_tranfer_arrow" />
+        <window pos="-425,20,@400,@470" skin="icon_rect_wnd">
+          <window pos="1,1,-1,@58" colorBkgnd="#f6f6f6" >
+            <text pos="100,0,@60,-0" colorText="#333333" >新设备：</text>
+            <text name="txt_new_name" pos="[0,0,@180,-0" font="bold:1" colorText="#333333"  dotted="1"></text>
+          </window>
+          <window pos="0,[0,-0,@1" colorBkgnd="#e1e1e1" />
+          <storagewnd name="storage_wnd" pos="0,{0,-0,-0">
+            <window name="enough_storage" pos="0,0,-0,-0">
+              <text name="storage_percent" pos="0,0,-0,-90" font="adding:32" colorText="#3a97e5" align="center"></text>
+              <window pos="17,310,@10,@10" colorBkgnd="#3a97e5" />
+              <window pos="{0,[12,@10,@10" colorBkgnd="#e0e0e0" />
+              <text pos="[8,305,-0,@20" font="adding:-2" colorText="#3a97e5">可用空间</text>
+              <text pos="{0,[3,-0,@20" font="adding:-2" colorText="#9b9b9b">已用空间</text>
+              <window pos="0,-50,-0,@1" colorBkgnd="#e1e1e1" />
+              <text pos="20,[8,-0,@30" font="adding:2" colorText="#333333">剩余空间：</text>
+              <text name="txt_storage" pos="140,{0,-0,@30" font="adding:4" colorText="#3a97e5"></text>
+            </window>
+            <window name="less_storage" pos="1,1,-1,-1" colorBkgnd="#ffffff" show="0">
+              <img pos="|0,|0" offset="-0.5,-0.5" skin="icon_not_enough" />
+              <text pos="0,300,-0,@30" align="center" font="adding:2" colorText="#333333">新设备空间不足，无法完成搬家</text>
+            </window>
+          </storagewnd>
+        </window>
+        <imgbtn name="btn_step2" pos="|-140,-75,@280,@50" font="adding:4" skin="icon_tranfer_btn" animate="1" colorText="#ffffff" colorTextHover="#ffffff" colorTextPush="#ffffff" colorTextDisable="#ffffff">开始搬家</imgbtn>
+        <link name="btn_goback" pos="{-60,-65,@60,@30" class="cls_btn_weblink" align="left">上一步</link>
+      </window>
+      <window name="wnd_restore_backup" pos="0,42,-0,-0" colorBkgnd="#ffffff" show="0">
+        <window pos="25,20,@400,@470" skin="icon_rect_wnd">
+          <window pos="1,1,-1,@58" colorBkgnd="#f6f6f6" >
+            <text name="txt_old_name2" pos="0,0,-0,-0" font="adding:2" align="center"></text>
+          </window>
+          <window pos="0,[0,-0,@1" colorBkgnd="#e1e1e1" />
+          <transferlistview name="lv_oldlistview" pos="35,[16,-21,-0" colorBkgnd="#ffffff" skin="skin_bkgnd_line" headerHeight="0"  dividerSkin="_skin.hor.line" dividerSize="1">
+            <header align="left" sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="1" font="adding:-2" colorText="#cccccc" sortHeader="0" colorBkgnd="#ffffff">
+              <items>
+                <item width="50">Name_h</item>
+                <item width="230">Version_h</item>
+                <item width="60">Size_h</item>
+              </items>
+            </header>
+            <template itemHeight="46" colorHover="#ffffff" colorSelected="#ffffff">
+              <window name="col1" clipClient="1">
+                <img name="img_type" pos="8,7,@32,@32"/>
+              </window>
+              <window  name="col2" clipClient="1">
+                <text name="txt_type" pos="0,0,-0,-0" align="left" colorText="@color/text_body" ></text>
+              </window>
+              <window name="col3" clipClient="1">
+                <img name="img_finish" pos="-18,10,@18,@15" skin="icon_success"/>
+                <animateimg name="anim_scan" skin="skin.anim.copy_file" pos="-20,13,@20,@20" autoStart="0" show="1"/>
+              </window>
+            </template>
+          </transferlistview>
+          <transferlistview name="lv_oldapplist" pos="70,{142,-21,-0" colorBkgnd="#ffffff" skin="skin_bkgnd_line" headerHeight="0"  dividerSkin="_skin.hor.line" dividerSize="1">
+            <header align="left" sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="1" font="adding:-2" colorText="#cccccc" sortHeader="0" colorBkgnd="#ffffff">
+              <items>
+                <item width="42"></item>
+                <item width="120"></item>
+                <item width="136"></item>
+              </items>
+            </header>
+            <template itemHeight="36" colorHover="#ffffff" colorSelected="#ffffff">
+              <window name="col1" clipClient="1">
+                <bitmap name="app_icon" skin="def_app_icon" pos="8,6,@24,@24"/>
+              </window>
+              <window  name="col2" clipClient="1">
+                <text name="txt_name" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="@color/text_body" >--</text>
+              </window>
+              <window name="col3" clipClient="1">
+                <text name="txt_addition" pos="0,0,-0,-0" font="adding:-2" align="right" colorText="#eb8000" >--</text>
+                <img name="img_finish" pos="-18,10,@18,@15" skin="icon_success"/>
+                <animateimg name="anim_app" skin="skin.anim.copy_file" pos="-20,13,@20,@20" autoStart="0" show="1"/>
+              </window>
+            </template>
+          </transferlistview>
+        </window>
+        <img pos="|0,|-50" offset="-0.5,-0.5" skin="icon_tranfer_arrow" />
+        <window pos="-425,20,@400,@470" skin="icon_rect_wnd">
+          <window pos="1,1,-1,@58" colorBkgnd="#f6f6f6" >
+            <text name="txt_new_name2" pos="0,0,-0,-0" font="adding:2" align="center"></text>
+          </window>
+          <window pos="0,[0,-0,@1" colorBkgnd="#e1e1e1" />
+          <transferlistview name="lv_newlistview" pos="35,[16,-21,-0" colorBkgnd="#ffffff" skin="skin_bkgnd_line" headerHeight="0"  dividerSkin="_skin.hor.line" dividerSize="1">
+            <header align="left" sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="1" font="adding:-2" colorText="#cccccc" sortHeader="0" colorBkgnd="#ffffff">
+              <items>
+                <item width="50">Name_h</item>
+                <item width="230">Version_h</item>
+                <item width="60">Size_h</item>
+              </items>
+            </header>
+            <template itemHeight="46" colorHover="#ffffff" colorSelected="#ffffff">
+              <window name="col1" clipClient="1">
+                <img name="img_type" pos="8,7,@32,@32"/>
+              </window>
+              <window  name="col2" clipClient="1">
+                <text name="txt_type" pos="0,0,-0,-0" align="left" colorText="@color/text_body" ></text>
+              </window>
+              <window name="col3" clipClient="1">
+                <img name="img_finish" pos="-18,10,@18,@15" skin="icon_success"/>
+                <animateimg name="anim_scan" skin="skin.anim.copy_file" pos="-20,13,@20,@20" autoStart="0" show="1"/>
+              </window>
+            </template>
+          </transferlistview>
+          <transferlistview name="lv_newapplist" pos="70,{142,-21,-0" colorBkgnd="#ffffff" skin="skin_bkgnd_line" headerHeight="0"  dividerSkin="_skin.hor.line" dividerSize="1">
+            <header align="left" sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="1" font="adding:-2" colorText="#cccccc" sortHeader="0" colorBkgnd="#ffffff">
+              <items>
+                <item width="42"></item>
+                <item width="120"></item>
+                <item width="136"></item>
+              </items>
+            </header>
+            <template itemHeight="36" colorHover="#ffffff" colorSelected="#ffffff">
+              <window name="col1" clipClient="1">
+                <bitmap name="app_icon" skin="def_app_icon" pos="8,6,@24,@24"/>
+              </window>
+              <window  name="col2" clipClient="1">
+                <text name="txt_name" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="@color/text_body" >--</text>
+              </window>
+              <window name="col3" clipClient="1">
+                <text name="txt_addition" pos="0,0,-0,-0" font="adding:-2" align="right" colorText="#eb8000" >--</text>
+                <img name="img_finish" pos="-18,10,@18,@15" skin="icon_success"/>
+                <animateimg name="anim_app" skin="skin.anim.copy_file" pos="-20,13,@20,@20" autoStart="0" show="1"/>
+              </window>
+            </template>
+          </transferlistview>
+        </window>
+        <window name="transfer_process" pos="0,-70,-0,-0" show="1">
+          <text pos="30,0,@160,@30" font="adding:2" colorText="#626262">正在搬家，大约还需要</text>
+          <text name="txt_progress_time" pos="[0,{0,@60,@30" font="adding:2,bold:1" colorText="#eb8000">...</text>
+          <text pos="[0,{0,-30,@30" font="adding:2" colorText="#626262">，在此过程中，切勿断开设备...</text>
+          <text name="txt_progress_tip" pos="0,-40,-0,@30" align="center" colorText="#9b9b9b">...</text>
+          <window name="rect_progress" pos="0,-10,-0,-0" colorBkgnd="#3b98eb"/>
+        </window>
+        <window name="transfer_failed" pos="0,-70,-0,-0" show="0">
+          <text name="failed_info" pos="30,0,-30,@24" font="adding:2" colorText="#eb8000" dotted="1">非常抱歉，搬家失败！错误原因：...</text>
+          <text name="failed_help" pos="30,[0,-30,@30" font="adding:0" colorText="#333333">请告知我们失败原因，以便修复此问题。QQ：800081336</text>
+        </window>
+      </window>
+      <window name="wnd_finished" pos="0,42,-0,-0" colorBkgnd="#ffffff" show="0">
+        <img pos="320,60" skin="icon_transfer_success" />
+        <text pos="[30,{18,-0,@30" font="adding:12" colorText="#333333">恭喜您，搬家成功！</text>
+        <text pos="115,170,-0,@30" font="adding:2" colorText="#333333">请在设备上，完成系统设置进入桌面后，填写 Apple ID。</text>
+        <text pos="{0,[0,-0,@30" font="adding:2" colorText="#eb8000">提示：请务必输入Apple ID 信息，否则无法恢复数据。</text>
+        <img pos="|0,[0" offset="-0.5,0" skin="icon_restore_tip" />
+      </window>
+    </window>
+  </root>
+</SOUI>

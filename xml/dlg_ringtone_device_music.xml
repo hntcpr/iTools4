@@ -1,0 +1,47 @@
+﻿<SOUI trCtx="" title="" width="682" height="472" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">设备音乐</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <mclistview name="lv_device_music" pos="0,42,-0,-0" headerHeight="30" dividerSkin="_skin.hor.line" dividerSize="1" >
+        <header align="left" sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="1" font="adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+          <items>
+            <item width="10"></item>
+            <item width="160">Name_h</item>
+            <item width="60">Time_h</item>
+            <item width="110">Artest_h</item>
+            <item width="130">Album_h</item>
+            <item width="100">Size_h</item>
+            <item width="80">Operation_h</item>
+          </items>
+        </header>
+        <template itemHeight="33" colorHover="#f2f4f6" colorSelected="#ddeeff">
+          <window name="col1"/>
+          <window name="col2" clipClient="1">
+            <text name="txt_name" pos="8,0,-4,-0" font="adding:-2" dotted="1">Name</text>
+          </window>
+          <window name="col3" clipClient="1">
+            <text name="txt_time" pos="8,0,-0,-0" font="adding:-2" colorText="#939496">00:00</text>
+          </window>
+          <window  name="col4" clipClient="1">
+            <text name="txt_artist" pos="8,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+          </window>
+          <window name="col5" clipClient="1">
+            <text name="txt_album" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+          </window>
+          <window name="col6" clipClient="1">
+            <text name="txt_size" pos="8,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+          </window>
+          <window name="col7" clipClient="1">
+            <button pos="10,|-7" skin="skin_null" name="btn_select" font="adding:-2" colorText="#1c8ee3" colorTextHover="#1c8ee3" colorTextPush="#0876c8" colorTextDisable="#cccccc" drawFocusRect="0" cursor="hand">选择</button>
+          </window>
+        </template>
+      </mclistview>
+      <window name="process_wnd" pos="0,0,-0,-0" show="0">
+        <include src="layout:progress_box"/>
+      </window>
+    </window>
+  </root>
+</SOUI>

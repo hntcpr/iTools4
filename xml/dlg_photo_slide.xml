@@ -1,0 +1,8 @@
+﻿<SOUI trCtx="dlg_photo_view" title="Photo View" appWnd="1" resizable="0" translucent="0">
+  <root>
+    <window pos="0,0,-0,-0" colorBkgnd="#000000" >
+        <photoslide name="photoslide" pos="0,0,-0,-0"/>
+        <imgbtn name="btn_close" skin="photo_view_close" pos="-51,0" tip="close" animate="1"/>
+    </window>
+  </root>
+</SOUI>

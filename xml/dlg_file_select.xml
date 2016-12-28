@@ -1,0 +1,48 @@
+<SOUI name="FileSelect" title="iTools 4"  width="862" height="540" margin="5,3,5,7" appWnd="0" resizable="0" translucent="1"  trCtx="">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">Select Files</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="0,[35,-0,@1" colorBkgnd="#E4E4E4"/>
+
+      <window pos="0, 76, -0, @1" colorBkgnd="#f1f1f1"></window>
+      <window pos="0,42">
+        <buttonex name="toolbar_btn_file" pos="20,0,@85, @35" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_null" iconSkin="toolbar_install_app" focusable="0">添加文件</buttonex>
+        <buttonex name="toolbar_btn_folder" pos="[0,0,@85, @35" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_null" iconSkin="toolbar_folder" focusable="0">添加目录</buttonex>
+      </window>
+
+      <mclistviewex pos="0,[0,-0,-70" name="lv_files" headerHeight="30" wantTab="1"  dividerSkin="_skin.hor.line" dividerSize="1">
+        <header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="1" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+          <items>
+            <item width="45"></item>
+            <item width="384">Name_h</item>
+            <item width="200">Type_h</item>
+            <item width="200">Size_h</item>
+          </items>
+        </header>
+        <check pos="20, 8" name="header_check"/>
+        <template itemHeight="35" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+          <window name="col1" clipClient="1">
+            <check pos="20,|0" offset="0,-0.5" name="checkbox"></check>
+          </window>
+          <window name="col2" clipClient="1">
+            <text name="txt_name" pos="8,0,-0,-0" font="adding:-2" dotted="1">Name</text>
+          </window>
+          <window name="col3" clipClient="1">
+            <text name="txt_type" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="#a8a8a8" dotted="1">--</text>
+          </window>
+          <window  name="col4" clipClient="1">
+            <text name="txt_size" pos="0,0,-0,-0" font="adding:-2" align="left" colorText="#a8a8a8" dotted="1">...</text>
+          </window>
+        </template>
+      </mclistviewex>
+      <window pos="0,-69,-0,@1" colorBkgnd="#E4E4E4"/>
+      <text name="txt_tip"  pos="20,-46" colorText="@color/text_body" show="0">已选择</text>
+      <text name="txt_tip_sel"  pos="[6,-46" colorText="#ff741b"></text>
+      <button name="btn_ok" pos="-230, -50, @100, @30">Ok</button>
+      <button name="btn_cancel" pos="-120, -50, @100, @30" id="IDCANCEL">Cancel</button>
+    </window>
+  </root>
+</SOUI>

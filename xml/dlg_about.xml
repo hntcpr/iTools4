@@ -1,0 +1,19 @@
+<SOUI name="Update" title="iTools 4"  width="500" height="340" margin="5,3,5,7" appWnd="1" resizable="0" translucent="1"  trCtx="config">
+  <style>
+    <class name="title" colorText="#333333"/>
+    <class name="content" colorText="#666666"/>
+  </style>
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" >
+        <text name="version" pos="15, 0, 200, -0">iTools</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" id="IDCANCEL" animate="1"/>
+      </caption>
+      
+      <img pos="|0,75" offset="-0.5,0" skin="icon_about"/>
+      <text pos="|0,210" offset="-0.5,0" colorText="#7e7e7e" font="adding:-1">深圳市创想天空科技股份有限公司版权所有</text>
+      <text pos="|0,[5" offset="-0.5,0" colorText="#7e7e7e" font="adding:-1">Copyright 2011-2016 ThinkSky. All rights reserved.</text>
+      <link pos="|0,[5" offset="-0.5,0" name="btn_connect" class="cls_btn_weblink" href="http://www.itools.cn">http://www.itools.cn</link>
+    </window>
+  </root>
+</SOUI>

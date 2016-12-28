@@ -1,0 +1,75 @@
+<include>
+  <window name="itools_ringtone" pos="0,0,-0,-0" colorBkgnd="#ffffff">
+    <window pos="0,0,-0,40" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line" focusable="1" drawFocusRect="0">
+      <buttonex name="tool_export" pos="20,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_export" focusable="0">导出</buttonex>
+      <buttonex name="tool_refresh" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0">刷新</buttonex>
+      <buttonex name="tool_setringtone" pos="[0,0,@130, -0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_setringtone" focusable="0">添加至系统铃声</buttonex>
+      <window pos="-210,5,@190,@30" skin="search_edit" trackMouseEvent="1">
+        <editex name="search_edit" pos="0,3,-30,-3" inset="12,0,12,0" cueText="搜索 iTools 铃声" cueColor="#9a9a9a"/>
+        <imgbtn name="search_reset" pos="-36,0,@36,@30" font="adding:-2" skin="search_reset" animate="1" visible="0"></imgbtn>
+      </window>
+    </window>
+
+    <tabctrl name="ringtoneBtnSwitch" pos="0,[0,-0,-0" tabHeight="0" curSel="0">
+      <page>
+        <window name="loading_wnd" pos="0,0,-0,-0" colorBkgnd="#ffffff" msgTransparent="1">
+          <gifplayer name="loading_img" skin="skin_loading_img" pos="|0,|0" offset="-0.5,-0.6" show="1"/>
+          <text pos="|0,[-20" offset="-0.5,0" colorText="#666666">正在加载中，请稍候...</text>
+        </window>
+      </page>
+      <page>
+        <window name="install_wnd" pos="0,0,-0,-0">
+          <text pos="0,50,-0,@40" colorText="@color/text_body" align="center" font="adding:2" >没有安装 iTools（应用兔）？</text>
+          <tabctrl name="installBtnSwitch" pos="0,[0,-0,@50" tabHeight="0" curSel="0">
+            <page>
+              <button name="btn_install_itools_ringtone" pos="|0,|0,@100, @30" offset="-0.5,-0.5" colorText="#555555" colorTextHover="#1c8ee3" colorTextPush="#0876c8" colorTextDisable="#cccccc">安装</button>
+            </page>
+            <page>
+              <text pos="0,0,-0,-0" colorText="@color/text_body" align="center">正在安装...</text>
+            </page>
+          </tabctrl>
+          <img pos="|0,[20" offset="-0.5,0" skin="ringtone_itools"></img>
+        </window>
+      </page>
+      <page>
+        <window pos="0,0,-0,-0">
+          <mclistviewex pos="0,0,-0,-0" id="4796" name="lv_itoolsringtone" headerHeight="30" dividerSize="1" wantTab="1"  dividerSkin="_skin.hor.line">
+            <header align="left"  sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="1" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+              <items>
+                <item width="40" minwidth="40"></item>
+                <item width="408">Name_h</item>
+                <item width="200">Time_h</item>
+                <item width="200">Size_h</item>
+              </items>
+            </header>
+            <check pos="20, 7" name="header_check"/>
+            <template itemHeight="30" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+              <window name="col1" clipClient="1">
+              <check pos="20,7" name="checkbox"></check>
+              </window>
+              <window name="col2" clipClient="1">
+                <text name="txt_name" pos="4,0,-0,-0" font="adding:-2" dotted="1">Name</text>
+              </window>
+              <window name="col3" clipClient="1">
+                <text name="txt_time" pos="4,0,-0,-0" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+              </window>
+              <window  name="col4" clipClient="1">
+                <text name="txt_size" pos="4,0,-0,-0"  font="adding:-2" dotted="1">...</text>
+              </window>
+            </template>
+          </mclistviewex>
+          <window name="empty_tip" pos="{0,{0,-0,-0" show="0" colorBkgnd="#ffffff">
+            <img skin="itools_ringtone_tip" pos="|0,|0" offset="-0.5,-0.5" />
+            <text pos="|0,{-50" offset="-0.5,0" colorText="@color/text_body" font="adding:2">还没有在 iTools（应用兔）上下载铃声哦</text>
+          </window>
+
+        </window>
+        <window name="process_wnd" pos="0,0,-0,-0" show="0">
+          <include src="layout:progress_box"/>
+        </window>
+      </page>
+
+    </tabctrl>
+
+  </window>
+</include>

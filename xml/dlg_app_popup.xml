@@ -1,0 +1,13 @@
+﻿<SOUI trCtx="" appWnd="0" width="666" height="480" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0,0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">精品推荐</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <img pos="20,[20" skin="install_itools_app"></img>
+      <button pos="-290,-185,@180,@42" skin="btn_blue" name="btn_install" colorText="#ffffff" font="adding:2" drawFocusRect="0">立即安装</button>
+      <check name="chk_ignore" pos="-110, -32" font="adding:-2">下次不再提醒</check>
+    </window>
+  </root>
+</SOUI>

@@ -1,0 +1,15 @@
+<SOUI title="iTools 4"  width="500" height="380" margin="5,3,5,7" appWnd="1" resizable="0" translucent="1">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" clipclient="1">
+      <caption pos="0, 0,-0,42">
+        <text pos="15, 0, 200, @40">导入备份</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" id="IDCANCEL" animate="0"/>
+        <window pos="0,-1,-0,-0" colorBkgnd="#e4e4e4"/>
+      </caption>
+      <treectrl name="tree" pos="15,[15,-0,-50">
+        
+      </treectrl>
+      <button pos="|0, -50, @100, @30" offset="-0.5,0" name="btn_ok">Ok</button>
+    </window>
+  </root>
+</SOUI>

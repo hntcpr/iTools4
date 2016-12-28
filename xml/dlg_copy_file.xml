@@ -1,0 +1,18 @@
+﻿<SOUI trCtx="dlg_copy_file" title="copyfile" width="420" height="250" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text name="title" pos="15, 0, 200, -0">正在复制...</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window pos="0,45,-0,@60" colorBkgnd="#ffffff">
+        <animateimg name="anim_copy" skin="skin.anim.copy_file" pos="|0,|0"  offset="-0.5,-0.5" align="center" autoStart="1" show="1"/>
+      </window>
+      <text name="txt_tip" pos="10,[10,-10,@20" font="adding:-2" dotted="1"></text>
+      <progress name="progress" pos="10,[18,-10,@6" offset="0, -1" value="0" min="0" max="100"/>
+      <text name="txt_time" pos="10,-64,-100,@20" font="adding:-2" dotted="1">正在计算操作所需时间...</text>
+      <text name="txt_percent" pos="[0,-64,-10,@20" font="adding:-2" align="right"></text>
+      <imgbtn id="IDCANCEL" pos="-90,-34,@80,@24" font="adding:-2" animate="1">取消</imgbtn>
+    </window>
+  </root>
+</SOUI>

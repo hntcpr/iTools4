@@ -1,0 +1,48 @@
+﻿<SOUI trCtx="" title="Ignore List" width="840" height="520" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">已忽略列表</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+    <mclistviewex name="lv_ignore" pos="0,42,-0,-60" colorBkgnd="#ffffff" skin="skin_bkgnd_line" headerHeight="30"  dividerSkin="_skin.hor.line" dividerSize="1">
+      <header align="left" sortSkin="skin_lcex_header_arrow" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="1" font="adding:-2" colorText="#cccccc" sortHeader="0" colorBkgnd="#ffffff">
+        <items>
+          <item width="40"></item>
+          <item width="300">Name_h</item>
+          <item width="134">Version_h</item>
+          <item width="134">Size_h</item>
+          <item width="200">Operation_h</item>
+        </items>
+      </header>
+      <check pos="20, 7" name="header_check"/>
+      <template itemHeight="70" colorHover="#f2f4f6" colorSelected="#ddeeff">
+        <window name="col1" clipClient="1">
+          <check pos="20,|0" name="checkbox"></check>
+        </window>
+        <window name="col2" clipClient="1">
+          <bitmap name="app_icon" pos="10,10,@48,@48"/>
+          <text name="txt_name" pos="[10,16,-10,@20" dotted="1" >--</text>
+          <text name="txt_desc" pos="{0,36,-10,-10" font="adding:-2" dotted="1" colorText="#000000bb" >--</text>
+        </window>
+        <window  name="col3" clipClient="1">
+          <text name="txt_oldversion" pos="10,16,-0,-36" font="adding:-2" align="left" colorText="@color/text_body" >--</text>
+          <text name="txt_newversion" pos="10,36" font="adding:-2" align="left" colorText="#1c8ee3" >--</text>
+          <img pos="[3,{3,@12,@12" skin="app_update"> </img>
+        </window>
+         <window name="col4" clipClient="1">
+            <text name="txt_app_size" pos="10,26,-0,-26" font="adding:-2" align="left" colorText="#000000bb" >--</text>
+      </window>
+       <window name="col5" clipClient="1">
+          <imgbtn name="btn_update" animate="1"  pos="|-80,|-14" colorText="#d36161" colorTextHover="#d36161" colorTextPush="#ffffff" colorTextDisable="#cccccc" cursor="hand" skin="list_btn_red">更新</imgbtn>
+          <imgbtn name="btn_recover" animate="1"  pos="|2,|-14,@80,@28" colorText="#1c8ee3" colorTextHover="#1c8ee3" colorTextPush="#ffffff" colorTextDisable="#cccccc" cursor="hand" skin="list_btn_blue">恢复提醒</imgbtn>
+        </window>
+      </template>
+    </mclistviewex>
+      <window pos="0,-60,-0,-0" colorText="@color/text_body"  colorBkgnd="#ffffff">
+        <imgbtn name="btn_recover" pos="-230,15,@100,@34" font="adding:-2" animate="1" colorTextDisable="#cccccc" enable="0">恢复</imgbtn>
+        <imgbtn name="btn_update" pos="[10,15,@100,@34" font="adding:-2" animate="1" colorTextDisable="#cccccc" enable="0">更新</imgbtn>
+      </window>
+    </window>
+  </root>
+</SOUI>

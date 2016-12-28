@@ -1,0 +1,11 @@
+﻿<SOUI trCtx="" title="" width="372" height="468" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text name="title" pos="15, 0, 200, -0">提示</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+	  <img pos="|0,|23" offset="-0.5,-0.5" skin="icon_fmip" />
+    </window>
+  </root>
+</SOUI>

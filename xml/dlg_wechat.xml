@@ -1,0 +1,298 @@
+<SOUI title="iTools 4"  width="822" height="600" margin="5,3,5,7" appWnd="0" resizable="0" translucent="1">
+  <style>
+    <class name="title" colorText="#333333"/>
+    <class name="content" colorText="#666666"/>
+  </style>
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">微信消息管理</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <tabctrl name="tabswitch" pos="0,42,-0,-0" colorBkgnd="#FFFFFF" tabHeight="0">
+        <page>
+          <img skin="wechatlogo" pos="|-45,|-120,@90,@90" />
+          <window  pos="0,[16,-0,@56" colorBkgnd="#FFFFFF" >
+            
+          <text pos="|-70,0"  font="face:微软雅黑,size:20" colorText="#303030" align="center" dotted="1">手机未安装微信</text>
+          <link name="login_setup" cursor="hand" pos="|-30,[8,@60,@20" colorText="#3E9CE8" colorTextHover="#68D0FE" colorTextPush="#3E9CE8" colorTextDisable="#cccccc" focusable="0">重新扫描</link>
+           
+            </window>
+          <text pos="0,[16,-0,@20"  font="face:微软雅黑,size:14" colorText="#303030" align="center" dotted="1">功能介绍：微信整体信息备份到本地，</text>
+          <text pos="0,[8,-0,@20"  font="face:微软雅黑,size:14" colorText="#303030" align="center" dotted="1">查看现有、删除的聊天记录并导出到指定位置</text>
+        </page>
+        <page>
+          <img skin="wechatlogo" pos="|-45,|-120,@90,@90" />
+          <window  pos="0,[16,-0,@56" colorBkgnd="#FFFFFF" >
+
+            <text pos="|-70,0"  font="face:微软雅黑,size:20" colorText="#303030" align="center" dotted="1">手机未登录微信</text>
+            <link name="login_login" cursor="hand" pos="|-30,[8,@60,@20" colorText="#3E9CE8" colorTextHover="#68D0FE" colorTextPush="#3E9CE8" colorTextDisable="#cccccc" focusable="0">重新扫描</link>
+
+          </window>
+          
+          <text pos="0,[16,-0,@20"  font="face:微软雅黑,size:14" colorText="#303030" align="center" dotted="1">功能介绍：微信整体信息备份到本地，</text>
+          <text pos="0,[8,-0,@20"  font="face:微软雅黑,size:14" colorText="#303030" align="center" dotted="1">查看现有、删除的聊天记录并导出到指定位置</text>
+        </page>
+        <page>
+          <window pos="0,49,-0,@1" colorBkgnd="#E4E4E4"/>
+          <tabctrl name="tablogin" pos="0,0,-0,-0" animateSteps="10"   tabAlign="top" tabSkin="tab_ctrl" tabInterSize="0" tabWidth="400" tabHeight="50" colorText="#555555" colorTextHover="#1c8ee3" colorTextPush="#0876c8" focusable="0">
+            <page title="获取信息">
+
+              <!--wallpaper-->
+              <img pos="120, 40, @248, @400" colorBkgnd="#E6E6E6">
+                <img pos="0, 0, -0, -0" skin="skin_dev_default" iconIndex="3">
+                  <WallpaperCtrl pos="14, 50, @220, @302" name="wallpaper"/>
+                  <text name="time" pos="0,{20, @248, @50" font="face:微软雅黑,size:36" textmode="25" colorText="#FFFFFF">08:08</text>
+                  <text name="date" pos="0,[0, @248, @20" font="face:微软雅黑,size:12" textmode="25" colorText="#FFFFFF">8月8日 星期二</text>
+                  <text name="charge" pos="0, 300, @248, @30" font="face:微软雅黑,size:12" textmode="25" colorText="#FFFFFF">Charging</text>
+                </img>
+              </img>
+              <window pos="380,100,-0,-0">
+                <text pos="0,[8,-0,@20"  font="face:微软雅黑,size:16" colorText="#303030" align="left" dotted="1">功能简介：</text>
+                <text pos="0,[8,-0,@20"  font="face:微软雅黑,size:12" colorText="#303030" align="left" dotted="1">通过对设备微信安装目标的扫描，获取包括文本，图片，视频展示</text>
+                <text pos="0,[8,-0,@20"  font="face:微软雅黑,size:12" colorText="#303030" align="left" dotted="1">出来并导出到指定位置</text>
+
+                <button name="btn_scan" skin="blue_btn" pos="0,[20,@180,@42" drawFocusRect="0" colorText="#ffffff">扫描</button>
+                <text pos="22,[8,-0,@20"  font="face:微软雅黑,size:12" colorText="#FF0000" align="left" dotted="1">扫描时请保持手机开启状态</text>
+              </window>
+                  
+                
+            </page>
+            <page title="备份历史">
+              <text pos="30,25,-0,@20"  font="face:微软雅黑,size:16" colorText="#303030" align="left" dotted="1">请选择要查看的微信信息备份文件</text>
+              <window pos="30,[16,-30,@1" colorBkgnd="#E4E4E4"/>
+              <mclistviewex pos="30,[0,-30,@296" id="4796" name="wc_backups" headerHeight="30" dividerSize="1" wantTab="1"  colorBorder="#000000" dividerSkin="_skin.hor.line">
+                <header align="left"  sortSkin="skin_lcex_header_arrow" columnNum="1" minColumn="50" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+                  <items>
+                    <item width="10"></item>
+                    <item width="105">Name_h</item>
+                    <item width="140">Time_h</item>
+                    <item width="110">Size_h</item>
+                    <item width="110">Version_h</item>
+                    <item width="100">Type_h</item>
+                    <item width="152">    操作</item>
+                  </items>
+                </header>
+                <template itemHeight="30" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+                  <window name="col1"/>
+                  <window name="col2" clipClient="1">
+                    <text name="txt_name" pos="10,0,-4,-0" font="adding:-2" dotted="1">Name</text>
+                  </window>
+                  <window name="col3" clipClient="1">
+                    <text name="txt_time" pos="4,0,-0,-0" font="adding:-2" colorText="#939496">--</text>
+                  </window>
+                  <window  name="col4" clipClient="1">
+                    <text name="txt_size" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+                  </window>
+                  <window name="col5" clipClient="1">
+                    <text name="txt_version" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+                  </window>
+                  <window name="col6">
+                    <text name="txt_type" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+                    
+                  </window>
+                  <window name="col7">
+                    
+                    <link name="btn_view" cursor="hand" pos="22,6,@30,@18" colorText="#3E9CE8" colorTextHover="#68D0FE" colorTextPush="#3E9CE8" colorTextDisable="#cccccc" focusable="0">查看</link>
+                    <link name="btn_del" cursor="hand" pos="[45,6,@30,@18" colorText="#3E9CE8" colorTextHover="#68D0FE" colorTextPush="#3E9CE8" colorTextDisable="#cccccc" focusable="0">删除</link>
+                    <!--<text name="txt_serial" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>-->
+                    <!--<buttonex name="btn_del" pos="4,0,-0,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0">删除</buttonex>-->
+                  </window>
+
+
+                </template>
+              </mclistviewex>
+              <window pos="30,[0,-30,@1" colorBkgnd="#E4E4E4"/>
+              <window pos="29,61,@1,@298" colorBkgnd="#E4E4E4"/>
+              <window pos="-30,61,@1,@298" colorBkgnd="#E4E4E4"/>
+
+              <text pos="30,[16,@440,@20"  font="face:微软雅黑,size:12" colorText="#404040" align="left" dotted="1">1、从备份文件读取微信信息能有效提高速度，首次备份所需时间比较长；</text>
+              <text pos="30,[8,@440,@20"  font="face:微软雅黑,size:12" colorText="#404040" align="left" dotted="1">2、通过备份文件只能查看截止备份时间的数据，查看新数据，请增量备份。</text>
+              <button name="decode_begin" skin="blue_btn" pos="-210,-95,@180,@42" drawFocusRect="0" colorText="#ffffff">创建新备份</button>
+              <window name="process_wnd" pos="0,0,-0,-0" show="0">
+                <include src="layout:progress_box"/>
+              </window>
+            </page>
+          </tabctrl>
+
+        </page>
+        <page>
+          <img skin="icon_sp" pos="|-160,|-135,@320,@160" />
+          <text name="scan_precent" pos="0,[16,-0,@20"  font="face:微软雅黑,size:12" colorText="#818181" align="center" dotted="1">完成0%</text>
+          <progress pos="|-185,[5,@370,@6" name="scan_procgress"/>
+          <text pos="0,[16,-0,@20"  font="face:微软雅黑,size:14" colorText="#303030" align="center" dotted="1">正在获取数据信息，8.3以上系统耗时较久，请耐心等待~</text>
+          
+        </page>
+        <page>
+          <img skin="msgbox.error" pos="|-67,|-80,@32,@32" />
+          <text pos="[8,|-74,-0,@20"  font="face:微软雅黑,size:14" colorText="#303030" align="left" dotted="1">信息获取失败！</text>
+          <button name="scan_rescan" skin="blue_btn" pos="|-90,[73,@180,@42" drawFocusRect="0" colorText="#ffffff">重新扫描</button>
+          <text pos="0,[8,-0,@20"  font="face:微软雅黑,size:12" colorText="#FF0000" align="center" dotted="1">扫描时请保持手机开启状态</text>
+        </page>
+        <page>
+          <gifplayer  skin="skin_progress_img" pos="|-20,|-20"  show="1"/>
+          <text pos="0,[16,-0,@20"  font="face:微软雅黑,size:14" colorText="#303030" align="center" dotted="1">正在获取微信数据</text>
+
+        </page>
+        <page>
+          <window pos="0,[0,-0,@40" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line" focusable="1" drawFocusRect="0">
+            
+            <buttonex name="tool_export" pos="[20,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_export" focusable="0">导出</buttonex>
+            <buttonex name="tool_refresh" pos="[0,0,@70,-0"  text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0">刷新</buttonex>
+            
+            <buttonex name="tool_backup" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_backup_app" focusable="0">备份</buttonex>
+            <buttonex name="tool_back" pos="[0,0,@85,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="wc_history" focusable="0">备份历史</buttonex>
+            <buttonex name="tool_discover" pos="[0,0,@100,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar.discover" focusable="0">找回聊天记录</buttonex>
+            
+            <text name="wc_username" pos="-200,0,-18,-0" font="adding:-2" align="right" valign="middle">chashion</text>
+            
+          </window>
+          <window pos="0,[0,@280,-0" >
+          <mclistviewex pos="0,[0,@280,-0" id="4796" name="lv_wechat" sbTop="40" headerHeight="40" dividerSize="1" wantTab="1"  dividerSkin="_skin.hor.line">
+            <header align="left"  sortSkin="skin_lcex_header_arrow" columnNum="1" itemSkin="icon_dot" itemSwapEnable="0" fixWidth="1" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="0" colorBkgnd="#ffffff">
+              <items>
+                <item width="270"></item>
+              </items>
+            </header>
+            <check pos="20,13" name="header_check"/>
+            <window pos="48,7,@220,@26" skin="icon_search_bg" trackMouseEvent="1">
+              <editex name="search_edit" pos="6,3,-30,-3" inset="12,0,12,0" cueText="搜索联系人" cueColor="#9a9a9a"/>
+              <imgbtn name="search_reset" pos="-36,0,@36,@26" font="adding:-2" skin="search_btn_close" animate="1" visible="0"></imgbtn>
+            </window>
+            <template itemHeight="56" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+              <window name="col1">
+                <check pos="20,|-8" name="checkbox"></check>
+                <bitmap name="app_icon" skin="def_app_icon" pos="40,|0" offset="0,-0.5"/>
+                <window pos="88,0,-0,28">
+                  <text name="txt_name" pos="[10,10" dotted="1" font="face:微软雅黑,size:12,bold:1" maxWidth="80">nickname</text>
+                  <text name="txt_delcount" pos="[4,10,@40,@20" visible="0" colorText="#FF0000" font="face:微软雅黑,size:12" dotted="1" >(100)</text>
+                  <text name="txt_time" pos="-64,10,@60,@18" align="right" font="face:微软雅黑,size:12" dotted="1" >昨天</text>
+                  <text pos="-4,0,-0,-0"/>
+                </window>
+                <window pos="88,28,-0,-0">
+                  <text name="txt_lastmsg" pos="[10,4,-10,-10" font="face:微软雅黑,size:12" dotted="1" >[文字消息]</text>
+                </window>
+              </window>
+
+            </template>
+          </mclistviewex>
+          </window>
+          <window pos="0,{39,@280,@1" colorBkgnd="#D4D4D4"/>
+          <window name="search_tip" pos="0,80,@280,-0" show="1">
+            <text name="search_ret" pos="0,0,-0,-0" align="center" font="face:微软雅黑,size:16" dotted="1" >未搜索到联系人</text>
+          </window>
+          <window pos="280,40,@1,-0" colorBkgnd="#E4E4E4"/>
+          <window pos="281,{0,-0,@40" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line" >
+            <text name="label" pos="0,|-12,@60,@24" font="adding:-2" align="right" valign="middle">联系人：</text>
+            <combobox name="combo_user" pos="[5,|-12,@98,@24" dropDown="1" font="face:微软雅黑,size:12" dropHeight="100" skin="normal_edit" dotted="0" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" inset="5,0,0,0">
+              <liststyle class="cls_combo_list" font="face:微软雅黑,size:12" itemHeight="30"/>
+              
+              <items>
+                <item text="当前联系人" data="0"/>
+                <item text="全部联系人" data="1"/>
+              </items>
+            </combobox>
+            <text name="label2" pos="[5,|-12,@40,@24" font="adding:-2" align="right" valign="middle">范围：</text>
+            <combobox name="combo_time" pos="[5,|-12,@94,@24" dropDown="1" font="face:微软雅黑,size:12" dropHeight="300" skin="normal_edit" dotted="0" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" inset="5,0,5,0">
+              <liststyle class="cls_combo_list" font="face:微软雅黑,size:12" itemHeight="30"/>
+              <editstyle inset="5,0,5,0" font="face:微软雅黑,size:12" colorText="@color/text_body" align="center" colorBkgnd="#FFFFFF"/>
+              <items>
+                <item text="最近一周" data="0"/>
+                <item text="最近一月" data="1"/>
+                <item text="最近三个月" data="2"/>
+                <item text="最近一年" data="3"/>
+                <item text="全部" data="4"/>
+            
+              </items>
+            </combobox>
+            <text name="label2" pos="[5,|-12,@40,@24" font="adding:-2" align="right" valign="middle">内容：</text>
+            <window pos="[5,8,-12,@24"  trackMouseEvent="1">
+              <editex name="s_edit" pos="0,0,-60,-0" inset="5,0,5,0" font="face:微软雅黑,size:12" skin="normal_edit" cueText="搜索" cueColor="#9a9a9a"/>
+              <imgbtn name="s_search" pos="-50,0,@50,@24" font="face:微软雅黑,size:12" skin="blue_btn" drawFocusRect="0" colorText="#ffffff" animate="1" >搜索</imgbtn>
+            </window>
+          </window>
+          <tabctrl name="tab_view" pos="281,[0,-0,-0" colorBkgnd="#FFFFFF" tabHeight="0">
+            <page>
+              <!--<img name="wx_search" skin="icon_nr" pos="|0,|-20" offset="-0.5,-0.5" visible="0" />
+            <img name="wx_normal" skin="icon_wx" pos="|0,|-20" offset="-0.5,-0.5" />
+            -->
+              <text name="txt_errinfo" pos="|-260,|-18,@520,@36" colorText="#818181" align="center" font="face:微软雅黑,size:24" dotted="1" >请点击左侧查看消息</text>
+            </page>
+            <page>
+              <img skin="icon_nr" pos="|0,|-20" offset="-0.5,-0.5" />
+            
+            
+              <text name="seach_errinfo" pos="|-260,[6,@520,@36" colorText="#818181" align="center" font="face:微软雅黑,size:14" dotted="1" >请点击左侧查看消息</text>
+            </page>
+            <page>
+              
+              <window pos="|-130,|-40,@260,@36" trackMouseEvent="1">
+                <text  pos="0,0," colorText="#333333" align="center" font="face:微软雅黑,size:20" dotted="1" >共找回</text>
+                <link name="err_delcount" pos="[0,0" colorText="#3E9CE8" cursor="hand" align="center" font="face:微软雅黑,size:20,underline:1" dotted="1" />
+                <!--<text  pos="[0,0" colorText="#333333" align="center" font="face:微软雅黑,size:20" dotted="1" >条删除数据</text>-->
+              </window>
+              <text pos="36,-165,@520,@20" colorText="#000000" align="left" font="face:微软雅黑,size:12" dotted="1" >提示：</text>
+              <text pos="36,-140,@520,@20" colorText="#FF0000" align="left" font="face:微软雅黑,size:12" dotted="1" >1、红色标注的联系人存在“删除或撤销数据”</text>
+              <text pos="36,-115,@520,@20" colorText="#000000" align="left" font="face:微软雅黑,size:12" dotted="1" >2、此功能无法100%找回所有删除数据</text>
+              <text pos="36,-88,@520,@20" colorText="#000000" align="left" font="face:微软雅黑,size:12" dotted="1" >3、成功找回的数据中可能存在少数乱码或其他错误</text>
+              <text pos="36,-62,@520,@20" colorText="#000000" align="left" font="face:微软雅黑,size:12" dotted="1" >4、其中以红色框标注内容的为删除的聊天记录</text>
+            </page>
+            <page>
+              <gifplayer  skin="skin_progress_img" pos="|-20,|-20"  show="1"/>
+              <text pos="0,[16,-0,@20"  font="face:微软雅黑,size:14" colorText="#303030" align="center" dotted="1">正在获取微信数据</text>
+
+            </page>
+            <page>
+              <webview pos="[0,{0,-0,-0" name="web_show"/>
+            </page>
+          </tabctrl>
+          <window name="view_wnd" pos="0,0,-0,-0" show="0">
+            <include src="layout:progress_box"/>
+          </window>
+          <window name="tip_wnd" pos="0,0,-0,-0" show="0">
+            <window colorBkgnd="#ffffff" colorBorder="#9a9a9a" margin="1" pos="|0,|0,@240,@120" offset="-0.5,-0.5">
+              <tabctrl name="btnSwitch" pos="0,0,-0,-0" tabHeight="0">
+                <page>
+
+                  <img skin="msgbox.ok" pos="|-16,|-24,@32,@32" />
+                  <text name="txt_tip" pos="0,|16,-0, @20" font="adding:-2" valign="center" align="center" colorText="#333333" dotted="1">正在加载...</text>
+                </page>
+                <page>
+                  <text name="txt_tip_p" pos="20,50,-0, @30" font="adding:-2" colorText="#333333" dotted="1">正在加载...</text>
+                  <progress name="progress" pos="20,[0,-20,@6" value="0" min="0" max="100"  show="0"/>
+                  <text name="txt_progress" pos="20,[5,-20,@30" font="adding:-2" colorText="#333333" dotted="1" show="0"></text>
+                  <imgbtn name="btn_cancel" pos="-80,-50,@60,@30" font="adding:-2"   animate="1" show="0">取消</imgbtn>
+                </page>
+              </tabctrl>
+
+            </window>
+          </window>
+          <window name="tiperror_wnd" pos="0,0,-0,-0" show="0">
+            <window colorBkgnd="#ffffff" colorBorder="#9a9a9a" margin="1" pos="|0,|0,@240,@120" offset="-0.5,-0.5">
+              <tabctrl name="btnSwitch" pos="0,0,-0,-0" tabHeight="0">
+                <page>
+
+                  <img skin="msgbox.error" pos="|-16,|-24,@32,@32" />
+                  <text name="txt_tip" pos="0,|16,-0, @20" font="adding:-2" valign="center" align="center" colorText="#333333" dotted="1">正在加载...</text>
+                </page>
+                <page>
+                  <text name="txt_tip_p" pos="20,50,-0, @30" font="adding:-2" colorText="#333333" dotted="1">正在加载...</text>
+                  <progress name="progress" pos="20,[0,-20,@6" value="0" min="0" max="100"  show="0"/>
+                  <text name="txt_progress" pos="20,[5,-20,@30" font="adding:-2" colorText="#333333" dotted="1" show="0"></text>
+                  <imgbtn name="btn_cancel" pos="-80,-50,@60,@30" font="adding:-2"   animate="1" show="0">取消</imgbtn>
+                </page>
+              </tabctrl>
+
+            </window>
+          </window>
+        </page>
+        <page>
+          <gifplayer  skin="skin_progress_img" pos="|-20,|-20"  show="1"/>
+          <text pos="0,[16,-0,@20"  font="face:微软雅黑,size:14" colorText="#303030" align="center" dotted="1">正在扫描...</text>
+
+        </page>
+      </tabctrl>
+
+    </window>
+  </root>
+</SOUI>

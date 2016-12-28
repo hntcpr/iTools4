@@ -1,0 +1,33 @@
+<SOUI title="iTools 4"  width="500" height="380" margin="5,3,5,7" appWnd="0" resizable="0" translucent="1">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" clipclient="1">
+      <caption pos="0, 0,-0,42">
+        <text pos="15, 0, 200, @40">SSH 通道</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" id="IDCANCEL" animate="0"/>
+        <window pos="0,-1,-0,-0" colorBkgnd="#e4e4e4"/>
+      </caption>
+      <tabctrl name="btnSwitch" pos="0,[0,-0,-0" tabHeight="0" curSel="0">
+        <page>
+          <text pos="|0,100" offset="-0.5,0">请先在 Cydia 安装 Open SSH</text>
+          <button pos="|0,[20,@100,@30" name="btn_retry" offset="-0.5,0" drawFocusRect="0">重试</button>
+        </page>
+        <page>
+          <window pos="30, 50">
+            <text pos="0,0" >IP:</text>
+            <text pos="60,0">127.0.0.1</text>
+            <text pos="0,25">端口:</text>
+            <text pos="60,25">22</text>
+            <text pos="0,50">用户名:</text>
+            <text pos="60,50">root</text>
+            <text pos="0,75">密码:</text>
+            <text pos="60,75">alpine（初始密码）</text>
+          </window>
+          <button pos="300,85,@150,@30" name="btn_generate" skin="blue_btn" colorText="#ffffff" drawFocusRect="0">一键生成 XShell 配置</button>
+          <window pos="0,-75,-0,@1" colorBkgnd="#e4e4e4"/>
+          <button pos="|0,-57,@120,@40" name="btn_stop" offset="-0.5,0" drawFocusRect="0">关闭 SSH 通道</button>
+        </page>
+      </tabctrl>
+
+    </window>
+  </root>
+</SOUI>

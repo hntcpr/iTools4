@@ -1,0 +1,45 @@
+<include>
+  <window name="music" pos="0,0,-0,-0" colorBkgnd="#ffffff">
+    <window pos="0,0,-0,40" colorText="@color/text_body"  colorBkgnd="#ffffff" skin="skin_bkgnd_line" focusable="1" drawFocusRect="0">
+      <buttonex name="tool_new" pos="20,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_new_folder" focusable="0">新建</buttonex>
+      <buttonex name="tool_import" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_import" focusable="0">导入</buttonex>
+      <buttonex name="tool_export" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_export" focusable="0">导出</buttonex>
+      <buttonex name="tool_refresh" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_refresh_app" focusable="0">刷新</buttonex>
+      <buttonex name="tool_edit" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar.edit" focusable="0" enable="0">编辑</buttonex>
+      <buttonex name="tool_delete" pos="[0,0,@70,-0" text-offset="22,0,0,0" icon-align="left" icon-margin="5,0,0,0" class="cls_toolbar_btn" skin="skin_bkgnd_line" iconSkin="toolbar_delete" focusable="0" enable="0">Delete</buttonex>
+    </window>
+    <window pos="0,[0,-0,-0" clipClient="1" skin="skin_bkgnd_line">
+      <bookmarktreelist id="4796" pos="0,0,-0,-0" name="bookmark_list" treeLabel="  标题" headerHeight="30" colorBkgnd="#ffffff">
+        <treectrlstyle itemHeight="30" iconSkin="bookmark_type" dividerSkin="_skin.hor.line" colorHover="#f2f4f6" colorItemSelBkgnd="#ddeeff" font="adding:-1" colorItemText="#4e4e4e" colorItemSelText="#4e4e4e" checkBox="0" treeWidth="320" rightClickSel="1" itemMargin="4" indent="24" scrollSpeed="50"/>
+        <headerstyle align="left" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+          <items>
+            <item width="520" minwidth="200">URL_h</item>
+          </items>
+        </headerstyle>
+      </bookmarktreelist>
+      <window name="empty_tip" pos="{0,{30,[0,[0" show="0" msgTransparent="1">
+        <img skin="empty_tip.bookmark" pos="|0,|0" offset="-0.5,-0.75" />
+        <text pos="|0,[20" offset="-0.5,0" colorText="#666666">— 暂无内容 —</text>
+      </window>
+
+    </window>
+    <window name="loading_wnd" pos="0,0,-0,-0" show="0">
+      <window pos="0,40,-0,-0" colorBkgnd="#ffffff"/>
+      <gifplayer name="loading_img" skin="skin_loading_img" pos="|0,|0" offset="-0.5,-0.6" show="1"/>
+      <text pos="|0,[-20" offset="-0.5,0" colorText="#666666">正在加载中，请稍候...</text>
+    </window>
+    <window name="icloud_tip" pos="0,0,-0,-0" colorBkgnd="#ffffff" visible="0" display="0">
+      <text pos="65,105" colorText="#333333" font="adding:2">无法读取您的书签，请按以下步骤关闭 iCloud Safari同步</text>
+      <img pos="{-20, [10" skin="icloud_bookmark_tip"></img>
+      <window pos="{0, [10">
+        <text pos="20,0" colorText="#333333">1. 打开设置中的 iCloud</text>
+        <text pos="290,0" colorText="#333333">2. 关闭 “Safari” 开关</text>
+        <text pos="550,0" colorText="#333333">3. 保留在我的 iPhone 上</text>
+      </window>
+      <button pos="|0, [30,@130,@40" offset="-0.5,0" colorText="#ffffff" name="icloud_refresh" skin="btn_blue" drawFocusRect="0">我已关闭</button>
+    </window>
+    <window name="process_wnd" pos="0,0,-0,-0" show="0">
+      <include src="layout:progress_box"/>
+    </window>
+  </window>
+</include>

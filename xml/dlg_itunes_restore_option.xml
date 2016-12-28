@@ -1,0 +1,48 @@
+<SOUI title="iTools 4"  width="550" height="540" margin="5,3,5,7" appWnd="1" resizable="0" translucent="1">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" clipclient="1">
+      <caption pos="0, 0,-0,42">
+        <text pos="15, 0, 200, @40">从备份恢复</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" id="IDCANCEL" animate="0"/>
+        <window pos="0,-1,-0,-0" colorBkgnd="#e4e4e4"/>
+      </caption>
+      <text pos="15,[20" align="left" colorText="@color/text_body">请选择要恢复的设备</text>
+      <combobox name="combo_dev" pos="30,[10,@200,@30" dropDown="1"  font="adding:-1" dropHeight="100" skin="normal_edit" dotted="0" animateTime="200" drawFocusRect="0" inset="5,0,5,0">
+        <liststyle class="cls_combo_list" itemHeight="30"/>
+        <editstyle colorText="@color/text_body" align="center" colorBkgnd="#FFFFFF"/>
+      </combobox>
+      <hr pos="0,[20,-0,@1" colorLine="#e4e4e4"></hr>
+
+      <window pos="15,[10,-10,]-20" align="left" colorText="@color/text_body">
+        <text pos="0,0" colorText="@color/text_body">请选择该设备的可用备份</text>
+        <mclistview pos="10,[10,-10,-10" id="4796" name="lv_backups" headerHeight="30" dividerSize="1" wantTab="1"  dividerSkin="_skin.hor.line">
+          <header align="left"  sortSkin="skin_lcex_header_arrow" columnNum="1" minColumn="50" itemSkin="skin_lcex_header" itemSwapEnable="0" fixWidth="0" font="underline:0,adding:-2" colorText="#cccccc" sortHeader="1" colorBkgnd="#ffffff">
+            <items>
+              <item width="165">Name_h</item>
+              <item width="130">Time_h</item>
+              <item width="80">Size_h</item>
+              <item width="90">Version_h</item>
+            </items>
+          </header>
+          <template itemHeight="30" colorHover="#f2f4f6" colorSelected="#ddeeff" trackMouseEvent="1">
+            <window name="col1" clipClient="1">
+              <text name="txt_name" pos="4,0,-4,-0" font="adding:-2" dotted="1">Name</text>
+            </window>
+            <window name="col2" clipClient="1">
+              <text name="txt_time" pos="4,0,-0,-0" font="adding:-2" colorText="#939496">--</text>
+            </window> 
+            <window  name="col3" clipClient="1">
+              <text name="txt_size" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+            </window>
+            <window name="col4" clipClient="1">
+              <text name="txt_version" pos="4,0,-0,-0" font="adding:-2" colorText="#939496"></text>
+            </window>
+          </template>
+        </mclistview>
+      </window>
+      <text name="tips" pos="15, -50, ]0,@30"></text>
+      <button pos="-240, -50, @100, @30" name="btn_ok" colorTextDisable="#cccccc" drawFocusRect="0">Ok</button>
+      <button pos="-120, -50, @100, @30" id="IDCANCEL" drawFocusRect="0">Cancel</button>
+    </window>
+  </root>
+</SOUI>

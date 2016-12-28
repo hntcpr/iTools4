@@ -1,0 +1,29 @@
+﻿<SOUI title="mesagebox" width="440" height="280" appwin="0" resize="0" translucent="1" trCtx="login">
+  <style>
+    <class name="normalbtn" skin="_skin.sys.btn.normal" font="" colorText="#333333" colorTextDisable="#91a7c0" textMode="0x25" cursor="hand" margin-x="0"/>
+  </style>
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11">
+      <window id="101" pos="0,0,-0,29">
+        <text pos="20, 0, @300, @42"  align="left" name="msgtitle" >双重验证</text>
+        <imgbtn name="btn_close" skin="_skin.sys.btn.close" pos="-35,10" tip="close"/>
+        <window pos="1, 42, -1, @1" colorBkgnd="#E4E4E4"/>
+      </window>
+
+      <window pos="0,[0,-0,-20">
+        <text pos="0,]0,]-8,@30" align="right" name="dev_tip" visible="0">发送验证码到</text>
+        <combobox name="combo_device" pos="145,]-50,@110,@30"  visible="0" dropDown="1" dropHeight="100" skin="normal_edit" dotted="0" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" inset="5,0,5,0">
+          <liststyle class="cls_edit" itemHeight="30" colorText="@color/text_body" colorSelText="#FFFFFF" colorItemBkgnd="#FFFFFF" colorItemSelBkgnd="#1c8ee3" colorItemHotBkgnd="#1c8ee3"/>
+          <editstyle inset="5,0,5,0" colorText="@color/text_body" align="center" colorBkgnd="#FFFFFF"/>
+        </combobox>
+        <edit name="edit_code" pos="|0, |0, @130, @35" offset="-0.5,-0.5" skin="normal_edit" inset="5,0,5,0" cueText="输入验证码"></edit>
+        <button pos="[10,|0" offset="0,-0.5" name="btn_resend" skin="skin_null" cursor="hand" colorText="#1e78d5" colorTextHover="#1e78d5" drawFocusRect="0">未收到？重新发送</button>
+      </window>
+
+      <text name="status" pos="40, -100, -40, -52" align="center" multiLines="1" font="adding:-1" colorText="#333333"/>
+      <button name="btn_commit" pos="-95, -50, @75, @30" >确认</button>
+
+    </window>
+
+  </root>
+</SOUI>

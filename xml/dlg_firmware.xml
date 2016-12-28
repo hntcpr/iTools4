@@ -1,0 +1,36 @@
+<SOUI title="iTools 4"  width="860" height="530" margin="5,3,5,7" appWnd="0" resizable="0" translucent="1">
+  <style>
+    <class name="title" colorText="#333333"/>
+    <class name="content" colorText="#666666"/>
+  </style>
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">Firmware</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" id="IDCANCEL" animate="1"/>
+      </caption>
+      <window pos="0,[0">
+        <window pos="90,50,@700,@30">
+          <text pos="0,0,@180,-0">设备名称</text>
+          <text pos="180,0,@260,-0">Model（型号）</text>
+          <text pos="440,0,@180,-0">固件版本</text>
+        </window>
+        <button name="btn_type" skin="normal_edit" pos="90,80,@180,@35" align="left" inset="5,0,0,0" drawFocusRect="0">iPhone
+          <img pos="-30,2" skin="_skin.sys.dropbtn"/>
+        </button>
+        <combobox name="combo_model" pos="269,80,@262,@35" dropDown="1" dropHeight="100" skin="normal_edit" dotted="0" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" inset="5,0,5,0">
+          <liststyle class="cls_combo_list" itemHeight="30"/>
+        </combobox>
+        <combobox name="combo_version" pos="530,80,@125n ,@35" dropDown="1" dropHeight="200" skin="normal_edit" dotted="0" animateTime="200" curSel="0" drawFocusRect="0" textOffset="5" inset="5,0,5,0">
+          <liststyle class="cls_combo_list" itemHeight="30"/>
+        </combobox>
+        <button name="btn_download" skin="blue_btn" pos="670,80,@90,@35" drawFocusRect="0" colorText="#ffffff">极速下载</button>
+        <img pos="90,205" colorBkgnd="#1F1F1F" skin="img_firmware"/>
+        <text pos="90, 405">1. 查看设备背面</text>
+        <text pos="455, 405">2. 背面下部Model（型号）</text>
+
+      </window>
+
+    </window>
+  </root>
+</SOUI>

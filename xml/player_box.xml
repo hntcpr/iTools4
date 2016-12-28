@@ -1,0 +1,11 @@
+﻿<include>
+	    <button name="button_prev" pos="20,|0" offset="0,-0.5" skin="player_prev" drawFocusRect="0"></button>
+        <button name="button_play" pos="[7,|0" offset="0,-0.5" skin="player_play" drawFocusRect="0"></button>
+        <button name="button_next" pos="[7,|0" offset="0,-0.5" skin="player_next" drawFocusRect="0"></button>
+
+        <text name="artist_label" pos="180, |0, @345, @20" offset="0,-1" colorText="#ffffff">--</text>
+        <text name="time_label" pos="-500, |0, -270, @20" offset="0,-1" colorText="#ffffff" align="right">00:00 / 00:00</text>
+        <sliderbar name="slider" thumbInRail="1" pos="180,|0,-270,@16" bkgndSkin="player_prog" posSkin="player_prog_bg" myalpha="200"  value="0" min="0" max="500"/>
+        <button name="button_mute" pos="-245,|0" skin="player_volume" offset="0,-0.5" drawFocusRect="0"></button>
+        <sliderbar name="volume" pos="-220, |0,@110,@6"  offset="0,-0.5" value="60" min="0" max="100" thumbInRail="0" thumbSkin="skin_null"  bkgndSkin="player_volume_prog_bg" posSkin="player_volume_prog" />
+</include>

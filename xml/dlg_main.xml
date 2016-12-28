@@ -1,0 +1,52 @@
+<SOUI name="mainWindow" title="iTools 4.0" maxInset="10,10,10,10" width="1044" height="740" minsize="1044,680" margin="10,10,10,10" appWnd="1" resizable="1" translucent="1" >
+	<root skin="_skin.sys.wnd.bkgnd">
+		<window pos="10,10,-10,-10">
+			<tabctrl2 name="tab_main"  cache="1" colorBkgnd="#3A97E5" font="face:微软雅黑,adding:-1" tabPos="0" tabAlign="top" colorText="#ffffff" pos="0,0,-0,-0" show="1" curSel="0" focusable="0" tabHeight="92" tabSkin="_skin.tab.main" iconSkin="skin_tab_icon" text-y="65" icon-x="0" icon-y="0" offset-x="185" tabInterSize="0" tabHeadBgSkin="skin.logo">
+				<downloaderctrl downbg="skin.download.icon" downIcon="skin.download.icon2"/>
+				<page2 title="我的设备" tip="我的设备" ani_in="skin.anim.tj1" ani_out="skin.anim.tj2" interval="50" clipClient="1">
+					<include src="layout:devices_page"/>
+				</page2>
+				<page2 title="应用市场" tip="应用市场" ani_in="skin.anim.mm1" ani_out="skin.anim.mm2" >
+          <webview pos="0,0,-0,-0"  url="http://ios-mini4.itools.cn/" name="wv_app" colorBkgnd="#ffffff"/>
+          <!--cef pos="0,0,-0,-0" url="file:///E:/Work/iTools4/Bin/test.html" name="wke_app"/-->
+				</page2>
+				<page2 title="游戏中心" tip="游戏中心" ani_in="skin.anim.xfie1" ani_out="skin.anim.xfie2" >
+					<webview pos="0,0,-0,-0" name="wv_game" url="http://ios-mini4.itools.cn/online/index?layout=online" colorBkgnd="#ffffff"/>
+				</page2>
+				<page2 title="铃声壁纸" tip="铃声壁纸" ani_in="skin.anim.yh1" ani_out="skin.anim.yh2" interval="50">
+					<webview pos="0,0,-0,-0" name="wke" colorBkgnd="#ffffff"/>
+				</page2>
+				<!--page2 title="精选图书" tip="精选图书" ani_in="skin.anim.yy1" ani_out="skin.anim.yy2" interval="50">
+					<webview pos="0,0,-0,-0" name="wke" colorBkgnd="#ffffff"/>
+				</page2-->
+				<page2 title="工具箱" tip="工具箱" ani_in="skin.anim.sj1" ani_out="skin.anim.sj2" interval="50">
+					<include src="layout:tools_page"/>
+				</page2>
+			</tabctrl2>
+			<devSelectCtl name="dev_select_ctl" pos="65, 37, @120, @24" drawFocusRect="0" skin="skin_null"  align="left">
+				<img pos="0,|0" name="icon" offset="0,-0.5" skin="dev_usb" display="0"/>
+				<button pos="[0,|0" name="label" skin="skin_null" offset="0,-0.5" colorText="#d8eafa" colorTextHover="#ffffff" drawFocusRect="0" font="adding:0" maxWidth="104" dotted="1">请连接手机</button>
+				<img pos="[2,|2" name="triger" offset="0,-0.5" skin="dev_triger" show="0"/>
+				<popupStyle translucent="1" resizable="0" sendWheel2Hover="1">
+					<root skin="skin.pop.bg" >
+						<listview pos="2,2,-2,-2" name="lv_dropdown" >
+							<template itemHeight="30" colorHover="#f2f4f6" colorSelected="#ddeeff" colorNormal="#ffffff">
+								<img pos="6,|0" offset="0,-0.5" skin="skin_select" visible="0" name="icon_select"/>
+								<text pos="25,0,]0,-0" dotted="1" name="txt_key" font="adding:-2"/>
+								<button pos="-20,|0" offset="0,-0.5" skin="btn_unplug" name="btn_unplug" drawFocusRect="0"/>
+							</template>
+						</listview>
+					</root>
+				</popupStyle>
+			</devSelectCtl>
+      <hr></hr>
+			<caption pos="-150,0,-0,40">
+				<animateBtn name="btn_close" skin="_skin.btn.close.main" animateSkin="caption.ani.close" speed="20" pos="-35,5" tip="close"/>
+				<animateBtn name="btn_max" skin="_skin.btn.max"  pos="-62,5" animateSkin="caption.ani.maxmize"  speed="20" tip="maximize"/>
+				<animateBtn name="btn_restore" skin="_skin.btn.restore"  pos="-62,5" show="0" animateSkin="caption.ani.restore" speed="20" tip="restore"/>
+				<animateBtn name="btn_min" skin="_skin.btn.min" pos="-89,5" animateSkin="caption.ani.minimize" speed="20" tip="minimize"/>
+				<animateBtn name="btn_menu" skin="_skin.menu" pos="-116,5" animateSkin="caption.ani.menu" speed="20" tip="Settings"/>
+			</caption>
+		</window>
+	</root>
+</SOUI>

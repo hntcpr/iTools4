@@ -1,0 +1,27 @@
+<SOUI name="More Info" title="iTools 4" maxInset="5,3,10,10" width="550" height="625" margin="5,3,5,7" appWnd="0" resizable="0" translucent="1"  trCtx="">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">More Info</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <listviewex pos="0,[0,-0,-60" name="lv_moreinfo" dividerSize="0">
+        <template itemHeight="35">
+          <itemOdd colorNormal="#ffffff" colorSelected="#f3f3f3">
+            <text pos="10,0, @85, @35" font="adding:-2" align="right" valign="center" colorText="#333333" multiLines="0" name="txt_info">loading</text>
+            <text pos="[10,0, @450, @35" font="adding:-2" align="left" valign="center" colorText="#333333" multiLines="0" name="txt_value"/>
+          </itemOdd>
+          <itemEven colorNormal="#f3f4f6" colorSelected="#f3f3f3">
+            <text pos="10,0, @85, @35" font="adding:-2" align="right" valign="center" colorText="#333333" multiLines="0" name="txt_info">loading</text>
+            <text pos="[10,0, @450, @35" font="adding:-2" align="left" valign="center" colorText="#333333" multiLines="0" name="txt_value"/>
+          </itemEven>
+        </template>
+      </listviewex>
+      <window pos="0, [0, -0, @1" colorBkgnd="#E4E4E4"></window>
+      <window pos="0,[0, -0, -0">
+        <button pos="|-20, |0" offset="-1, -0.5" name="clip2clipboard">复制到剪贴板</button>
+        <button pos="|20, |0" offset="0, -0.5"  name="open_in_file">记事本打开</button>
+      </window>
+    </window>
+  </root>
+</SOUI>

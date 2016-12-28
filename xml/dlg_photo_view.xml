@@ -1,0 +1,33 @@
+﻿<SOUI trCtx="" title="iTools 相片查看器" width="1044" height="740" minsize="640,480" margin="11,11,11,11" marginInset="5,5,5,5" maxInset="10,10,10,10" resizable="1" translucent="1">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">iTools 相片查看器</text>
+        <imgbtn name="btn_close" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+        <imgbtn name="btn_max" skin="sys_btn_max2" pos="-65,10" tip="maximize" animate="1"/>
+        <imgbtn name="btn_restore" skin="sys_btn_restore2" pos="-65,10" tip="restore" animate="1" show="0"/>
+        <imgbtn name="btn_min" skin="sys_btn_min2" pos="-95,10" tip="restore" animate="1" show="1"/>
+      </caption>
+      <window pos="0,42,-0,-60" colorBkgnd="#f0f0f0">
+        <photoview name="photoview" pos="0,0,-0,-0" clipClient="1" zoomPercent="zoom_percent">
+		<text name="zoom_text" pos="0,0" colorText="#ffffff" font="adding:2,bold:1" align="center" show="0"/>
+		</photoview>
+        <imgbtn name="btn_prev" pos="25,|-30,@48,@42" skin="photoview.btn_prev" animate="1"/>
+        <imgbtn name="btn_next" pos="-77,|-30,@48,@42" skin="photoview.btn_next" animate="1"/>
+      </window>
+      <window name="tool_btn" pos="0,-60,-0,-0" colorBkgnd="#ffffff">
+        <imgbtn name="tool_true_size" tip="实际大小" pos="|-221,15,@32,@32" skin="photoview.true_size" animate="1" accel="ctrl+F"/>
+        <imgbtn name="tool_best_size" tip="最佳大小" pos="|-221,15,@32,@32" skin="photoview.best_size" animate="1" accel="ctrl+G" show="0"/>
+        <imgbtn name="tool_zoom_out" tip="放大" pos="[10,15,@32,@32" skin="photoview.zoom_out" animate="1"/>
+        <imgbtn name="tool_zoom_in" tip="缩小" pos="[10,15,@32,@32" skin="photoview.zoom_in" animate="1"/>
+        <imgbtn name="tool_play" tip="幻灯片" pos="[10,15,@32,@32" skin="photoview.play" animate="1" accel="ctrl+P"/>
+        <imgbtn name="tool_prev" tip="上一张" pos="[10,15,@48,@32" skin="photoview.prev" animate="1"/>
+        <imgbtn name="tool_next" tip="下一张" pos="|5,15,@48,@32" skin="photoview.next" animate="1"/>
+        <imgbtn name="tool_rotate_left" tip="向左旋转" pos="[10,15,@32,@32" skin="photoview.rotate_left" animate="1" accel="ctrl+L"/>
+        <imgbtn name="tool_rotate_right" tip="向右旋转" pos="[10,15,@32,@32" skin="photoview.rotate_right" animate="1" accel="ctrl+R"/>
+        <imgbtn name="tool_save_as" tip="另存为" pos="[10,15,@32,@32" skin="photoview.save_as" animate="1" accel="ctrl+S"/>
+        <imgbtn name="tool_show_thumb" tip="缩略图" pos="[10,15,@32,@32" skin="photoview.show_thumb" animate="1" accel="ctrl+T" show="0"/>
+      </window>
+    </window>
+  </root>
+</SOUI>

@@ -1,0 +1,75 @@
+﻿<SOUI trCtx="" title="RingtoneMaker" width="924" height="558" margin="5,3,5,7" resizable="0" translucent="1" alpha="255">
+  <root skin="_skin.sys.wnd.bkgnd">
+    <window pos="11,11,-11,-11" colorBkgnd="#FFFFFF" >
+      <caption pos="0, 0,-0,42" skin="skin_bkgnd_line">
+        <text pos="15, 0, 200, -0">铃声制作</text>
+        <imgbtn id="IDCANCEL" skin="_skin.btn.close" pos="-35,10" tip="close" animate="1"/>
+      </caption>
+      <window name="main_wnd" pos="0,42,-200,-0" colorBkgnd="#FFFFFF">
+        <window pos="0,0,-0,@70" colorBkgnd="#ffffff">
+          <text name="drop_name" pos="27,35,-230,@30" font="size:16,bold:1" colorText="#333333" dotted="1">请选择或拖放音乐文件</text>
+          <imgbtn name="btn_load_local" pos="-226,30,@94,@34" font="adding:-2" colorTextDisable="#cccccc">选择本地音乐</imgbtn>
+          <imgbtn name="btn_load_device" pos="-120,30,@94,@34" font="adding:-2" colorTextDisable="#cccccc">选择设备音乐</imgbtn>
+        </window>
+        <radio pos="27,[25" name="radio_call" font="adding:-2" checked="1">电话铃声</radio>
+        <radio pos="[30,{0" name="radio_message" font="adding:-2">短信铃声</radio>
+        <text pos="[0,{0" font="adding:-2" colorText="#999999">（30秒）</text>
+        <ringtoneslider name="ringtoneslider" pos="27,[10,@646,@130" clipClient="1"/>
+        <imgbtn name="btn_play"   pos="48,[45,@120,@34" colorTextDisable="#cccccc" animate="1">播放</imgbtn>
+        <imgbtn name="btn_set_start"   pos="[32,{0,@90,@34" font="adding:-2" colorTextDisable="#cccccc" animate="1">设为起点</imgbtn>
+        <imgbtn name="btn_audio"   pos="48,[10,@120,@34" colorTextDisable="#cccccc" animate="1">试听铃声</imgbtn>
+        <imgbtn name="btn_set_end"   pos="[32,{0,@90,@34" font="adding:-2" colorTextDisable="#cccccc" animate="1">设为终点</imgbtn>
+        <text pos="[10,{-36" font="adding:-2">起点：</text>
+        <window name="spin_start_m" pos="[5,{-4,@50,@26" margin="1,1,1,1" class="cls_edit" trackMouseEvent="1">
+          <edit pos="0,0,-20,-0" name="edit_spin" margin-x="0" inset="5,0,5,0" margin-y="0" font="adding:-2" colorTextDisable="#cccccc" readonly="1"/>
+          <spinButtonEx name="btn_start_m" pos="[0,0,-0,-0" margin="0,0,0,0" max="5" min="0" value="0" step="1" circle="0" buddy="edit_spin">
+            <imgbtn name="btn_up" skin="spin_btn_up"/>
+            <imgbtn name="btn_down" skin="spin_btn_down"/>
+          </spinButtonEx>
+        </window>
+        <text pos="[5,{4" font="adding:-2">分</text>
+        <window name="spin_start_s" pos="[5,{-4,@70,@26" margin="1,1,1,1" class="cls_edit" trackMouseEvent="1">
+          <edit pos="0,0,-20,-0" name="edit_spin" margin-x="0" margin-y="0" inset="5,0,5,0" font="adding:-2" colorTextDisable="#cccccc" readonly="1"/>
+          <spinButtonEx name="btn_start_s" pos="[0,0,-0,-0" max="59.9" min="0" value="0" circle="1" buddy="edit_spin">
+            <imgbtn name="btn_up" skin="spin_btn_up"/>
+            <imgbtn name="btn_down" skin="spin_btn_down"/>
+          </spinButtonEx>
+        </window>
+        <text pos="[5,{4" font="adding:-2">秒</text>
+        <text pos="{-188,[27" font="adding:-2">终点：</text>
+        <window name="spin_end_m" pos="[5,{-4,@50,@26" margin="1,1,1,1" class="cls_edit" trackMouseEvent="1">
+          <edit pos="0,0,-20,-0" name="edit_spin" margin-x="0" margin-y="0" inset="5,0,5,0" font="adding:-2" colorTextDisable="#cccccc" readonly="1"/>
+          <spinButtonEx name="btn_end_m" pos="[0,0,-0,-0" max="5" min="0" value="3" step="1.0" circle="0" buddy="edit_spin">
+            <imgbtn name="btn_up" skin="spin_btn_up"/>
+            <imgbtn name="btn_down" skin="spin_btn_down"/>
+          </spinButtonEx>
+        </window>
+        <text pos="[5,{4" font="adding:-2">分</text>
+        <window name="spin_end_s" pos="[5,{-4,@70,@26" margin="1,1,1,1" class="cls_edit" trackMouseEvent="1">
+          <edit pos="0,0,-20,-0" name="edit_spin" margin-x="0" margin-y="0" inset="5,0,5,0" font="adding:-2" colorTextDisable="#cccccc" readonly="1"/>
+          <spinButtonEx name="btn_end_s" pos="[0,0,-0,-0" max="59.9" min="0" value="0" circle="1" buddy="edit_spin">
+            <imgbtn name="btn_up" skin="spin_btn_up"/>
+            <imgbtn name="btn_down" skin="spin_btn_down"/>
+          </spinButtonEx>
+        </window>
+        <text pos="[5,{4" font="adding:-2">秒</text>
+        <text pos="[30,{-46" font="adding:-2" colorText="#666666">铃声长度：</text>
+        <text name="txt_time_len" pos="{-3,[0" font="size:44,bold:0" colorText="#333333">00:30</text>
+        <link name="btn_tutorial" pos="27,-90,%100,%100" class="cls_btn_weblink" align="left">如何设置铃声？</link>
+        <imgbtn name="btn_save_local"   pos="-226,-62,@94,@34" font="adding:-2" colorTextDisable="#cccccc" animate="1">保存到本地</imgbtn>
+        <imgbtn name="btn_save_device"   pos="-120,-62,@94,@34" font="adding:-2" colorTextDisable="#cccccc" animate="1" enable="0">保存到设备</imgbtn>
+      </window>
+      <webview pos="-195,42,-0,-0" url="http://ring.itools.cn/index.php?m=applist&a=ringmaker" name="wke_ringtone"/>
+      <window pos="-196,42,@1,-0" colorBkgnd="#e1e1e1" />
+      <window name="process_wnd" pos="0,42,-0,-0" show="0">
+        <include src="layout:progress_box"/>
+      </window>
+      <window name="text_loading" pos="0,42,-0,-0" show="0">
+        <text pos="|-178,|-88,@300,@32" font="size:16" colorText="#ffffff">正在加载音乐，请稍候...</text>
+      </window>
+      <window name="img_tutorial" pos="0,42,-0,-0" colorBkgnd="#FFFFFF" show="0">
+        <img pos="|-432,|-190" skin="ringtone_tutorial"/>
+      </window>
+    </window>
+  </root>
+</SOUI>

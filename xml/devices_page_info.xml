@@ -1,0 +1,114 @@
+<include>
+  <window name="info" pos="|-425, |-313, @850, @610" colorBkgnd="#ffffff" focusable="1" drawFocusRect="0">
+    <text Pos="315,[55" name="name" font="face:微软雅黑,size:18" colorText="#ffffff" maxWidth="380" dotted="1">xxx's iPhone</text>
+    <devnameedit pos="{-5,{-5,[5,[5" name="edit_dev" font="face:微软雅黑,size:18" inset="5,5,5,5" colorText="@color/text_body"/>
+    <imgbtn pos="[6, {8" name="modify_name" skin="skin_dev_edit"/>
+    <text Pos="315,[25" class="cls_info_label">Device: </text>
+    <text Pos="385,{0" name="type" class="cls_info_label">iPhone 6s</text>
+    <text Pos="550,{0" class="cls_info_label">Purchese: </text>
+    <text Pos="620,{0" name="purchase" class="cls_info_label">No data</text>
+    <button visible="0" pos="[8, {0" name="purchase_btn" skin="skin_null" cursor="hand" drawFocusRect="0" valign="center" colorText="#1c8be4" colorTextHover="#1c8be4" font="adding:-2" fontHover="adding:-2,underline:1">获取保修信息</button>
+
+    <text Pos="315,[12" class="cls_info_label">iOS: </text>
+    <text Pos="385,{0" name="version" class="cls_info_label">8.4</text>
+    <text Pos="550,{0" class="cls_info_label">Warranty: </text>
+    <text Pos="620,{0" name="warranty" class="cls_info_label">No data</text>
+    <text Pos="315,[12" class="cls_info_label">Jailbreak: </text>
+    <text Pos="385,{0" name="jailbreak" class="cls_info_label">not yet</text>
+    <text Pos="550,{0" class="cls_info_label">Battery: </text>
+    <text Pos="620,{0" name="battery" class="cls_info_label">...</text>
+    <button pos="[25,{0" name="btn_battery" skin="skin_null" cursor="hand" drawFocusRect="0" valign="center" colorText="#1c8be4" colorTextHover="#1c8be4" font="adding:-2" fontHover="adding:-2,underline:1">电池详情</button>
+    <text Pos="315,[12" class="cls_info_label">Country: </text>
+    <text Pos="385,{0" name="country" class="cls_info_label">Unknown</text>
+    <text visible="0" Pos="550,{0" name="sell_label" class="cls_info_label">Sell: </text>
+    <text visible="0" Pos="620,{0" name="sell_price" class="cls_info_label">- ~ -</text>
+    <link visible="0" pos="700, {0" name="sell_btn" cursor="hand" valign="center" colorText="#1c8be4" colorTextHover="#1c8be4" font="adding:-2" fontHover="adding:-2,underline:1">设备回收</link>
+    <button pos="315, [15, @90, @26" name="btn_moreinfo" class="cls_toolbar_btn" align="center" skin="btn_round_gray" focusable="0">More Info</button>
+
+    <!--toolbar-->
+    <buttonex pos="290, [45, @105, @95" name="btn_install_app" skin="skin_null" iconSkin="skin_dev_itools" valign="center" text-offset="0, 56, 0, 0" icon-valign="top" focusable="0" colorText="@color/text_body" colorTextHover="#000000" cursor="hand">iTools</buttonex>
+    <buttonex name="btn_fixauth" pos="[0, {0, @105, @95"  class="tool_item" iconSkin="skin_dev_auth" >闪退修复</buttonex>
+    <buttonex pos="[0, {0, @105, @95" name="btn_ringtone_maker" skin="skin_null" iconSkin="skin_dev_ringtone" valign="center" text-offset="0, 56, 0, 0" icon-valign="top" focusable="0" colorText="@color/text_body" colorTextHover="#000000" cursor="hand">铃声制作</buttonex>
+    <!--buttonex pos="[0, {0, @105, @95" skin="skin_null" iconSkin="skin_dev_itunes" valign="center" text-offset="0, 56, 0, 0" icon-valign="top" focusable="0" colorText="@color/text_body" colorTextHover="#000000" cursor="hand">iTunes 备份管理</buttonex-->
+    <buttonex pos="[0, {0, @105, @95" name="btn_AirPlayer" skin="skin_null" iconSkin="skin_dev_airplay" valign="center" text-offset="0, 56, 0, 0" icon-valign="top" focusable="0" colorText="@color/text_body" colorTextHover="#000000" cursor="hand">
+      苹果录屏大师
+      <window name="prog_wnd" pos="0,-30,-0,@30" colorBkgnd="#ffffff" visible="0">
+        <progress name="progress" pos="20,10,-35,@6" value="0" min="0" max="100" showPercent="0"/>
+        <imgbtn name="buttonex_cancel" pos="-30,5" skin="tool_stop" tip="Cancel" cursor="hand"/>
+      </window>
+    </buttonex>
+    <buttonex pos="[0, {0, @105, @95" name="btn_itunes_backup" skin="skin_null" iconSkin="dev_toolbar.itunes" valign="center" text-offset="0, 56, 0, 0" icon-valign="top" focusable="0" colorText="@color/text_body" colorTextHover="#000000" cursor="hand">iTunes 备份管理</buttonex>
+
+    <!--wallpaper-->
+    <img pos="33, 60, @248, @400" colorBkgnd="#E6E6E6">
+      <img pos="0, 0, -0, -0" skin="skin_dev_default" iconIndex="3">
+        <WallpaperCtrl pos="14, 50, @220, @302" name="wallpaper"/>
+        <text name="time" pos="0,{20, @248, @50" font="face:微软雅黑,size:36" textmode="25" colorText="#FFFFFF">08:45</text>
+        <text name="date" pos="0,[0, @248, @20" font="face:微软雅黑,size:12" textmode="25" colorText="#FFFFFF">3月7日 星期二</text>
+        <text name="charge" pos="0, 300, @248, @30" font="face:微软雅黑,size:12" textmode="25" colorText="#FFFFFF">Charging</text>
+      </img>
+    </img>
+
+    <DiskusageCtrl pos="315, 400, @510, @100" name="usage" >
+      <tabctrl name="usage_tab" pos="0,0,-0,-0" animateSteps="10"  colorBkgnd="#ffffff" tabAlign="top" tabInterSize="2" tabWidth="60" tabHeight="20" tabSkin="skin_null" colorText="#555555" colorTextHover="#1c8ee3" colorTextPush="#0876c8" focusable="0">
+        <page title="数据容量" cursor="hand">
+          <window cursor="arrow">
+            <window pos="0, 10, @440, @10" colorBkgnd="#d2d2d2"/>
+            <imgbtn pos="[10, 7" name="disk_refresh" skin="toolbar_refresh_app" tip="Refresh"  cursor="hand"/>
+            <tipOwnerWnd pos="0, 10, @0, @10" colorBkgnd="#469ed0" name="app_o" data="100"/>
+            <tipOwnerWnd pos="0, 10, @0, @10" colorBkgnd="#68c363" name="photo_o" data="101"/>
+            <tipOwnerWnd pos="0, 10, @0, @10" colorBkgnd="#e7b669" name="music_o" data="102"/>
+            <tipOwnerWnd pos="0, 10, @0, @10" colorBkgnd="#ff794c" name="video_o" data="103"/>
+            <tipOwnerWnd pos="0, 10, @0, @10" colorBkgnd="#9b65dd" name="storage_o" data="104"/>
+            <tipOwnerWnd pos="0, 10, @0, @10" colorBkgnd="#8ba0b1" name="other_o" data="105"/>
+            <tipOwnerWnd pos="0, 10, @0, @10" colorBkgnd="#e6a1d0" name="book_o" data="106"/>
+            <tipOwnerWnd pos="0, 10, @0, @10" colorBkgnd="#d2d2d2" name="free_o" data="107"/>
+
+            <window pos="0, 32, @12, @12" colorBkgnd="#469ed0"/>
+            <text pos="[6, {-2" class="cls_info_label" name="app" id="100">App</text>
+            <window pos="130, 32, @12, @12" colorBkgnd="#68c363"/>
+            <text pos="[6, {-2" class="cls_info_label" name="photo" id="101">Photo</text>
+            <window pos="260, 32, @12, @12" colorBkgnd="#e7b669"/>
+            <text pos="[6, {-2" class="cls_info_label" name="music" id="102">Music</text>
+            <window pos="390, 32, @12, @12" colorBkgnd="#ff794c"/>
+            <text pos="[6, {-2" class="cls_info_label" name="video" id="103">Video</text>
+            <window pos="0, 57, @12, @12" colorBkgnd="#e6a1d0"/>
+            <text pos="[6, {-2" class="cls_info_label" name="book" id="106">Book</text>
+            <window pos="130, 57, @12, @12" colorBkgnd="#9b65dd"/>
+            <text pos="[6, {-2" class="cls_info_label" name="storage" id="104">Storage</text>
+            <window pos="260, 57, @12, @12" colorBkgnd="#8ba0b1"/>
+            <text pos="[6, {-2" class="cls_info_label" name="other" id="105">Other</text>
+            <window pos="390, 57, @12, @12" colorBkgnd="#d2d2d2"/>
+            <text pos="[6, {-2" class="cls_info_label" name="free" id="107">Free</text>
+
+          </window>
+        </page>
+        <page title="系统容量" cursor="hand">
+          <window cursor="arrow">
+            <window pos="0, 10, @440, @10" colorBkgnd="#d2d2d2"/>
+            <imgbtn pos="[10, 7" name="disk_refresh" skin="toolbar_refresh_app" cursor="hand" tip="Refresh"/>
+            <tipOwnerWnd pos="[0, 10, @0, @10" colorBkgnd="#469ed0" name="system_o" data="108"/>
+            <tipOwnerWnd pos="[0, 10, @0, @10" colorBkgnd="#d2d2d2" name="available_o" data="109"/>
+
+            <window pos="0, 32, @12, @12" colorBkgnd="#469ed0"/>
+            <text pos="[6, {-2" class="cls_info_label" name="system" id="108">Used</text>
+            <window pos="130, 32, @12, @12" colorBkgnd="#d2d2d2"/>
+            <text pos="[6, {-2" class="cls_info_label" name="available" id="109">Free</text>
+          </window>
+        </page>
+      </tabctrl>
+      <window pos="60, 3, @1, @14" colorBkgnd="#CACACA"/>
+      <text pos="200, 0, -70, 30" class="righttext" name="used" font="face:微软雅黑,size:12" colorText="#666666">0G / 0G</text>
+    </DiskusageCtrl>
+
+    <button pos="73, 480,@40,@25" skin="skin_null" name="btn_screenshot" cursor="hand" font="adding:-2" colorText="#555555" colorTextHover="#1c8ee3" colorTextPush="#0876c8" colorTextDisable="#cccccc" drawFocusRect="0">截屏</button>
+    <imgbtn pos="]-20,480" name="btn_screenshot_opt" skin="dev_btn_dropdown" cursor="hand" ></imgbtn>
+    <window pos="128, 484, @1, @16" colorBkgnd="#CACACA"/>
+
+    <button pos="133, 480,@40,@25" skin="skin_null" name="btn_reboot" cursor="hand" font="adding:-2" colorText="#555555" colorTextHover="#1c8ee3" colorTextPush="#0876c8" drawFocusRect="0">重启</button>
+    <imgbtn pos="]-19,480" name="btn_reboot_opt" skin="dev_btn_dropdown" cursor="hand" ></imgbtn>
+    <window pos="187, 484, @1, @16" colorBkgnd="#CACACA"/>
+
+    <button pos="185, 480, @60, @25" skin="skin_null" name="btn_refresh" cursor="hand" font="adding:-2" colorText="#555555" colorTextHover="#1c8ee3" colorTextPush="#0876c8" colorTextDisable="#cccccc" drawFocusRect="0">刷新</button>
+  </window>
+</include>
