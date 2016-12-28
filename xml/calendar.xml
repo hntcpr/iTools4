@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--日期显示面板-->
+<include>
+  <window pos="0,0,-0,-0" name="panel_calendar" skin="_skin.sys.border">
+    <window pos="0,0,-0,45">
+      <imgbtn pos="10,10" name="btn_prev_month" skin="calendar.cal_arrow_left"></imgbtn>
+      <text pos="|0,|0" offset="-0.5,-0.5" name="txt_month" msgTransparent="0" colorTextHover="#1c8ee3" colorTextPush="#1c8ee3"/>
+      <imgbtn pos="-35,10" name="btn_next_month" skin="calendar.cal_arrow_right"></imgbtn>
+    </window>
+    <calendar pos="1,[0,-1,@140" name="wnd_calendar" daySkin="calendar.button_radio_aio" colorWeekend="#3b97e4" colorTitleBack="#ffffff" colorDay="#ffffff" font="adding:-2" footerHeight="0"/>
+    <button pos="|0,[0,@60,@25" offset="-0.5,0" name="btn_today" drawFocusRect="0" skin="calendar.sel" colorText="#3b97e4" colorTextHover="#3a97e5" colorTextPush="#2e6c9f">today</button>
+  </window>
+  <window pos="0,0,-0,-0" name="panel_month_picker" skin="_skin.sys.border">
+    <window pos="0,0,-0,-50">
+      <!--月份选择面板-->
+      <window pos="0,35,|-2,-0" name="group_months">
+        <!--line 1-->
+        <radio2 id="1000" pos="10,0,|-5,@20" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">一月</radio2>
+        <radio2 id="1001" pos="|5,0,-10,@20" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">二月</radio2>
+        <!--line 2-->
+        <radio2 id="1002" pos="10,0,|-5,@20" offset="0,1.1" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">三月</radio2>
+        <radio2 id="1003" pos="|5,0,-10,@20" offset="0,1.1" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">四月</radio2>
+        <!--line 3-->
+        <radio2 id="1004" pos="10,0,|-5,@20" offset="0,2.2" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">五月</radio2>
+        <radio2 id="1005" pos="|5,0,-10,@20" offset="0,2.2" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">六月</radio2>
+        <!--line 4-->
+        <radio2 id="1006" pos="10,0,|-5,@20" offset="0,3.3" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">七月</radio2>
+        <radio2 id="1007" pos="|5,0,-10,@20" offset="0,3.3" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">八月</radio2>
+        <!--line 5-->
+        <radio2 id="1008" pos="10,0,|-5,@20" offset="0,4.4" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">九月</radio2>
+        <radio2 id="1009" pos="|5,0,-10,@20" offset="0,4.4" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">十月</radio2>
+        <!--line 6-->
+        <radio2 id="1010" pos="10,0,|-5,@20" offset="0,5.5" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">十一月</radio2>
+        <radio2 id="1011" pos="|5,0,-10,@20" offset="0,5.5" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2">十二月</radio2>
+      </window>
+      <hr pos="|0,30,|1,-5" mode="vertical" colorLine="#e4e4e4"/>
+      <!--年份选择面板-->
+      <window pos="|5,23,-0,-0" name="group_years">
+        <!--line 1-->
+        <button name="btn_year_prev" pos="10,5,|-10,@20" skin="calendar.sel" colorText="#3b97e4" colorTextHover="#3a97e5" colorTextPush="#2e6c9f" drawFocusRect="0" font="adding:-2">前十年</button>
+        <button name="btn_year_next" pos="|10,5,-10,@20" skin="calendar.sel" colorText="#3b97e4" colorTextHover="#3a97e5" colorTextPush="#2e6c9f" drawFocusRect="0" font="adding:-2">后十年</button>
+        <!--line 6-->
+        <radio2 id="2000"  pos="10,35,|-5,@20" skin="calendar.button_radio_aio" align="center" valign="middle"  colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2"/>
+        <radio2 id="2001" pos="|5,35,-10,@20" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2"/>
+        <!--line 2-->
+        <radio2 id="2002" pos="10,35,|-5,@20" offset="0,1.1" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2"/>
+        <radio2 id="2003" pos="|5,35,-10,@20" offset="0,1.1" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2"/>
+        <!--line 3-->
+        <radio2 id="2004" pos="10,35,|-5,@20" offset="0,2.2" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2"/>
+        <radio2 id="2005" pos="|5,35,-10,@20" offset="0,2.2" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2"/>
+        <!--line 4-->
+        <radio2 id="2006" pos="10,35,|-5,@20" offset="0,3.3" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2"/>
+        <radio2 id="2007" pos="|5,35,-10,@20" offset="0,3.3" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2"/>
+        <!--line 5-->
+        <radio2 id="2008" pos="10,35,|-5,@20" offset="0,4.4" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2"/>
+        <radio2 id="2009" pos="|5,35,-10,@20" offset="0,4.4" skin="calendar.button_radio_aio" align="center" valign="middle" colorTextHover="#ffffff" colorTextPush="#ffffff" font="adding:-2"/>
+      </window>
+    </window>
+    <!--返回按钮-->
+    <window pos="0,[0,-0,-0">
+      <button pos="|-20,12,@60,-12" offset="-1,0" name="btn_pick_month_cancel" skin="calendar.sel" colorText="#3b97e4" colorTextHover="#3a97e5" colorTextPush="#2e6c9f" drawFocusRect="0">Cancel</button>
+      <button pos="|20,12,@60,-12" name="btn_pick_month_finish" skin="calendar.sel" colorText="#3b97e4" colorTextHover="#3a97e5" colorTextPush="#2e6c9f" drawFocusRect="0">OK</button>
+    </window>
+  </window>
+</include>
